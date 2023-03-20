@@ -390,11 +390,6 @@
   grid-gap: 8px 8px;
 }
 
-.u-section-2 .u-image-1 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("images/pitsata-lyubov-za-vinagi.jpg");
-  background-position: 50% 50%;
-}
-
 .u-section-2 .u-container-layout-1 {
   padding: 30px;
 }
@@ -418,11 +413,6 @@
   padding: 0;
 }
 
-.u-section-2 .u-image-2 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("images/smutita-i-shejkove.jpg");
-  background-position: 50% 50%;
-}
-
 .u-section-2 .u-container-layout-2 {
   padding: 30px;
 }
@@ -444,11 +434,6 @@
   text-transform: uppercase;
   margin: 0 auto 0 0;
   padding: 0;
-}
-
-.u-section-2 .u-image-3 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("images/dietichni-i-niskokalorichni-retsepti.jpg");
-  background-position: 50% 50%;
 }
 
 .u-section-2 .u-container-layout-3 {
