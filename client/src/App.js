@@ -4,12 +4,15 @@ import { FooterBottomLine } from "./components/FooterBottomLine/FooterBottomLine
 import { Home } from "./components/Home/Home";
 
 
+
 function App() {
   return (
     <>
       <Header />
 
       <Home />
+
+
 
       <Footer />
 
