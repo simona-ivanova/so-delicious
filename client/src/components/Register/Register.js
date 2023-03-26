@@ -2,6 +2,7 @@ import './Register.css'
 
 export const Register = () => {
     return (
+        <div className="page page-register">
         <section className="u-clearfix u-section-1" id="sec-837c">
             <div className="u-clearfix u-sheet u-sheet-1">
                 <h1 className="u-text u-text-default u-text-palette-2-light-1 u-title u-text-1">Регистрация </h1>
@@ -45,6 +46,7 @@ export const Register = () => {
                         <a href="Login.html" className="u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-text-hover-palette-2-light-2 u-text-palette-2-light-1 u-btn-2">Вход</a>
                 </div>
         </section>
+        </div>
 
     );
 };

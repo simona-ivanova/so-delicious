@@ -19,8 +19,6 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/about' element={<About />} />
       </Routes>
-      
-
 
       <Footer />
       <FooterBottomLine />

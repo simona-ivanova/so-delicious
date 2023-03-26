@@ -1,7 +1,8 @@
+import './Home.css'
+
 export const Home = () => {
     return (
-    
-        <div className="home-sections">
+        <div className="page page-home">
                  {/* Recipe Carousel */}
 
             <section className="u-align-center u-clearfix u-white u-section-1" id="sec-15c6">

@@ -2,6 +2,7 @@ import './About.css'
 
 export const About = () => {
     return (
+        <div className='page page-about'>
         <section className="u-clearfix u-section-1" id="sec-a45c">
             <div className="u-clearfix u-sheet u-sheet-1">
                 <div className="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
@@ -51,5 +52,6 @@ export const About = () => {
                 </div>
             </div>
         </section>
+        </div>
     );
 };
