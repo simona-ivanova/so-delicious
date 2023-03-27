@@ -9,15 +9,15 @@ export const Contact = () => {
                     <div className="u-form u-form-1">
                         <form action="https://forms.nicepagesrv.com/v2/form/process" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style={{padding: 10}} source="email" name="form">
                             <div className="u-form-group u-form-name u-label-none">
-                                <label for="name-3b9a" className="u-label">Name</label>
+                                <label htmlFor="name-3b9a" className="u-label">Name</label>
                                 <input type="text" placeholder="Enter your Name" id="name-3b9a" name="name" className="u-border-palette-2-light-1 u-input u-input-rectangle u-radius-11 u-text-palette-2-light-1" required="" />
                             </div>
                             <div className="u-form-email u-form-group u-label-none">
-                                <label for="email-3b9a" className="u-label">Email</label>
+                                <label htmlFor="email-3b9a" className="u-label">Email</label>
                                 <input type="email" placeholder="Enter a valid email address" id="email-3b9a" name="email" className="u-border-palette-2-light-1 u-input u-input-rectangle u-radius-11 u-text-palette-2-light-1" required="" />
                             </div>
                             <div className="u-form-group u-form-message u-label-none">
-                                <label for="message-3b9a" className="u-label">Message</label>
+                                <label htmlFor="message-3b9a" className="u-label">Message</label>
                                 <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3b9a" name="message" className="u-border-palette-2-light-1 u-input u-input-rectangle u-radius-11 u-text-palette-2-light-1" required=""></textarea>
                             </div>
                             <div className="u-align-left u-form-group u-form-submit">
