@@ -1,219 +1,287 @@
+import { Link } from 'react-router-dom';
+
 export const Header = () => {
-    return (
-        <header className="u-align-left u-clearfix u-header u-section-row-container" id="sec-0c6c" data-animation-name=""
-        data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-        <div className="u-section-rows">
-          <div className="u-section-row u-white u-section-row-1" id="sec-46aa">
-            <div className="u-clearfix u-sheet u-sheet-1">
-              <div className="u-social-icons u-spacing-10 u-social-icons-1">
-                <a className="u-social-url" title="facebook" target="_blank" href="https://facebook.com/name"><span
-                    className="u-icon u-social-facebook u-social-icon u-text-palette-2-light-1"><svg className="u-svg-link"
-                      preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style={{}}>
-                      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-a857"></use>
-                    </svg><svg className="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a857">
-                      <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-                      <path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
+  return (
+    <header className="u-align-left u-clearfix u-header u-section-row-container" id="sec-0c6c" data-animation-name=""
+      data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+      <div className="u-section-rows">
+        <div className="u-section-row u-white u-section-row-1" id="sec-46aa">
+          <div className="u-clearfix u-sheet u-sheet-1">
+            <div className="u-social-icons u-spacing-10 u-social-icons-1">
+              <Link to="https://facebook.com/" className="u-social-url" title="facebook" target="_blank">
+                <span className="u-icon u-social-facebook u-social-icon u-text-palette-2-light-1">
+                  <svg className="u-svg-link"
+                    preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style={{}}>
+                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-a857"></use>
+                  </svg>
+                  <svg className="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a857">
+                    <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
+                    <path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
           c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path>
-                    </svg></span>
-                </a>
-                <a className="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/name"><span
-                    className="u-icon u-social-icon u-social-instagram u-text-palette-2-light-1"><svg className="u-svg-link"
-                      preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style={{}}>
-                      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-485d"></use>
-                    </svg><svg className="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-485d">
-                      <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-                      <path fill="#FFFFFF"
-                        d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
+                  </svg></span>
+              </Link>
+              <Link to="https://www.instagram.com/" className="u-social-url" title="instagram" target="_blank">
+                <span className="u-icon u-social-icon u-social-instagram u-text-palette-2-light-1">
+                  <svg className="u-svg-link"
+                    preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style={{}}>
+                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-485d"></use>
+                  </svg>
+                  <svg className="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-485d">
+                    <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
+                    <path fill="#FFFFFF"
+                      d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
           z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path>
-                      <path fill="#FFFFFF"
-                        d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path>
-                      <path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
+                    <path fill="#FFFFFF"
+                      d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path>
+                    <path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
           C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
           c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path>
-                    </svg></span>
-                </a>
-                <a className="u-social-url" title="youtube" target="_blank" href=""><span
-                    className="u-icon u-social-icon u-social-youtube u-text-palette-2-light-1"><svg className="u-svg-link"
-                      preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style={{}}>
-                      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-b57c"></use>
-                    </svg><svg className="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-b57c">
-                      <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-                      <path fill="#FFFFFF"
-                        d="M74.9,33.3H37.3c-7.4,0-13.4,6-13.4,13.4v18.8c0,7.4,6,13.4,13.4,13.4h37.6c7.4,0,13.4-6,13.4-13.4V46.7 C88.3,39.3,82.3,33.3,74.9,33.3L74.9,33.3z M65.9,57l-17.6,8.4c-0.5,0.2-1-0.1-1-0.6V47.5c0-0.5,0.6-0.9,1-0.6l17.6,8.9 C66.4,56,66.4,56.8,65.9,57L65.9,57z">
-                      </path>
-                    </svg></span>
+                  </svg></span>
+              </Link>
+              <Link to="https://www.youtube.com/" className="u-social-url" title="youtube" target="_blank" >
+                <span className="u-icon u-social-icon u-social-youtube u-text-palette-2-light-1">
+                  <svg className="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style={{}}>
+                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-b57c"></use>
+                  </svg>
+                  <svg className="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-b57c">
+                    <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
+                    <path fill="#FFFFFF"
+                      d="M74.9,33.3H37.3c-7.4,0-13.4,6-13.4,13.4v18.8c0,7.4,6,13.4,13.4,13.4h37.6c7.4,0,13.4-6,13.4-13.4V46.7 C88.3,39.3,82.3,33.3,74.9,33.3L74.9,33.3z M65.9,57l-17.6,8.4c-0.5,0.2-1-0.1-1-0.6V47.5c0-0.5,0.6-0.9,1-0.6l17.6,8.9 C66.4,56,66.4,56.8,65.9,57L65.9,57z">
+                    </path>
+                  </svg>
+                  </span>
+              </Link>
+            </div>
+
+            <form action="#" method="get"
+              className="u-border-1 u-border-palette-2-light-1 u-radius-25 u-search u-search-right u-search-1">
+              <button className="u-search-button" type="submit">
+                <span className="u-search-icon u-spacing-10 u-text-palette-2-light-1">
+                  <svg className="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style={{}}>
+                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-9dab"></use>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="svg-9dab" x="0px" y="0px" viewBox="0 0 56.966 56.966"
+                    style={{ enableBackground: "new 0 0 56.966 56.966" }} xmlSpace="preserve" className="u-svg-content">
+                    <path
+                      d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z">
+                    </path>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                  </svg>
+                </span>
+              </button>
+              <input className="u-search-input u-text-palette-2-light-1" type="search" name="search"
+                placeholder="Search" defaultValue="Search..." />
+            </form>
+          </div>
+        </div>
+        <div className="u-custom-color-4 u-section-row" id="sec-37e8">
+          <div className="u-clearfix u-sheet u-sheet-2">
+            <Link to="/" className="u-image u-logo u-image-1" data-image-width="352"
+              data-image-height="202">
+              <img src="images/logo.png" className="u-logo-image u-logo-image-1" data-image-width="80" />
+            </Link>
+
+            <nav data-position="" className="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+              <div className="menu-collapse" style={{ fontSize: 16, fontWeight: 700 }}>
+                <a href="#" className="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link"
+                  style={{ padding: "3 0", fontSize: 32 }}>
+                  <svg className="u-svg-link" viewBox="0 0 24 24">
+                    <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#menu-hamburger"></use>
+                  </svg>
+                  <svg className="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+                    xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <rect y="1" width="16" height="2"></rect>
+                      <rect y="7" width="16" height="2"></rect>
+                      <rect y="13" width="16" height="2"></rect>
+                    </g>
+                  </svg>
                 </a>
               </div>
-              <form action="#" method="get"
-                className="u-border-1 u-border-palette-2-light-1 u-radius-25 u-search u-search-right u-search-1">
-                <button className="u-search-button" type="submit">
-                  <span className="u-search-icon u-spacing-10 u-text-palette-2-light-1">
-                    <svg className="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style={{}}>
-                      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-9dab"></use>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1"
-                      id="svg-9dab" x="0px" y="0px" viewBox="0 0 56.966 56.966"
-                      style={{enableBackground:"new 0 0 56.966 56.966"}} xmlSpace="preserve" className="u-svg-content">
-                      <path
-                        d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z">
-                      </path>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                      <g></g>
-                    </svg>
-                  </span>
-                </button>
-                <input className="u-search-input u-text-palette-2-light-1" type="search" name="search"
-                  placeholder="Search" defaultValue="Search..."/>
-              </form>
-            </div>
-          </div>
-          <div className="u-custom-color-4 u-section-row" id="sec-37e8">
-            <div className="u-clearfix u-sheet u-sheet-2">
-              <a href="https://nicepage.com" className="u-image u-logo u-image-1" data-image-width="352"
-                data-image-height="202">
-                <img src="images/logo.png" className="u-logo-image u-logo-image-1" data-image-width="80" />
-              </a>
-              
-              <nav data-position="" className="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-                <div className="menu-collapse" style={{fontSize: 16, fontWeight: 700}}>
-                  <a className="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link"
-                    href="#" style={{padding: "3 0", fontSize: 32}}>
-                    <svg className="u-svg-link" viewBox="0 0 24 24">
-                      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#menu-hamburger"></use>
-                    </svg>
-                    <svg className="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
-                      xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                      <g>
-                        <rect y="1" width="16" height="2"></rect>
-                        <rect y="7" width="16" height="2"></rect>
-                        <rect y="13" width="16" height="2"></rect>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-                <div className="u-custom-menu u-nav-container">
-                  <ul className="u-nav u-spacing-20 u-unstyled u-nav-1">
-                    <li className="u-nav-item"><a
-                        className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
-                        href="Home.html" style={{padding: 10}}>Начало</a>
-                    </li>
-                    <li className="u-nav-item"><a
-                        className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
-                        href="Recipes.html" style={{padding: 10}}>Рецепти</a>
-                      <div className="u-nav-popup">
-                        <ul className="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
-                          <li className="u-nav-item"><a
-                              className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1"
-                              href="Breakfasts.html">Закуски</a>
-                          </li>
-                          <li className="u-nav-item"><a
-                              className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1"
-                              href="Recipes.html">Салати</a>
-                          </li>
-                          <li className="u-nav-item"><a
-                              className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1"
-                              href="Recipes.html">Супи</a>
-                          </li>
-                          <li className="u-nav-item"><a
-                              className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1"
-                              href="Recipes.html">Предястия</a>
-                          </li>
-                          <li className="u-nav-item"><a
-                              className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1"
-                              href="Recipes.html">Основни ястия</a>
-                          </li>
-                          <li className="u-nav-item"><a
-                              className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1"
-                              href="Recipes.html">Десерти</a>
-                          </li>
-                          <li className="u-nav-item"><a
-                              className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1"
-                              href="Recipes.html">Хляб</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="u-nav-item"><a
-                        className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
-                        href="blog/blog.html" style={{padding: 10}}>Блог</a>
-                    </li>
-                    <li className="u-nav-item"><a
-                        className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
-                        href="About.html" style={{padding: 10}}>За мен</a>
-                    </li>
-                    <li className="u-nav-item"><a
-                        className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
-                        href="Contact.html" style={{padding: 10}}>Контакти</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="u-custom-menu u-nav-container-collapse">
-                  <div
-                    className="u-container-style u-inner-container-layout u-opacity u-opacity-95 u-palette-2-light-2 u-sidenav u-sidenav-1"
-                    data-offcanvas-width="182.6199">
-                    <div className="u-inner-container-layout u-sidenav-overflow">
-                      <div className="u-menu-close"></div>
-                      <ul
-                        className="u-align-center u-nav u-popupmenu-items u-text-active-palette-2-light-1 u-text-hover-palette-2-light-1 u-unstyled u-nav-3">
-                        <li className="u-nav-item"><a className="u-button-style u-nav-link" href="Home.html">Начало</a>
+              <div className="u-custom-menu u-nav-container">
+                <ul className="u-nav u-spacing-20 u-unstyled u-nav-1">
+                  <li className="u-nav-item">
+                    <Link to="/"
+                      className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
+                      style={{ padding: 10 }}>
+                      Начало
+                    </Link>
+                  </li>
+                  <li className="u-nav-item">
+                    <Link to="Recipes.html"
+                      className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
+                      style={{ padding: 10 }}>
+                      Рецепти
+                    </Link>
+                    <div className="u-nav-popup">
+                      <ul className="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+                        <li className="u-nav-item">
+                          <Link to="Breakfasts.html"
+                            className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1">
+                            Закуски
+                          </Link>
                         </li>
-                        <li className="u-nav-item"><a className="u-button-style u-nav-link" href="Recipes.html">Рецепти</a>
-                          <div className="u-nav-popup">
-                            <ul className="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
-                              <li className="u-nav-item"><a className="u-button-style u-nav-link u-text-hover-palette-2-light-1"
-                                  href="Breakfasts.html">Закуски</a>
-                              </li>
-                              <li className="u-nav-item"><a className="u-button-style u-nav-link u-text-hover-palette-2-light-1"
-                                  href="Recipes.html">Салати</a>
-                              </li>
-                              <li className="u-nav-item"><a className="u-button-style u-nav-link u-text-hover-palette-2-light-1"
-                                  href="Recipes.html">Супи</a>
-                              </li>
-                              <li className="u-nav-item"><a className="u-button-style u-nav-link u-text-hover-palette-2-light-1"
-                                  href="Recipes.html">Предястия</a>
-                              </li>
-                              <li className="u-nav-item"><a className="u-button-style u-nav-link u-text-hover-palette-2-light-1"
-                                  href="Recipes.html">Основни ястия</a>
-                              </li>
-                              <li className="u-nav-item"><a className="u-button-style u-nav-link u-text-hover-palette-2-light-1"
-                                  href="Recipes.html">Десерти</a>
-                              </li>
-                              <li className="u-nav-item"><a className="u-button-style u-nav-link u-text-hover-palette-2-light-1"
-                                  href="Recipes.html">Хляб</a>
-                              </li>
-                            </ul>
-                          </div>
+                        <li className="u-nav-item">
+                          <Link to="Recipes.html"
+                            className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1">
+                            Салати
+                          </Link>
                         </li>
-                        <li className="u-nav-item"><a className="u-button-style u-nav-link" href="blog/blog.html">Блог</a>
+                        <li className="u-nav-item">
+                          <Link to="Recipes.html"
+                            className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1">
+                            Супи
+                          </Link>
                         </li>
-                        <li className="u-nav-item"><a className="u-button-style u-nav-link" href="About.html">За мен</a>
+                        <li className="u-nav-item">
+                          <Link to="Recipes.html"
+                            className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1">
+                            Предястия
+                          </Link>
                         </li>
-                        <li className="u-nav-item"><a className="u-button-style u-nav-link" href="Contact.html">Контакти</a>
+                        <li className="u-nav-item">
+                          <Link to="Recipes.html"
+                            className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1">
+                            Основни ястия
+                          </Link>
+                        </li>
+                        <li className="u-nav-item">
+                          <Link to="Recipes.html"
+                            className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1">
+                            Десерти
+                          </Link>
+                        </li>
+                        <li className="u-nav-item">
+                          <Link to="Recipes.html"
+                            className="u-active-custom-color-4 u-button-style u-custom-color-4 u-hover-custom-color-4 u-nav-link u-text-hover-palette-2-light-1">
+                            Хляб
+                          </Link>
                         </li>
                       </ul>
                     </div>
+                  </li>
+                  <li className="u-nav-item">
+                    <Link to="blog/blog.html"
+                      className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
+                      style={{ padding: 10 }}>
+                      Блог
+                    </Link>
+                  </li>
+                  <li className="u-nav-item">
+                    <Link to="/about"
+                      className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
+                      style={{ padding: 10 }}>
+                      За мен
+                    </Link>
+                  </li>
+                  <li className="u-nav-item">
+                    <Link to="Contact.html"
+                      className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
+                      style={{ padding: 10 }}>
+                      Контакти
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="u-custom-menu u-nav-container-collapse">
+                <div
+                  className="u-container-style u-inner-container-layout u-opacity u-opacity-95 u-palette-2-light-2 u-sidenav u-sidenav-1"
+                  data-offcanvas-width="182.6199">
+                  <div className="u-inner-container-layout u-sidenav-overflow">
+                    <div className="u-menu-close"></div>
+                    <ul
+                      className="u-align-center u-nav u-popupmenu-items u-text-active-palette-2-light-1 u-text-hover-palette-2-light-1 u-unstyled u-nav-3">
+                      <li className="u-nav-item">
+                        <Link to="/" className="u-button-style u-nav-link">
+                          Начало
+                        </Link>
+                      </li>
+                      <li className="u-nav-item">
+                        <Link to="Recipes.html" className="u-button-style u-nav-link">
+                          Рецепти
+                        </Link>
+                        <div className="u-nav-popup">
+                          <ul className="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
+                            <li className="u-nav-item">
+                              <Link to="Breakfasts.html" className="u-button-style u-nav-link u-text-hover-palette-2-light-1">
+                                Закуски
+                              </Link>
+                            </li>
+                            <li className="u-nav-item">
+                              <Link to="Recipes.html" className="u-button-style u-nav-link u-text-hover-palette-2-light-1">
+                                Салати
+                              </Link>
+                            </li>
+                            <li className="u-nav-item">
+                              <Link to="Recipes.html" className="u-button-style u-nav-link u-text-hover-palette-2-light-1">
+                                Супи
+                              </Link>
+                            </li>
+                            <li className="u-nav-item">
+                              <Link to="Recipes.html" className="u-button-style u-nav-link u-text-hover-palette-2-light-1">
+                                Предястия
+                              </Link>
+                            </li>
+                            <li className="u-nav-item">
+                              <Link to="Recipes.html" className="u-button-style u-nav-link u-text-hover-palette-2-light-1">
+                                Основни ястия
+                              </Link>
+                            </li>
+                            <li className="u-nav-item">
+                              <Link to="Recipes.html" className="u-button-style u-nav-link u-text-hover-palette-2-light-1">
+                                Десерти
+                              </Link>
+                            </li>
+                            <li className="u-nav-item">
+                              <Link to="Recipes.html" className="u-button-style u-nav-link u-text-hover-palette-2-light-1">
+                                Хляб
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="u-nav-item">
+                        <Link to="blog/blog.html" className="u-button-style u-nav-link">
+                          Блог
+                        </Link>
+                      </li>
+                      <li className="u-nav-item">
+                        <Link to="/about" className="u-button-style u-nav-link">
+                          За мен
+                        </Link>
+                      </li>
+                      <li className="u-nav-item">
+                        <Link to="Contact.html" className="u-button-style u-nav-link">
+                          Контакти
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
-                  <div className="u-menu-overlay u-opacity u-opacity-70 u-palette-2-light-3"></div>
                 </div>
-              </nav><span className="u-icon u-text-palette-2-light-1 u-icon-4" data-href="https://nicepage.cloud"><svg
-                  className="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style={{}}>
-                  <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-58ec"></use>
-                </svg><svg className="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-58ec"
-                  style={{enableBackground:"new 0 0 55 55"}}>
-                  <path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
+                <div className="u-menu-overlay u-opacity u-opacity-70 u-palette-2-light-3"></div>
+              </div>
+            </nav><span className="u-icon u-text-palette-2-light-1 u-icon-4" data-href="https://nicepage.cloud"><svg
+              className="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style={{}}>
+              <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-58ec"></use>
+            </svg>
+            <svg className="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-58ec"
+              style={{ enableBackground: "new 0 0 55 55" }}>
+                <path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
         c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348
         c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98
         c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033
@@ -245,11 +313,12 @@ export const Header = () => {
         c0,0.713-0.485,1.36-1.181,1.575l-0.497,0.153l-0.16,0.495c-0.59,1.833-1.43,3.526-2.496,5.032c-0.262,0.37-0.517,0.698-0.736,0.949
         l-0.248,0.283V39.8c0,1.612,0.896,3.062,2.338,3.782l8.467,4.233c0.054,0.027,0.107,0.055,0.16,0.083
         C42.677,47.979,42.567,48.054,42.459,48.132z"></path>
-                </svg></span>
-            </div>
+              </svg>
+              </span>
           </div>
         </div>
-    
-      </header>
-    );
+      </div>
+
+    </header>
+  );
 };
