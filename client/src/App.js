@@ -8,6 +8,7 @@ import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { About } from './components/About/About';
 import { Contact } from './components/Contact/Contact';
+import { Recipes } from './components/Recipes/Recipes';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/recipes' element={<Recipes />} />
       </Routes>
 
       <Footer />
