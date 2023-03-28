@@ -176,6 +176,13 @@ export const Header = () => {
                     </div>
                   </li>
                   <li className="u-nav-item">
+                    <Link to="/create"
+                      className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
+                      style={{ padding: 10 }}>
+                      Cъздай рецепта
+                    </Link>
+                  </li>
+                  <li className="u-nav-item">
                     <Link to="blog/blog.html"
                       className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
                       style={{ padding: 10 }}>
@@ -254,6 +261,11 @@ export const Header = () => {
                             </li>
                           </ul>
                         </div>
+                      </li>
+                      <li className="u-nav-item">
+                        <Link to="/create" className="u-button-style u-nav-link">
+                          Създай рецепта
+                        </Link>
                       </li>
                       <li className="u-nav-item">
                         <Link to="blog/blog.html" className="u-button-style u-nav-link">
