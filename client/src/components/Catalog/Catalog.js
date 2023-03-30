@@ -1,8 +1,12 @@
-import './Recipes.css';
+import { CatalogItem } from './CatalogItem/CatalogItem';
+import './Catalog.css';
 
-export const Recipes = () => {
+
+export const Catalog = ({
+    recipes
+}) => {
     return (
-        <div className="page page-recipes">
+        <div className="page page-catalog">
             <section className="u-clearfix u-container-align-center u-section-1" id="sec-987f">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <p className="u-align-center u-text u-text-1">Add subnavigation</p>
@@ -13,7 +17,7 @@ export const Recipes = () => {
                     <div className="u-expanded-width u-list u-list-1">
                         <div className="u-repeater u-repeater-1">
 
-                            <div className="u-align-center u-container-style u-list-item u-repeater-item">
+                            {/* <div className="u-align-center u-container-style u-list-item u-repeater-item">
                                 <div className="u-container-layout u-similar-container u-container-layout-1">
                                     <img alt="" className="u-expanded-width u-image u-image-default u-image-1"
                                         data-image-width="649"
@@ -111,12 +115,22 @@ export const Recipes = () => {
                                     Празнична питка
                                     </a>
                                 </div>
-                            </div>
-                            
+                            </div> */}
+
+                            {recipes.map(x =>
+                                <CatalogItem key={x._id} {...x} />
+                            )}
+
                         </div>
                     </div>
                 </div>
             </section>
+            {recipes.length === 0 && (
+                <div className="no-recipes">
+                    <p>No recipes yet!</p>
+                </div>
+            )}
+
         </div>
 
     );

@@ -123,7 +123,7 @@ export const Header = () => {
                     </Link>
                   </li>
                   <li className="u-nav-item">
-                    <Link to="/recipes"
+                    <Link to="/catalog"
                       className="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-grey-90 u-text-hover-palette-2-light-1"
                       style={{ padding: 10 }}>
                       Рецепти
@@ -219,7 +219,7 @@ export const Header = () => {
                         </Link>
                       </li>
                       <li className="u-nav-item">
-                        <Link to="/recipes" className="u-button-style u-nav-link">
+                        <Link to="/catalog" className="u-button-style u-nav-link">
                           Рецепти
                         </Link>
                         <div className="u-nav-popup">
