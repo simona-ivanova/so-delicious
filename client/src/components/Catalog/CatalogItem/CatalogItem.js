@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 export const CatalogItem = ({
+    _id,
     title,
     category,
     imageUrl
@@ -10,7 +13,7 @@ export const CatalogItem = ({
                     data-image-width="649"
                     data-image-height="920"
                     src={imageUrl} />
-                <a href="https://nicepage.com/k/birthday-html-templates"
+                <a href="#"
                     className="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-grey-40 u-text-hover-grey-15 u-btn-1"
                     data-animation-name=""
                     data-animation-duration="0"
@@ -18,14 +21,14 @@ export const CatalogItem = ({
                     data-animation-direction="">
                     {category}
                 </a>
-                <a href="https://nicepage.com/k/birthday-html-templates"
+                <Link to={`/catalog/${_id}`}
                     className="u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-text-body-color u-text-hover-palette-2-light-1 u-btn-2"
                     data-animation-name=""
                     data-animation-duration="0"
                     data-animation-delay="0"
                     data-animation-direction="">
                     {title}
-                </a>
+                </Link>
             </div>
         </div>
     );

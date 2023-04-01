@@ -1,0 +1,231 @@
+.page-create-recipe .u-section-1 .u-sheet-1 {
+  min-height: 870px;
+}
+
+.page-create-recipe .u-section-1 .u-text-1 {
+  font-weight: 700;
+  font-size: 1.875rem;
+  margin: 51px auto 0;
+}
+
+.page-create-recipe .u-section-1 .u-form-1 {
+  height: 755px;
+  --thumb-color: #478ac9;
+  --thumb-hover-color: #77aad9;
+  --track-color: #c0c0c0;
+  --track-active-color: #478ac9;
+  background-image: none;
+  width: 570px;
+  margin: 34px auto 0;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-1 {
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-label-1 {
+  font-weight: 700;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-2 {
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-label-2 {
+  font-weight: 700;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-3 {
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-label-3 {
+  font-weight: 700;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-4 {
+  --progress: 0%;
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-label-4 {
+  font-weight: 700;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-5 {
+  --progress: 0%;
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-label-5 {
+  font-weight: 700;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-6 {
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-label-6 {
+  font-weight: 700;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-7 {
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-label-7 {
+  font-weight: 700;
+}
+
+.page-create-recipe .u-section-1 .u-form-group-8 {
+  margin-left: 0;
+}
+
+.page-create-recipe .u-section-1 .u-btn-1 {
+  letter-spacing: 0px;
+  border-style: solid;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: none;
+}
+
+.page-create-recipe .u-section-1 .u-icon-1 {
+  width: 32px;
+  height: 32px;
+  margin: -250px 312px 0 auto;
+  padding: 0;
+}
+
+.page-create-recipe .u-section-1 .u-icon-2 {
+  width: 32px;
+  height: 32px;
+  margin: 69px 312px 0 auto;
+  padding: 0;
+}
+
+.page-create-recipe .u-section-1 .u-icon-3 {
+  width: 22px;
+  height: 22px;
+  margin: -128px 317px 0 auto;
+  padding: 0;
+}
+
+.page-create-recipe .u-section-1 .u-icon-4 {
+  width: 22px;
+  height: 22px;
+  margin: 78px 317px 172px auto;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+  .page-create-recipe .u-section-1 .u-form-1 {
+    --checkbox-checked-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-1 {
+    margin-right: 219px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-2 {
+    margin-right: 219px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-3 {
+    margin-top: -127px;
+    margin-right: 224px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-4 {
+    margin-right: 224px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-create-recipe .u-section-1 .u-form-1 {
+    height: 702px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-1 {
+    margin-right: 98px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-2 {
+    margin-right: 98px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-3 {
+    margin-right: 103px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-4 {
+    margin-right: 103px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-create-recipe .u-section-1 .u-text-1 {
+    width: auto;
+  }
+
+  .page-create-recipe .u-section-1 .u-form-1 {
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-1 {
+    margin-right: 27px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-2 {
+    margin-right: 27px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-3 {
+    margin-right: 32px;
+  }
+
+  .page-create-recipe .u-section-1 .u-icon-4 {
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 575px) {
+  .page-create-recipe .u-section-1 .u-sheet-1 {
+    min-height: 913px;
+  }
+
+  .page-create-recipe .u-section-1 .u-text-1 {
+    font-size: 1.5rem;
+  }
+
+  .page-create-recipe .u-section-1 .u-form-1 {
+    height: 855px;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
+  }
+}
+
+/* .page-create-recipe .btn-add {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e68387;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border-color: #e68387;
+  
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  padding: 8px 10px;
+
+ 
+ 
+} */
