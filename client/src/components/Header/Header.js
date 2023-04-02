@@ -287,7 +287,9 @@ export const Header = () => {
                 </div>
                 <div className="u-menu-overlay u-opacity u-opacity-70 u-palette-2-light-3"></div>
               </div>
-            </nav><span className="u-icon u-text-palette-2-light-1 u-icon-4" data-href="https://nicepage.cloud"><svg
+            </nav>
+            <span className="u-icon u-text-palette-2-light-1 u-icon-4" data-href="/register">
+            <svg
               className="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style={{}}>
               <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-58ec"></use>
             </svg>
