@@ -1,4 +1,5 @@
 import './Register.css'
+import { Link } from 'react-router-dom';
 
 export const Register = () => {
     return (
@@ -43,7 +44,7 @@ export const Register = () => {
                             </form>
                         </div>
                         <p className="u-text u-text-default u-text-palette-2-light-1 u-text-2"> Вече имаш акаунт?</p>
-                        <a href="Login.html" className="u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-text-hover-palette-2-light-2 u-text-palette-2-light-1 u-btn-2">Вход</a>
+                        <Link to="/login" className="u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-text-hover-palette-2-light-2 u-text-palette-2-light-1 u-btn-2">Вход</Link>
                 </div>
         </section>
         </div>
