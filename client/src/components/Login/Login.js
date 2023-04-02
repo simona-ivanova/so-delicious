@@ -1,4 +1,5 @@
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
   return (
@@ -9,7 +10,11 @@ export const Login = () => {
             <div className="u-container-layout u-container-layout-1">
               <h3 className="u-custom-font u-text u-text-default u-text-font u-text-palette-2-light-1 u-text-1">Вход</h3>
               <div className="u-form u-login-control u-form-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-                <form action="#" className="u-clearfix u-form-custom-backend u-form-spacing-35 u-form-vertical u-inner-form" source="custom" name="form-2" style={{ padding: 10 }}>
+                <form onSubmit={}
+                  className="u-clearfix u-form-custom-backend u-form-spacing-35 u-form-vertical u-inner-form"
+                  source="custom"
+                  name="form-2" s
+                  tyle={{ padding: 10 }}>
                   <div className="u-form-group u-form-name u-label-top">
                     <label for="username-708d" className="u-label u-text-palette-2-light-1 u-label-1">Имейл</label>
                     <input type="text" placeholder="Enter your Username" id="username-708d" name="username" className="u-border-palette-2-light-1 u-input u-input-rectangle u-radius-50 u-text-palette-2-light-1" required="" />
@@ -31,7 +36,7 @@ export const Login = () => {
           </div>
           <p className="u-text u-text-palette-2-light-1 u-text-2"> <span style={{ fontSize: 16 }}></span>Нямаш профил?
           </p>
-          <a href="Register.html" className="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-hover-palette-2-light-2 u-text-palette-2-light-1 u-btn-3">Регистрирай се тук</a>
+          <Link to="/register" className="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-hover-palette-2-light-2 u-text-palette-2-light-1 u-btn-3">Регистрирай се тук</Link>
         </div>
       </section>
     </div>
