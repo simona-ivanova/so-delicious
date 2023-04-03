@@ -30047,13 +30047,13 @@ section.u-white:before,
   color: #111111;
   background-color: #ffffff;
 }
-.u-input.u-white,
+/* .u-input.u-white,
 .u-field-input.u-white,
 .u-button-style.u-white,
 .u-button-style.u-white[class*="u-border-"] {
   color: #111111 !important;
   background-color: #ffffff !important;
-}
+} */
 .u-button-style.u-white:hover,
 .u-button-style.u-white[class*="u-border-"]:hover,
 .u-button-style.u-white:focus,
