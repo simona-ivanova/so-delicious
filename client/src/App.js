@@ -70,11 +70,13 @@ function App() {
   };
 
   const onLogout = async () => {
-    await authService.logout();
+    // TODO: authorized request
+    // await authService.logout();
+
     setAuth({});
   };
 
-  const context = {
+  const contextValues = {
     onLoginSubmit,
     onRegisterSubmit,
     onLogout,
@@ -85,7 +87,7 @@ function App() {
   };
 
   return (
-    <AuthContext.Provider value={{ context }}>
+    <AuthContext.Provider value={contextValues}>
       <Header />
 
       <Routes>

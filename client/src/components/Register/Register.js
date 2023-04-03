@@ -21,9 +21,9 @@ export const Register = () => {
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h1 className="u-text u-text-default u-text-palette-2-light-1 u-title u-text-1">Регистрация </h1>
                     <div className="u-form u-form-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-                        <form method='POST' onSubmit={onSubmit} className="u-clearfix u-form-spacing-18 u-form-vertical u-inner-form" source="email" name="form" style={{ padding: 18 }}>
+                        <form method='POST' onSubmit={onSubmit} className="u-clearfix u-form-spacing-18 u-form-vertical u-inner-form" name="form" style={{ padding: 18 }}>
                             <div className="u-form-group u-form-name u-form-partition-factor-2 u-label-top u-form-group-1">
-                                <label htmlFor="name" className="u-label u-text-palette-2-light-1 u-label-1">Име</label>
+                                <label htmlFor="firstName" className="u-label u-text-palette-2-light-1 u-label-1">Име</label>
                                 <input 
                                 type="text" 
                                 placeholder="Enter your First Name" 
@@ -36,7 +36,7 @@ export const Register = () => {
                                 />
                             </div>
                             <div className="u-form-group u-form-name u-form-partition-factor-2 u-label-top u-form-group-2">
-                                <label htmlFor="name" className="u-label u-text-palette-2-light-1 u-label-2">Фамилия</label>
+                                <label htmlFor="lastName" className="u-label u-text-palette-2-light-1 u-label-2">Фамилия</label>
                                 <input 
                                 type="text" 
                                 placeholder="Enter your Last Name" 
@@ -54,7 +54,7 @@ export const Register = () => {
                                 type="email" 
                                 pattern="[^ @]*@[^ @]*" 
                                 placeholder="Enter a valid email address" 
-                                id="email-9f77" 
+                                id="email" 
                                 name="email" 
                                 className="u-border-palette-2-light-1 u-input u-input-rectangle u-none u-radius-50 u-text-palette-2-light-1" 
                                 required
@@ -63,22 +63,25 @@ export const Register = () => {
                                 />
                             </div>
                             <div className="u-form-group u-form-phone u-label-top u-form-group-4">
-                                <label htmlFor="phone-1e10" className="u-label u-text-palette-2-light-1 u-label-4">Телефон</label>
+                                <label htmlFor="phoneNumber" className="u-label u-text-palette-2-light-1 u-label-4">Телефон</label>
                                 <input 
                                 type="text" 
                                 pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" 
-                                placeholder="Enter your phone (e.g. +14155552675)" id="phone-1e10" name="phoneNumber" className="u-border-palette-2-light-1 u-input u-input-rectangle u-none u-radius-50 u-text-palette-2-light-1" 
+                                placeholder="Enter your phone (e.g. +14155552675)" 
+                                id="phoneNumber" 
+                                name="phoneNumber" 
+                                className="u-border-palette-2-light-1 u-input u-input-rectangle u-none u-radius-50 u-text-palette-2-light-1" 
                                 required
                                 value={values.phoneNumber}
                                 onChange={changeHandler}
                                 />
                             </div>
                             <div className="u-form-group u-form-name u-label-top u-form-group-5">
-                                <label htmlFor="name" className="u-label u-text-palette-2-light-1 u-label-5">Парола</label>
+                                <label htmlFor="password" className="u-label u-text-palette-2-light-1 u-label-5">Парола</label>
                                 <input 
                                 type="password" 
                                 placeholder="Enter your Password" 
-                                id="name" 
+                                id="password" 
                                 name="password" 
                                 className="u-border-palette-2-light-1 u-input u-input-rectangle u-none u-radius-50 u-text-palette-2-light-1" 
                                 required
@@ -87,11 +90,11 @@ export const Register = () => {
                                 />
                             </div>
                             <div className="u-form-group u-form-name u-label-top u-form-group-6">
-                                <label htmlFor="name" className="u-label u-text-palette-2-light-1 u-label-6">Повтори парола</label>
+                                <label htmlFor="repeatPassword" className="u-label u-text-palette-2-light-1 u-label-6">Повтори парола</label>
                                 <input 
                                 type="password" 
                                 placeholder="Enter your password" 
-                                id="name" 
+                                id="repeatPassword" 
                                 name="repeatPassword" 
                                 className="u-border-palette-2-light-1 u-input u-input-rectangle u-none u-radius-50 u-text-palette-2-light-1" 
                                 required
@@ -108,8 +111,8 @@ export const Register = () => {
                             </div>
                             <div className="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                             <div className="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                            <input type="hidden" value="" name="recaptchaResponse" />
-                            <input type="hidden" name="formServices" value="e4a9a16928184301e069cf5ec2ea4020" />
+                            {/* <input type="hidden" value="" name="recaptchaResponse" />
+                            <input type="hidden" name="formServices" value="e4a9a16928184301e069cf5ec2ea4020" /> */}
                         </form>
                     </div>
                     <p className="u-text u-text-default u-text-palette-2-light-1 u-text-2"> Вече имаш акаунт?</p>
