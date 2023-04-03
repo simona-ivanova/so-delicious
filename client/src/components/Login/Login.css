@@ -64,6 +64,24 @@
   padding: 0;
 }
 
+.page-login .login-button {
+  display: inline-block;
+  background: transparent;
+  color: #e68387;
+  border: 1px solid #e68387;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+    padding: 10px 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.page-login .login-button:hover {
+  background-color: #e68387;
+  color: #fff;
+}
+
 @media (max-width: 1199px) {
   .page-login .u-section-1 .u-group-1 {
     height: auto;

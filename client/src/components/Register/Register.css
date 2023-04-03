@@ -80,6 +80,23 @@
   padding: 0;
 }
 
+.page-register .register-button {
+  display: inline-block;
+  background: transparent;
+  color: #e68387;
+  border: 1px solid #e68387;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+    padding: 10px 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.page-register .register-button:hover {
+  background-color: #e68387;
+  color: #fff;
+}
 @media (max-width: 1199px) {
   .page-register .u-section-1 .u-form-1 {
     --checkbox-checked-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
