@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import { recipeServiceFactory } from './services/recipeService';
-import { authServiceFactory } from './services/authService';
-import { AuthContext } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -24,11 +23,9 @@ import { EditRecipe } from './components/EditRecipe/EditRecipe';
 function App() {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState([]);
-  const [auth, setAuth] = useState({});
+
   const recipeService = recipeServiceFactory(auth.accessToken);
-  const authService = authServiceFactory(auth.accessToken);
-
-
+  
   useEffect(() => {
     recipeService.getAll()
       .then(result => {
@@ -44,41 +41,6 @@ function App() {
     navigate('/catalog');
   };
 
-  const onLoginSubmit = async (data) => {
-
-    try {
-      const result = await authService.login(data);
-      setAuth(result);
-      console.log(result);
-      navigate('/');
-    } catch (error) {
-      console.log('There is a problem');
-    };
-
-  };
-
-  const onRegisterSubmit = async (values) => {
-
-    const { repeatPassword, ...registerData } = values;
-    if (repeatPassword !== registerData.password) {
-      return;
-    }
-
-    try {
-      const result = await authService.register(registerData);
-      setAuth(result);
-      navigate('/');
-    } catch (error) {
-      console.log('There is a problem');
-    }
-
-  };
-
-  const onLogout = async () => {
-    await authService.logout();
-    setAuth({});
-  };
-
   const onRecipeEditSubmit = async (values) => {
     const result = await recipeService.edit(values._id, values);
 
@@ -87,20 +49,8 @@ function App() {
     navigate(`/catalog/${values._id}`);
   }
 
-  const contextValues = {
-    onLoginSubmit,
-    onRegisterSubmit,
-    onLogout,
-    userId: auth._id,
-    token: auth.accessToken,
-    userEmail: auth.email,
-    userFirstName: auth.firstName,
-    isAuthenticated: !!auth.accessToken,
-  };
-
-
   return (
-    <AuthContext.Provider value={contextValues}>
+    <AuthProvider>
       <Header />
 
       <Routes>
@@ -121,7 +71,7 @@ function App() {
       <Footer />
 
       <FooterBottomLine />
-    </AuthContext.Provider>
+    </AuthProvider>
 
   );
 }
