@@ -24,7 +24,7 @@ function App() {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState([]);
 
-  const recipeService = recipeServiceFactory(auth.accessToken);
+  const recipeService = recipeServiceFactory(); // auth.accessToken
   
   useEffect(() => {
     recipeService.getAll()
