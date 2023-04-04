@@ -1,12 +1,17 @@
 import './RecipeDetails.css';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState, useContext } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
-import * as recipeService from '../../services/recipeService';
-import { useEffect, useState } from 'react';
+import { recipeServiceFactory } from '../../services/recipeService';
+import { useService } from '../../hooks/useService';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const RecipeDetails = () => {
+    const { userId } = useContext(AuthContext);
     const { recipeId } = useParams();
-    const [recipe, setRecipe] = useState([]);
+    const [recipe, setRecipe] = useState({});
+    const recipeService = useService(recipeServiceFactory);
+    const navigate = useNavigate();
 
     useEffect(() => {
         recipeService.getOne(recipeId)
@@ -14,6 +19,17 @@ export const RecipeDetails = () => {
                 setRecipe(result);
             });
     }, [recipeId]);
+
+    const isOwner = recipe._ownerId === userId;
+
+    const onDeleteClick = async () => {
+        // Add confirm
+
+        await recipeService.delete(recipe._id);
+        // TODO: delete from state
+
+        navigate('/catalog');
+    };
 
     return (
         <div className="page page-recipe-details">
@@ -23,16 +39,21 @@ export const RecipeDetails = () => {
                     <h1 className="u-align-center u-custom-font u-text u-text-font u-text-1">
                         {recipe.title}
                     </h1>
+                    {isOwner && (
+                        <div>
+                            <button
+                                className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-49 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-1"
+                                onClick={onDeleteClick}>
+                                Изтрий
+                            </button>
 
-                    <a href="#"
-                        className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-49 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-1">
-                        Изтрий
-                    </a>
+                            <Link to={`/catalog/${recipe._id}/edit`}
+                                className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-49 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-2">
+                                Редактирай
+                            </Link>
+                        </div>
+                    )}
 
-                    <a href="#"
-                        className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-49 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-2">
-                        Редактирай
-                    </a>
 
                     <div className="u-carousel u-expanded-width-xs u-gallery u-layout-thumbnails u-lightbox u-no-transition u-show-text-always u-gallery-1" id="carousel-e131" data-interval="5000" data-u-ride="carousel">
                         <div className="u-carousel-inner u-gallery-inner" role="listbox">
@@ -146,7 +167,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                     <ol className="u-align-left u-spacing-11 u-text u-text-9">
                         <li>{recipe.steps}</li>
                     </ol>
-                    <a href="https://nicepage.com/k/ranking-website-templates" className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-49 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Назад</a>
+                    <Link to="/catalog" className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-49 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Назад</Link>
                 </div>
 
 

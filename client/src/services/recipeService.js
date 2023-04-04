@@ -1,24 +1,38 @@
-import * as request from './requester';
+import { requestFactory } from './requester';
 
-const baseUrl = 'http://localhost:3030/jsonstore/recipes';
+const baseUrl = 'http://localhost:3030/data/recipes';
 
-export const getAll = async () => {
-    const result = await request.get(baseUrl);
-    const recipes = Object.values(result);
+export const recipeServiceFactory = (token) => {
+    const request = requestFactory(token);
 
-    return recipes;
+    const getAll = async () => {
+        const result = await request.get(baseUrl);
+        const recipes = Object.values(result);
+
+        return recipes;
+    };
+
+    const getOne = async (recipeId) => {
+        const result = await request.get(`${baseUrl}/${recipeId}`);
+
+        return result;
+    };
+
+    const create = async (recipeData) => {
+        const result = await request.post(baseUrl, recipeData);
+
+        return result;
+    };
+
+    const edit = (recipeId, data) => request.put(`${baseUrl}/${recipeId}`, data);
+
+    const deleteRecipe = (recipeId) => request.delete(`${baseUrl}/${recipeId}`)
+
+    return {
+        getAll,
+        getOne,
+        create,
+        edit,
+        delete: deleteRecipe,
+    };
 };
-
-export const getOne = async (recipeId) => {
-    const result = await request.get(`${baseUrl}/${recipeId}`);
-
-    return result;
-}
-
-export const create = async (recipeData) => {
-    const result = await request.post(baseUrl, recipeData);
-
-    return result;
-
-
-}

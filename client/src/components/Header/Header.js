@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 
 export const Header = () => {
-  const { isAuthenticated, userEmail } = useContext(AuthContext);
+  const { isAuthenticated, userEmail, userFirstName } = useContext(AuthContext);
 
   return (
     <header className="u-align-left u-clearfix u-header u-section-row-container" id="sec-0c6c" data-animation-name=""
@@ -334,7 +334,7 @@ export const Header = () => {
         l-0.248,0.283V39.8c0,1.612,0.896,3.062,2.338,3.782l8.467,4.233c0.054,0.027,0.107,0.055,0.16,0.083
         C42.677,47.979,42.567,48.054,42.459,48.132z"></path>
                 </svg>
-                <span>Здравей, {userEmail}</span>
+                <span>Здравей, {userFirstName}</span>
               </span>
             )}
 

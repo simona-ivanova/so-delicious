@@ -1,4 +1,5 @@
 import './Profile.css';
+import { Link } from 'react-router-dom';
 
 export const Profile = () => {
     return (
@@ -37,7 +38,7 @@ export const Profile = () => {
 	l5.407,10.957c0.521,1.058,1.529,1.79,2.696,1.959l12.092,1.757c0.609,0.089,1.086,0.491,1.276,1.077
 	c0.19,0.585,0.041,1.191-0.4,1.621l-8.749,8.528C37.866,30.65,37.481,31.835,37.681,32.998z"></path></svg></span>
                     <p className="u-align-center u-text u-text-palette-2-light-1 u-text-5">Любими</p>
-                    <a href="https://nicepage.cloud" className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-50 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">изход</a>
+                    <Link to="/logout" className="u-border-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-radius-50 u-text-hover-white u-text-palette-2-light-1 u-white u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">изход</Link>
                 </div>
 
             </section>

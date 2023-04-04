@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-import * as recipeService from './services/recipeService';
-import * as authService from './services/authServices';
+import { recipeServiceFactory } from './services/recipeService';
+import { authServiceFactory } from './services/authService';
 import { AuthContext } from './contexts/AuthContext';
 
 import { Header } from "./components/Header/Header";
@@ -18,12 +18,16 @@ import { CreateRecipe } from './components/CreateRecipe/CreateRecipe';
 import { RecipeDetails } from './components/RecipeDetails/RecipeDetails';
 import { Profile } from './components/Profile/Profile';
 import { Logout } from './components/Logout/Logout';
+import { EditRecipe } from './components/EditRecipe/EditRecipe';
 
 
 function App() {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState([]);
   const [auth, setAuth] = useState({});
+  const recipeService = recipeServiceFactory(auth.accessToken);
+  const authService = authServiceFactory(auth.accessToken);
+
 
   useEffect(() => {
     recipeService.getAll()
@@ -45,6 +49,7 @@ function App() {
     try {
       const result = await authService.login(data);
       setAuth(result);
+      console.log(result);
       navigate('/');
     } catch (error) {
       console.log('There is a problem');
@@ -70,11 +75,17 @@ function App() {
   };
 
   const onLogout = async () => {
-    // TODO: authorized request
-    // await authService.logout();
-
+    await authService.logout();
     setAuth({});
   };
+
+  const onRecipeEditSubmit = async (values) => {
+    const result = await recipeService.edit(values._id, values);
+
+    setRecipes(state => state.map(x => x._id === values._id ? result : x));
+
+    navigate(`/catalog/${values._id}`);
+  }
 
   const contextValues = {
     onLoginSubmit,
@@ -83,8 +94,10 @@ function App() {
     userId: auth._id,
     token: auth.accessToken,
     userEmail: auth.email,
+    userFirstName: auth.firstName,
     isAuthenticated: !!auth.accessToken,
   };
+
 
   return (
     <AuthContext.Provider value={contextValues}>
@@ -98,9 +111,11 @@ function App() {
         <Route path='/logout' element={<Logout />} />
         <Route path='/catalog' element={<Catalog recipes={recipes} />} />
         <Route path='/create' element={<CreateRecipe onCreateRecipeSubmit={onCreateRecipeSubmit} />} />
+        <Route path='/catalog/:recipeId' element={<RecipeDetails />} />
+        <Route path='/catalog/:recipeId/edit' element={<EditRecipe onRecipeEditSubmit={onRecipeEditSubmit} />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/catalog/:recipeId' element={<RecipeDetails />} />
+
       </Routes>
 
       <Footer />

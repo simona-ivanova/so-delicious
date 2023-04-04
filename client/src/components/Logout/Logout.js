@@ -6,12 +6,10 @@ import { AuthContext } from "../../contexts/AuthContext";
 export const Logout = () => {
     const { onLogout } = useContext(AuthContext);
 
-    onLogout();
-
     useEffect(() => {
         onLogout();
     }, [onLogout]);
 
-    return <Navigate to="/" />
+    return <Navigate to="/" /> 
 
 };
