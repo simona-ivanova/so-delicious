@@ -19,6 +19,7 @@ import { Logout } from './components/Logout/Logout';
 import { EditRecipe } from './components/EditRecipe/EditRecipe';
 import { Preloader } from './components/Preloader/Preloader';
 import { Search } from './components/Search/Search';
+import {Helmet} from "react-helmet";
 
 
 function App() {
