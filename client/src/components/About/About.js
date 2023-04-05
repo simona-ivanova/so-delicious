@@ -1,57 +1,157 @@
-import './About.css'
-
 export const About = () => {
     return (
-        <div className='page page-about'>
-        <section className="u-clearfix u-section-1" id="sec-a45c">
-            <div className="u-clearfix u-sheet u-sheet-1">
-                <div className="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
-                    <div className="u-layout">
-                        <div className="u-layout-row">
-                            <div className="u-size-30 u-size-60-md">
-                                <div className="u-layout-col">
-                                    <div className="u-container-style u-image u-layout-cell u-left-cell u-size-60 u-image-1" src="" data-image-width="2048" data-image-height="1365">
-                                        <div className="u-container-layout u-valign-middle u-container-layout-1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="u-size-30 u-size-60-md">
-                                <div className="u-layout-col">
-                                    <div className="u-size-30">
-                                        <div className="u-layout-row">
-                                            <div className="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                                                <div className="u-container-layout u-valign-top u-container-layout-2">
-                                                    <h3 className="u-text u-text-1">We are the experts in quality business strategy</h3>
-                                                </div>
-                                            </div>
-                                            <div className="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-3">
-                                                <div className="u-container-layout u-valign-top u-container-layout-3">
-                                                    <p className="u-text u-text-2">Sample text. Click to select the text box. Click again or double click to start editing the text.&nbsp;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="u-size-30">
-                                        <div className="u-layout-row">
-                                            <div className="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-4">
-                                                <div className="u-container-layout u-valign-top u-container-layout-4">
-                                                    <p className="u-text u-text-3">Sample text. Click to select the text box. Click again or double click to start editing the text.&nbsp;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                                </div>
-                                            </div>
-                                            <div className="u-align-left u-container-style u-custom-color-4 u-layout-cell u-right-cell u-size-30 u-layout-cell-5">
-                                                <div className="u-container-layout u-valign-top u-container-layout-5">
-                                                    <p className="u-text u-text-4">Sample text. Click to select the text box. Click again or double click to start editing the text.&nbsp;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+        <div>
+            <div className="breadcumb-area bg-img bg-overlay" style={{backgroundImage: `url("img/bg-img/2018_06_27_48298_1530062479._large.jpg")`}}>
+                <div className="container h-100">
+                    <div className="row h-100 align-items-center">
+                        <div className="col-12">
+                            <div className="breadcumb-text text-center">
+                                <h2>About us</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <section className="about-area section-padding-80">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="section-heading">
+                                <h3>Who we are and what we do?</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-12">
+                            <h6 className="sub-heading pb-5">Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</h6>
+
+                            <p className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin malesuada et mauris ut lobortis. Sed eu iaculis sapien, eget luctus quam. Aenean hendrerit varius massa quis laoreet. Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                        </div>
+                    </div>
+
+                    <div className="row align-items-center mt-70">
+
+                        <div className="col-12 col-sm-6 col-lg-3">
+                            <div className="single-cool-fact">
+                                <img src="img/core-img/salad.png" alt="" />
+                                    <h3><span className="counter">1287</span></h3>
+                                    <h6>Amazing receipies</h6>
+                            </div>
+                        </div>
+
+
+                        <div className="col-12 col-sm-6 col-lg-3">
+                            <div className="single-cool-fact">
+                                <img src="img/core-img/hamburger.png" alt="" />
+                                    <h3><span className="counter">25</span></h3>
+                                    <h6>Burger receipies</h6>
+                            </div>
+                        </div>
+
+
+                        <div className="col-12 col-sm-6 col-lg-3">
+                            <div className="single-cool-fact">
+                                <img src="img/core-img/rib.png" alt="" />
+                                    <h3><span className="counter">471</span></h3>
+                                    <h6>Meat receipies</h6>
+                            </div>
+                        </div>
+
+
+                        <div className="col-12 col-sm-6 col-lg-3">
+                            <div className="single-cool-fact">
+                                <img src="img/core-img/pancake.png" alt="" />
+                                    <h3><span className="counter">326</span></h3>
+                                    <h6>Desert receipies</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-12">
+                            <img className="mb-70" src="img/bg-img/smiling-young-woman-chef-in-apron-standing-at-the-kitchen.jpg" alt="" />
+                                <p className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin malesuada et mauris ut lobortis. Sed eu iaculis sapien, eget luctus quam. Aenean hendrerit varius massa quis laoreet. Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div className="follow-us-instagram">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <h5>Follow Us Instragram</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="insta-feeds d-flex flex-wrap">
+
+                    <div className="single-insta-feeds">
+                        <img src="img/bg-img/insta1.jpg" alt="" />
+
+                            <div className="insta-icon">
+                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+
+
+                    <div className="single-insta-feeds">
+                        <img src="img/bg-img/insta2.jpg" alt="" /> 
+
+                            <div className="insta-icon">
+                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+
+
+                    <div className="single-insta-feeds">
+                        <img src="img/bg-img/insta3.jpg" alt="" />
+
+                            <div className="insta-icon">
+                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+
+
+                    <div className="single-insta-feeds">
+                        <img src="img/bg-img/insta4.jpg" alt="" />
+
+                            <div className="insta-icon">
+                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+
+
+                    <div className="single-insta-feeds">
+                        <img src="img/bg-img/insta5.jpg" alt="" />
+
+                            <div className="insta-icon">
+                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+
+
+                    <div className="single-insta-feeds">
+                        <img src="img/bg-img/insta6.jpg" alt="" />
+                    
+                            <div className="insta-icon">
+                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+
+
+                    <div className="single-insta-feeds">
+                        <img src="img/bg-img/insta7.jpg" alt="" />
+
+                            <div className="insta-icon">
+                                <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
