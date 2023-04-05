@@ -43,10 +43,11 @@ export const CreateRecipe = ({
                                             type="text"
                                             className="form-control"
                                             placeholder="Заглавие"
+                                            required
                                         />
                                     </div>
                                     <div className="col-12 col-lg-4">
-                                        <select onChange={changeHandler} className="form-control" name="category">
+                                        <select onChange={changeHandler} className="form-control" name="category" required>
                                             <option>Избери категория</option>
                                             {options.map((option, index) => {
                                                 return <option key={index} >
@@ -65,6 +66,7 @@ export const CreateRecipe = ({
                                             className="form-control"
                                             placeholder="Порции"
                                             min="1"
+                                            required
                                         />
                                     </div>
 
@@ -76,6 +78,7 @@ export const CreateRecipe = ({
                                             type="text"
                                             className="form-control"
                                             placeholder="Снимка 1"
+                                            required
                                         />
                                     </div>
 
@@ -87,6 +90,7 @@ export const CreateRecipe = ({
                                             type="text"
                                             className="form-control"
                                             placeholder="Снимка 2"
+                                            required
                                         />
                                     </div>
 
@@ -99,6 +103,7 @@ export const CreateRecipe = ({
                                             type="text"
                                             className="form-control"
                                             placeholder="Снимка 3"
+                                            required
                                         />
                                     </div>
 
@@ -111,6 +116,7 @@ export const CreateRecipe = ({
                                             className="form-control"
                                             placeholder="Време за подготовка"
                                             min="1"
+                                            required
                                         />
                                     </div>
 
@@ -123,6 +129,29 @@ export const CreateRecipe = ({
                                             className="form-control"
                                             placeholder="Време на готвене"
                                             min="1"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.ingredients}
+                                            onChange={changeHandler}
+                                            name="ingredients"
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Съставки"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.steps}
+                                            onChange={changeHandler}
+                                            name="steps"
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Стъпки"
+                                            required
                                         />
                                     </div>
                                     
