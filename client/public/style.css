@@ -17,6 +17,7 @@
 @import url(css/custom-icon.css);
 @import url(css/classy-nav.min.css);
 @import url(css/nice-select.min.css);
+
 /* :: 3.0 Base CSS */
 * {
     margin: 0;
@@ -324,6 +325,7 @@ img {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
     .mfp-image-holder .mfp-close,
     .mfp-iframe-holder .mfp-close {
         right: 0;
@@ -331,6 +333,7 @@ img {
 }
 
 @media only screen and (max-width: 767px) {
+
     .mfp-image-holder .mfp-close,
     .mfp-iframe-holder .mfp-close {
         right: 0;
@@ -418,7 +421,9 @@ textarea:focus {
     background-color: #40ba37;
 }
 
-.delicious-btn.active, .delicious-btn:hover, .delicious-btn:focus {
+.delicious-btn.active,
+.delicious-btn:hover,
+.delicious-btn:focus {
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
@@ -431,7 +436,9 @@ textarea:focus {
     border-color: #40ba37;
 }
 
-.delicious-btn.btn-2.active, .delicious-btn.btn-2:hover, .delicious-btn.btn-2:focus {
+.delicious-btn.btn-2.active,
+.delicious-btn.btn-2:hover,
+.delicious-btn.btn-2:focus {
     background-color: #40ba37;
     border-color: #1c8314;
 }
@@ -441,7 +448,9 @@ textarea:focus {
     border-color: #1c8314;
 }
 
-.delicious-btn.btn-3.active, .delicious-btn.btn-3:hover, .delicious-btn.btn-3:focus {
+.delicious-btn.btn-3.active,
+.delicious-btn.btn-3:hover,
+.delicious-btn.btn-3:focus {
     background-color: #40ba37;
     border-color: #1c8314;
 }
@@ -460,14 +469,19 @@ textarea:focus {
     }
 }
 
-.delicious-btn.btn-4.active, .delicious-btn.btn-4:hover, .delicious-btn.btn-4:focus {
+.delicious-btn.btn-4.active,
+.delicious-btn.btn-4:hover,
+.delicious-btn.btn-4:focus {
     line-height: 53px;
     color: #ffffff;
     background-color: #40ba37;
 }
 
 @media only screen and (max-width: 767px) {
-    .delicious-btn.btn-4.active, .delicious-btn.btn-4:hover, .delicious-btn.btn-4:focus {
+
+    .delicious-btn.btn-4.active,
+    .delicious-btn.btn-4:hover,
+    .delicious-btn.btn-4:focus {
         height: 40px;
         line-height: 33px;
     }
@@ -607,7 +621,8 @@ textarea:focus {
     font-size: 20px;
 }
 
-.header-area .top-header-area .breaking-news .ticker ul li a:hover, .header-area .top-header-area .breaking-news .ticker ul li a:focus {
+.header-area .top-header-area .breaking-news .ticker ul li a:hover,
+.header-area .top-header-area .breaking-news .ticker ul li a:focus {
     color: #40ba37;
 }
 
@@ -622,7 +637,9 @@ textarea:focus {
     margin-right: 0;
 }
 
-.header-area .top-header-area .top-social-info a:hover, .header-area .top-header-area .top-social-info a:focus, .header-area .top-header-area .top-social-info a.active {
+.header-area .top-header-area .top-social-info a:hover,
+.header-area .top-header-area .top-social-info a:focus,
+.header-area .top-header-area .top-social-info a.active {
     color: #40ba37;
 }
 
@@ -666,7 +683,7 @@ textarea:focus {
         max-width: 120px;
     }
 
-    .header-area .delicious-main-menu .classy-navbar .nav-brand img{
+    .header-area .delicious-main-menu .classy-navbar .nav-brand img {
         max-width: 100%;
         width: 100%;
     }
@@ -676,11 +693,12 @@ textarea:focus {
     font-weight: 600;
 }
 
-.header-area .delicious-main-menu .classy-navbar .classynav ul li a:hover, .header-area .delicious-main-menu .classy-navbar .classynav ul li a:focus {
+.header-area .delicious-main-menu .classy-navbar .classynav ul li a:hover,
+.header-area .delicious-main-menu .classy-navbar .classynav ul li a:focus {
     font-weight: 600;
 }
 
-.header-area .delicious-main-menu .classy-navbar .classynav > ul > li > a {
+.header-area .delicious-main-menu .classy-navbar .classynav>ul>li>a {
     text-transform: uppercase;
     padding: 12px 18px 11px;
     background-color: transparent;
@@ -690,24 +708,26 @@ textarea:focus {
     font-weight: 600;
 }
 
-.header-area .delicious-main-menu .classy-navbar .classynav > ul > li > a:hover, .header-area .delicious-main-menu .classy-navbar .classynav > ul > li > a:focus {
+.header-area .delicious-main-menu .classy-navbar .classynav>ul>li>a:hover,
+.header-area .delicious-main-menu .classy-navbar .classynav>ul>li>a:focus {
     font-size: 14px;
     color: #ffffff;
     background-color: #40ba37;
     border-bottom: 3px solid #1c8314;
 }
 
-.header-area .delicious-main-menu .classy-navbar .classynav > ul > li > a:hover::after, .header-area .delicious-main-menu .classy-navbar .classynav > ul > li > a:focus::after {
+.header-area .delicious-main-menu .classy-navbar .classynav>ul>li>a:hover::after,
+.header-area .delicious-main-menu .classy-navbar .classynav>ul>li>a:focus::after {
     color: #ffffff;
 }
 
-.header-area .delicious-main-menu .classy-navbar .classynav > ul > li.active > a {
+.header-area .delicious-main-menu .classy-navbar .classynav>ul>li.active>a {
     color: #ffffff;
     background-color: #40ba37;
     border-bottom: 3px solid #1c8314;
 }
 
-.header-area .delicious-main-menu .classy-navbar .classynav > ul > li.active > a::after {
+.header-area .delicious-main-menu .classy-navbar .classynav>ul>li.active>a::after {
     color: #ffffff;
 }
 
@@ -724,7 +744,8 @@ textarea:focus {
     transition-duration: 500ms;
 }
 
-.header-area .delicious-main-menu .classynav .search-btn:hover i, .header-area .delicious-main-menu .classynav .search-btn:focus i {
+.header-area .delicious-main-menu .classynav .search-btn:hover i,
+.header-area .delicious-main-menu .classynav .search-btn:focus i {
     color: #40ba37;
 }
 
@@ -848,6 +869,7 @@ textarea:focus {
 }
 
 @media only screen and (max-width: 767px) {
+
     .hero-slides .owl-prev,
     .hero-slides .owl-next {
         font-size: 13px;
@@ -859,7 +881,8 @@ textarea:focus {
     right: 4%;
 }
 
-.hero-slides:hover .owl-prev, .hero-slides:hover .owl-next {
+.hero-slides:hover .owl-prev,
+.hero-slides:hover .owl-next {
     opacity: 1;
     visibility: visible;
 }
@@ -887,15 +910,17 @@ textarea:focus {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .breakpoint-on .classynav ul li.cn-dropdown-item > a::after,
-    .breakpoint-on .classynav ul li.megamenu-item > a::after {
+
+    .breakpoint-on .classynav ul li.cn-dropdown-item>a::after,
+    .breakpoint-on .classynav ul li.megamenu-item>a::after {
         top: 10px;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .breakpoint-on .classynav ul li.cn-dropdown-item > a::after,
-    .breakpoint-on .classynav ul li.megamenu-item > a::after {
+
+    .breakpoint-on .classynav ul li.cn-dropdown-item>a::after,
+    .breakpoint-on .classynav ul li.megamenu-item>a::after {
         top: 10px;
     }
 }
@@ -993,20 +1018,22 @@ textarea:focus {
     transition-duration: 500ms;
 }
 
-.single-best-receipe-area .receipe-content h5:hover, .single-best-receipe-area .receipe-content h5:focus {
+.single-best-receipe-area .receipe-content h5:hover,
+.single-best-receipe-area .receipe-content h5:focus {
     color: #40ba37;
 }
 
 .single-best-receipe-area .receipe-content h6 {
-  font-size: 12px;
-  margin-bottom: 10px;
-  font-weight: 400;
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
 }
 
-.single-best-receipe-area .receipe-content h6:hover, .single-best-receipe-area .receipe-content h6:focus {
-  color: #40ba37;
+.single-best-receipe-area .receipe-content h6:hover,
+.single-best-receipe-area .receipe-content h6:focus {
+    color: #40ba37;
 }
 
 .single-best-receipe-area .receipe-content .ratings i {
@@ -1108,7 +1135,8 @@ textarea:focus {
     }
 }
 
-.single-small-receipe-area .receipe-content a h5:hover, .single-small-receipe-area .receipe-content a h5:focus {
+.single-small-receipe-area .receipe-content a h5:hover,
+.single-small-receipe-area .receipe-content a h5:focus {
     color: #40ba37;
 }
 
@@ -1287,7 +1315,8 @@ textarea:focus {
     display: block;
 }
 
-.single-blog-area .blog-thumbnail .post-date:hover, .single-blog-area .blog-thumbnail .post-date:focus {
+.single-blog-area .blog-thumbnail .post-date:hover,
+.single-blog-area .blog-thumbnail .post-date:focus {
     background-color: #1c8314;
 }
 
@@ -1303,7 +1332,8 @@ textarea:focus {
     margin-bottom: 10px;
 }
 
-.single-blog-area .blog-content .post-title:hover, .single-blog-area .blog-content .post-title:focus {
+.single-blog-area .blog-content .post-title:hover,
+.single-blog-area .blog-content .post-title:focus {
     color: #40ba37;
 }
 
@@ -1319,7 +1349,8 @@ textarea:focus {
     color: #a4a4a4;
 }
 
-.single-blog-area .blog-content .meta-data a:hover, .single-blog-area .blog-content .meta-data a:focus {
+.single-blog-area .blog-content .meta-data a:hover,
+.single-blog-area .blog-content .meta-data a:focus {
     color: #40ba37;
 }
 
@@ -1343,7 +1374,8 @@ textarea:focus {
     color: #797979;
 }
 
-.single-widget .list li a:hover, .single-widget .list li a:focus {
+.single-widget .list li a:hover,
+.single-widget .list li a:focus {
     color: #40ba37;
 }
 
@@ -1360,7 +1392,8 @@ textarea:focus {
     color: #474747;
 }
 
-.pagination .page-link:hover, .pagination .page-link:focus {
+.pagination .page-link:hover,
+.pagination .page-link:focus {
     background-color: transparent;
     color: #40ba37;
 }
@@ -1425,6 +1458,7 @@ textarea:focus {
 }
 
 @media only screen and (max-width: 767px) {
+
     .receipe-slider .owl-prev,
     .receipe-slider .owl-next {
         font-size: 14px;
@@ -1436,7 +1470,8 @@ textarea:focus {
     right: 4%;
 }
 
-.receipe-slider:hover .owl-prev, .receipe-slider:hover .owl-next {
+.receipe-slider:hover .owl-prev,
+.receipe-slider:hover .owl-next {
     opacity: 1;
     visibility: visible;
 }
@@ -1459,6 +1494,7 @@ textarea:focus {
         font-size: 24px;
     }
 }
+
 .receipe-headline .actions {
     margin-bottom: 20px;
 }
@@ -1558,7 +1594,7 @@ textarea:focus {
     height: 20px;
 }
 
-.ingredients .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+.ingredients .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #40ba37;
 }
 
@@ -1575,7 +1611,7 @@ textarea:focus {
     font-size: 22px;
 }
 
-    /* :: 16.0 Footer Area CSS */
+/* :: 16.0 Footer Area CSS */
 .footer-area {
     position: relative;
     z-index: 1;
@@ -1607,7 +1643,8 @@ textarea:focus {
     margin-right: 0;
 }
 
-.footer-area .footer-social-info a:hover, .footer-area .footer-social-info a:focus {
+.footer-area .footer-social-info a:hover,
+.footer-area .footer-social-info a:focus {
     color: #40ba37;
 }
 
@@ -1633,7 +1670,8 @@ textarea:focus {
     font-weight: 600;
 }
 
-.footer-area p a:hover, .footer-area p a:focus {
+.footer-area p a:hover,
+.footer-area p a:focus {
     color: #40ba37;
 }
 
@@ -1643,7 +1681,7 @@ textarea:focus {
     }
 }
 
-.footer-line {
+.follow-us-instagram {
     position: relative;
     z-index: 1;
     border-top: 1px solid #dcdcdc;
@@ -2028,3 +2066,20 @@ textarea:focus {
     display: block;
     margin-bottom: 30px;
 }
+
+.no-recipes p {
+    font-size: 24px;
+    text-align: center;
+}
+
+@media(max-width: 1140px) {
+    .no-recipes {
+        padding: 0 20px;
+    }
+}
+
+.no-recipes {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto 60px;
+  }
