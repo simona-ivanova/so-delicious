@@ -3,37 +3,138 @@ import { useForm } from '../../hooks/useForm';
 export const CreateRecipe = ({
     onCreateRecipeSubmit,
 }) => {
-    const {values, changeHandler, onSubmit } = useForm({
+    const { values, changeHandler, onSubmit } = useForm({
         title: '',
         category: '',
-        time: '',
-        imageUrl: '',
+        imageUrl1: '',
+        imageUrl2: '',
+        imageUrl3: '',
+        prepTime: '',
+        cookingTime: '',
+        serving: '',
+        ingredients: '',
         steps: '',
     }, onCreateRecipeSubmit);
 
+    const options = ['Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
+
     return (
-        <section id="create-page" className="auth">
-            <form id="create" onSubmit={onSubmit}>
-                <div className="container">
-                    <h1>Създай рецепти</h1>
 
-                    <label htmlFor="title">Заглавие</label>
-                    <input value={values.title} onChange={changeHandler} type="text" id="title" name="title" placeholder="Enter a title..." />
-
-                    <label htmlFor="category">Категория</label>
-                    <input value={values.category} onChange={changeHandler} type="text" id="category" name="category" placeholder="Enter a category..." />
-
-                    <label htmlFor="time">Време</label>
-                    <input value={values.time} onChange={changeHandler} type="number" id="time" name="time" min="1" placeholder="1" />
-
-                    <label htmlFor="imageUrl">Снимка</label>
-                    <input value={values.imageUrl} onChange={changeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
-
-                    <label htmlFor="steps">Стъпки</label>
-                    <textarea name="steps" id="steps" value={values.steps} onChange={changeHandler}></textarea>
-                    <input className="btn submit" type="submit" value="Създай" />
+        <div className="contact-area section-padding-60">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="section-heading">
+                            <h3>Създай рецепта</h3>
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </section>
+
+                <div className="row">
+                    <div className="col-12">
+                        <div className="contact-form-area">
+                            <form onSubmit={onSubmit}>
+                                <div className="row">
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.title}
+                                            onChange={changeHandler}
+                                            name="title"
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Заглавие"
+                                        />
+                                    </div>
+                                    <div className="col-12 col-lg-4">
+                                        <select onChange={changeHandler} className="form-control" name="category">
+                                            <option>Избери категория</option>
+                                            {options.map((option, index) => {
+                                                return <option key={index} >
+                                                    {option}
+                                                </option>
+                                            })}
+                                        </select>
+                                    </div>
+                                                  
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.serving}
+                                            onChange={changeHandler}
+                                            name="serving"
+                                            type="number"
+                                            className="form-control"
+                                            placeholder="Порции"
+                                            min="1"
+                                        />
+                                    </div>
+
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.imageUrl1}
+                                            onChange={changeHandler}
+                                            name="imageUrl1"
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Снимка 1"
+                                        />
+                                    </div>
+
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.imageUrl2}
+                                            onChange={changeHandler}
+                                            name="imageUrl2"
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Снимка 2"
+                                        />
+                                    </div>
+
+                                    
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.imageUrl3}
+                                            onChange={changeHandler}
+                                            name="imageUrl3"
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Снимка 3"
+                                        />
+                                    </div>
+
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.prepTime}
+                                            onChange={changeHandler}
+                                            name="prepTime"
+                                            type="number"
+                                            className="form-control"
+                                            placeholder="Време за подготовка"
+                                            min="1"
+                                        />
+                                    </div>
+
+                                    <div className="col-12 col-lg-4">
+                                        <input
+                                            value={values.cookingTime}
+                                            onChange={changeHandler}
+                                            name="cookingTime"
+                                            type="number"
+                                            className="form-control"
+                                            placeholder="Време на готвене"
+                                            min="1"
+                                        />
+                                    </div>
+                                    
+                                    <div className="col-12 text-center">
+                                        <input className="btn delicious-btn mt-30" type="submit" value="Създай" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
