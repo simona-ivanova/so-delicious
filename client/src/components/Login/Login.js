@@ -58,7 +58,7 @@ export const Login = () => {
                 </div>
               </form>
 
-              <p>Нямаш профил</p>
+              <p>Нямаш профил?</p>
               <Link to="/register">Регистрация</Link>
               
             </div>
