@@ -1,0 +1,47 @@
+.receipe-post-area .buttons {
+    margin-bottom: 30px;
+}
+
+.receipe-post-area .buttons .delicious-btn {
+    margin-right: 20px;
+}
+
+.receipe-content-area .owl-carousel .owl-nav button.owl-prev, .receipe-content-area .owl-carousel .owl-nav button.owl-next, .receipe-content-area .owl-carousel button.owl-dot {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+    top: 50%;
+    margin-top: -20px;
+    left: 4%;
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    border-bottom: 3px solid #1c8314;
+    outline: none
+};
+
+.receipe-content-area .owl-carousel .owl-nav button.owl-prev:focus, 
+.receipe-content-area .owl-carousel .owl-nav button.owl-next:focus{
+    outline: none;
+}
+
+.receipe-content-area .owl-carousel .owl-nav button.owl-next {
+    left: auto;
+    right: 4%;
+}
+
+.receipe-content-area .owl-carousel:hover .owl-nav button.owl-prev, 
+.receipe-content-area .owl-carousel:hover .owl-nav button.owl-next {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0,0,0,0.5);
+}
+

@@ -13,6 +13,7 @@ export const useLocalStorage = (key, initialValue) => {
     });
 
     const setLocalStorageState = (value) => {
+        // TODO: if it is functon?
         setState(value);
 
         localStorage.setItem(key, JSON.stringify(value));

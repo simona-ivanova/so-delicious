@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { authServiceFactory } from '../services/authService';
@@ -7,7 +7,7 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({
-    children
+    children,
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
     const navigate = useNavigate();
@@ -44,8 +44,11 @@ export const AuthProvider = ({
 
     };
     const onLogout = async () => {
-        await authService.logout();
+
         setAuth({});
+        await authService.logout();
+        localStorage.clear();
+        navigate('/');
     };
 
     const contextValues = {
@@ -69,3 +72,8 @@ export const AuthProvider = ({
     )
 };
 
+export const useAuthContext = () => {
+    const context = useContext(AuthContext);
+
+    return context;
+};
