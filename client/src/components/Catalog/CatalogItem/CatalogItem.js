@@ -4,12 +4,12 @@ export const CatalogItem = ({
     _id,
     title,
     category,
-    imageUrl
+    imageUrl1
 }) => {
     return (
         <div className="col-12 col-sm-6 col-lg-4">
             <div className="single-best-receipe-area mb-30">
-                <img src={imageUrl} alt="" />
+                <img src={imageUrl1} alt="" />
                 <div className="receipe-content">
                     <Link to={`/catalog/${_id}`}>
                         <h5>{title}</h5>

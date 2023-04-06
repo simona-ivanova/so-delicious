@@ -65,7 +65,6 @@ export const CreateRecipe = ({
                                             type="number"
                                             className="form-control"
                                             placeholder="Порции"
-                                            min="1"
                                             required
                                         />
                                     </div>
@@ -115,7 +114,6 @@ export const CreateRecipe = ({
                                             type="number"
                                             className="form-control"
                                             placeholder="Време за подготовка"
-                                            min="1"
                                             required
                                         />
                                     </div>
@@ -128,7 +126,6 @@ export const CreateRecipe = ({
                                             type="number"
                                             className="form-control"
                                             placeholder="Време на готвене"
-                                            min="1"
                                             required
                                         />
                                     </div>
