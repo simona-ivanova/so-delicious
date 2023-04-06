@@ -1,13 +1,18 @@
 import './Home.css';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import CarouselFadeExample from './HomeCarousel/HomeCarousel';
+// import OwlCarousel from 'react-owl-carousel';
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+const images = ["img/bg-img/bg1.jpg", "img/bg-img/bg6.jpg", "img/bg-img/bg7.jpg"];
 
 export const Home = () => {
     return (
         <>
     <section className="hero-area">
-         <OwlCarousel className="hero-slides owl-carousel owl-dots" loop margin={1} nav items={1}>
+        <CarouselFadeExample images={images}/>
+        
+         {/* <OwlCarousel className="hero-slides owl-carousel owl-dots" loop margin={1} nav items={1}>
             <div className="single-hero-slide bg-img" style={{backgroundImage: "url(img/bg-img/bg1.jpg)"}}>
                 <div className="container h-100">
                     <div className="row h-100 align-items-center">
@@ -49,7 +54,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-        </OwlCarousel>
+        </OwlCarousel> */}
     </section>
 
             <section className="top-catagory-area section-padding-80-0">
