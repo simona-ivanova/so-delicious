@@ -1849,7 +1849,7 @@ textarea:focus {
 }
 
 .contact-form-area .form-control {
-    height: 52px;
+    height: 52px !important;
     width: 100%;
     background-color: #f3f5f8;
     font-size: 12px;

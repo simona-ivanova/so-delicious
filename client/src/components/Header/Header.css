@@ -1,0 +1,17 @@
+.classynav ul li {
+    display: inline-block;
+    clear: both;
+    position: relative;
+    z-index: 10;
+}
+
+.classynav ul li ul li {
+    display: block;
+    position: relative;
+}
+
+.classynav ul li.cn-dropdown-item, 
+.classynav ul li.cn-dropdown-item ul li {
+    position: relative;
+    z-index: 10;
+}

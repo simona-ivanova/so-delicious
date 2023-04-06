@@ -1,8 +1,13 @@
+import './Home.css';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 export const Home = () => {
     return (
         <>
     <section className="hero-area">
-        <div className="hero-slides owl-carousel">
+         <OwlCarousel className="hero-slides owl-carousel owl-dots" loop margin={1} nav items={1}>
             <div className="single-hero-slide bg-img" style={{backgroundImage: "url(img/bg-img/bg1.jpg)"}}>
                 <div className="container h-100">
                     <div className="row h-100 align-items-center">
@@ -44,7 +49,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </OwlCarousel>
     </section>
 
             <section className="top-catagory-area section-padding-80-0">
