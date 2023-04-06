@@ -14,6 +14,7 @@ const requester = async (method, token, url, data) => {
     }
 
     if (token) {
+
         options.headers = {
             ...options.headers,
             'X-Authorization': token,
@@ -21,7 +22,8 @@ const requester = async (method, token, url, data) => {
     }
 
     const response = await fetch(url, options);
-    
+
+
     if (response.status === 204 || response.status === 404) {
         return {};
     }
@@ -38,7 +40,9 @@ const requester = async (method, token, url, data) => {
 
 
 export const requestFactory = (token) => {
-    
+
+
+
     if (!token) {
         const serializedAuth = localStorage.getItem('auth');
 
