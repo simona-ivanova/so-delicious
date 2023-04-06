@@ -8,7 +8,6 @@ export const CreateRecipe = ({
         category: '',
         imageUrl1: '',
         imageUrl2: '',
-        imageUrl3: '',
         prepTime: '',
         cookingTime: '',
         serving: '',
@@ -17,6 +16,7 @@ export const CreateRecipe = ({
     }, onCreateRecipeSubmit);
 
     const options = ['Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
+
 
     return (
 
@@ -56,7 +56,7 @@ export const CreateRecipe = ({
                                             })}
                                         </select>
                                     </div>
-                                                  
+
                                     <div className="col-12 col-lg-4">
                                         <input
                                             value={values.serving}
@@ -93,19 +93,6 @@ export const CreateRecipe = ({
                                         />
                                     </div>
 
-                                    
-                                    <div className="col-12 col-lg-4">
-                                        <input
-                                            value={values.imageUrl3}
-                                            onChange={changeHandler}
-                                            name="imageUrl3"
-                                            type="text"
-                                            className="form-control"
-                                            placeholder="Снимка 3"
-                                            required
-                                        />
-                                    </div>
-
                                     <div className="col-12 col-lg-4">
                                         <input
                                             value={values.prepTime}
@@ -130,28 +117,29 @@ export const CreateRecipe = ({
                                         />
                                     </div>
                                     <div className="col-12 col-lg-4">
-                                        <input
+                                        <textarea
                                             value={values.ingredients}
                                             onChange={changeHandler}
                                             name="ingredients"
-                                            type="text"
                                             className="form-control"
-                                            placeholder="Съставки"
-                                            required
-                                        />
+                                            placeholder="Въведи всяка съставка на нов ред."
+                                            required>
+                                        </textarea>
+
                                     </div>
+
                                     <div className="col-12 col-lg-4">
-                                        <input
+                                        <textarea
                                             value={values.steps}
                                             onChange={changeHandler}
                                             name="steps"
                                             type="text"
                                             className="form-control"
-                                            placeholder="Стъпки"
-                                            required
-                                        />
+                                            placeholder="Въведи всяка стъпка на нов ред."
+                                            required>
+                                        </textarea>
                                     </div>
-                                    
+
                                     <div className="col-12 text-center">
                                         <input className="btn delicious-btn mt-30" type="submit" value="Създай" />
                                     </div>
