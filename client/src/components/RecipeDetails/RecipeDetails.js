@@ -1,7 +1,3 @@
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-import './RecipeDetails.css';
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
@@ -11,8 +7,11 @@ import { useService } from '../../hooks/useService';
 import { useAuthContext } from '../../contexts/AuthContext';
 
 import { AddComment } from '../AddComment/AddComment';
+import { RecipeDetailCarousel } from './RecipeDetailCarousel/RecipeDetailCarousel';
+import { Ingredients } from '../CreateRecipe/Ingredients/Ingredients';
+import { Steps } from '../CreateRecipe/Steps/Steps';
 
-export const RecipeDetails = () => {
+export const RecipeDetails = ({ receipe }) => {
     const { recipeId } = useParams();
     const { userId, isAuthenticated, userEmail } = useAuthContext();
     const [recipe, setRecipe] = useState({});
@@ -31,6 +30,7 @@ export const RecipeDetails = () => {
         });
     }, [recipeId]);
 
+
     const onCommentSubmit = async (values) => {
 
         const response = await commentServise.create(recipeId, values.comment);
@@ -44,11 +44,13 @@ export const RecipeDetails = () => {
                     author: {
                         email: userEmail,
                     }
-                } 
+                }
             ],
         }));
 
     };
+
+    const images = [recipe.imageUrl1, recipe.imageUrl2];
 
     const isOwner = recipe._ownerId === userId;
 
@@ -66,7 +68,7 @@ export const RecipeDetails = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                    
+
                         {isOwner && (
                             <div className="buttons">
                                 <Link to={`/catalog/${recipe._id}/edit`} className="btn delicious-btn">Редактирай</Link>
@@ -89,41 +91,42 @@ export const RecipeDetails = () => {
 
                                 <h2>{recipe.title}</h2>
                                 <div className="receipe-duration">
-                                    <h6>Време за подготовка: {recipe.prepTime} мин.</h6>
-                                    <h6>Време на готвене: {recipe.cookingTime} мин.</h6>
+                                    <h6>Подготовка: {recipe.prepTime} мин.</h6>
+                                    <h6>Готвене: {recipe.cookingTime} мин.</h6>
                                     <h6>Порции: {recipe.serving}</h6>
                                 </div>
                             </div>
                         </div>
 
+
                         <div className="col-12 col-md-4">
-                       
-                            <OwlCarousel className="receipe-slider owl-carousel owl-dots" loop margin={1} nav items={1}>
-                            
-                                <img src={recipe.imageUrl1} alt="" />
-                                <img src={recipe.imageUrl2} alt="" />
-                                <img src={recipe.imageUrl3} alt="" />
-                            </OwlCarousel>
+
+                            <RecipeDetailCarousel images={images} />
+
+                            {/* {(recipe.imageUrl1 && recipe.imageUrl2) !== undefined && (
+
+                                <OwlCarousel className="receipe-slider owl-carousel owl-dots" loop margin={1} nav items={1}>
+                                    <img src={recipe.imageUrl1} alt="" />
+                                    <img src={recipe.imageUrl2} alt="" />
+                                </OwlCarousel>)
+                            } */}
                         </div>
+
                     </div>
-                    <img src={recipe.imageUrl1} alt="" />
-                                <img src={recipe.imageUrl2} alt="" />
-                                <img src={recipe.imageUrl3} alt="" />
+
 
                     <div className="row">
                         <div className="col-12 col-lg-8">
-                            <p>{recipe.steps}</p>
+                        <div className="steps">
+                                <h4>Стъпки:</h4>                       
+                                <Steps steps={recipe.steps} />
+                            </div>
                         </div>
 
                         <div className="col-12 col-lg-4">
                             <div className="ingredients">
-                                <h4>Ingredients</h4>
-
-                                <ul>
-                                    <li><i className="fa fa-check-square" aria-hidden="true"></i>{recipe.ingredients}</li>
-
-                                </ul>
-
+                                <h4>Съставки:</h4>                       
+                                <Ingredients ingredients={recipe.ingredients} />
                             </div>
                         </div>
                     </div>
