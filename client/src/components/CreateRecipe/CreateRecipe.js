@@ -112,7 +112,7 @@ export const CreateRecipe = ({
                                             name="cookingTime"
                                             type="number"
                                             className="form-control"
-                                            placeholder="Време на готвене"
+                                            placeholder="Време за готвене"
                                             required
                                         />
                                     </div>
@@ -122,7 +122,7 @@ export const CreateRecipe = ({
                                             onChange={changeHandler}
                                             name="ingredients"
                                             className="form-control"
-                                            placeholder="Въведи всяка съставка на нов ред."
+                                            placeholder="Въведи всяка съставка на нов ред..."
                                             required>
                                         </textarea>
 
@@ -135,7 +135,7 @@ export const CreateRecipe = ({
                                             name="steps"
                                             type="text"
                                             className="form-control"
-                                            placeholder="Въведи всяка стъпка на нов ред."
+                                            placeholder="Въведи всяка стъпка на нов ред..."
                                             required>
                                         </textarea>
                                     </div>
