@@ -60,6 +60,7 @@ export const AuthProvider = ({
         userEmail: auth.email,
         userFirstName: auth.firstName,
         isAuthenticated: !!auth.accessToken,
+        isAdmin: (auth.email === 'simona@gmail.bg')
     };
 
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 
 export const Header = () => {
-  const { isAuthenticated, userFirstName } = useContext(AuthContext);
+  const { isAuthenticated, userFirstName, isAdmin } = useContext(AuthContext);
 
   return (
     <header className="header-area">
@@ -73,7 +73,7 @@ export const Header = () => {
                         <li><Link to="/catalog">Хляб</Link></li>
                       </ul>
                     </li>
-                    <li><Link to="/create">Създай рецепта</Link></li>
+                  {isAdmin && (  <li><Link to="/create">Създай рецепта</Link></li>)}
                     <li><Link to="/about">За мен</Link></li>
                     <li><Link to="/contact">Контакти</Link></li>
                   </ul>
