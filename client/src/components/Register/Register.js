@@ -36,7 +36,7 @@ export const Register = () => {
                                             onChange={changeHandler}
                                             name="firstName"
                                             type="text"
-                                            minlength="2"
+                                            minLength="2"
                                             className="form-control"
                                             placeholder="Име"
                                             required
@@ -44,11 +44,11 @@ export const Register = () => {
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <input
-                                            value={values.email}
+                                            value={values.lastName}
                                             onChange={changeHandler}
                                             name="lastName"
                                             type="text"
-                                            minlength="2"
+                                            minLength="2"
                                             className="form-control"
                                             placeholder="Фамилия"
                                             required
@@ -92,10 +92,10 @@ export const Register = () => {
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <input
-                                            value={values.password}
+                                            value={values.repeatPassword}
                                             onChange={changeHandler}
                                             name="repeatPassword"
-                                            type="repeatPassword"
+                                            type="password"
                                             className="form-control"
                                             placeholder="Повтори парола"
                                             required
