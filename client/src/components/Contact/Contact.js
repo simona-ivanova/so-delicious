@@ -1,15 +1,22 @@
+import './Contacts.css';
 export const Contact = () => {
     return (
-       
-        <div className="contact-area section-padding-0-80">
-            <div className="container">
-                <div className="row">
+         <>   
+    
+        <div className="breadcumb-area bg-img bg-overlay" style={{backgroundImage: `url("img/bg-img/breadcumb4.jpg")`}}>
+            <div className="container h-100">
+                <div className="row h-100 align-items-center">
                     <div className="col-12">
-                        <div className="section-heading">
-                            <h3>Свържете се с нас</h3>
+                        <div className="breadcumb-text text-center">
+                            <h2>Контакти</h2>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+       
+        <div className="contact-area section-padding-80">
+            <div className="container">
     
                 <div className="row">
                     <div className="col-12">
@@ -40,6 +47,6 @@ export const Contact = () => {
                 <a href="https://www.youtube.com/"><i className="fa fa-youtube-play" aria-hidden="true"></i></a>
               </div>
         </div>
-
+        </>
     );
 };
