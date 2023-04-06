@@ -15,7 +15,6 @@ export const EditRecipe = ({
         category: '',
         imageUrl1: '',
         imageUrl2: '',
-        imageUrl3: '',
         prepTime: '',
         cookingTime: '',
         serving: '',
@@ -135,29 +134,30 @@ export const EditRecipe = ({
                                             name="cookingTime"
                                             type="number"
                                             className="form-control"
-                                            placeholder="Време на готвене"
+                                            placeholder="Време за готвене"
                                             min="1"
                                         />
                                     </div>
                                     <div className="col-12 col-lg-4">
-                                        <input
+                                    <textarea
                                             value={values.ingredients}
                                             onChange={changeHandler}
                                             name="ingredients"
-                                            type="text"
                                             className="form-control"
-                                            placeholder="Съставки"
-                                        />
+                                            placeholder="Въведи всяка съставка на нов ред..."
+                                            required>
+                                        </textarea>
                                     </div>
-                                    <div className="col-12 col-lg-4">
-                                        <input
+                                     <div className="col-12 col-lg-4">
+                                        <textarea
                                             value={values.steps}
                                             onChange={changeHandler}
                                             name="steps"
                                             type="text"
                                             className="form-control"
-                                            placeholder="Стъпки"
-                                        />
+                                            placeholder="Въведи всяка стъпка на нов ред..."
+                                            required>
+                                        </textarea>
                                     </div>
                                     
                                     <div className="col-12 text-center">
