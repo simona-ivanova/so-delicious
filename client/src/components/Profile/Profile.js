@@ -1,8 +1,50 @@
+
 import './Profile.css';
 import { Link } from 'react-router-dom';
 
 export const Profile = () => {
     return (
+        <>
+        <div className="breadcumb-area bg-img bg-overlay" style={{backgroundImage: `url("img/bg-img/breadcumb4.jpg")`}}>
+            <div className="container h-100">
+                <div className="row h-100 align-items-center">
+                    <div className="col-12">
+                        <div className="breadcumb-text text-center">
+                            <h2>Профил</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="contact-area section-padding-80">
+             <div className="container">
+                <div className="row">
+                    <div className="col-6">
+                        <div className="contact-form-area">
+                            <form action="#" method="post">
+                                <div className="row">
+                                    <div className="col-12 col-lg-12">
+                                        <input type="text" className="form-control" id="name" placeholder="Име" />
+                                    </div>
+                                    <div className="col-12 col-lg-12">
+                                        <input type="email" className="form-control" id="email" placeholder="Имейл" />
+                                    </div>
+                               
+                                    <div className="col-12 text-center">
+                                        <button className="btn delicious-btn mt-30" type="submit">Изпрати</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div className="col-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>  
+
         <div className="page page-profile">
             <section className="u-align-center u-clearfix u-section-1" id="sec-e942">
                 <div className="u-clearfix u-sheet u-sheet-1">
@@ -44,5 +86,6 @@ export const Profile = () => {
             </section>
 
         </div>
+        </>
     );
 };
