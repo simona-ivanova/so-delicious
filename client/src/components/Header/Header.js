@@ -1,3 +1,4 @@
+import './Header.css';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -73,7 +74,6 @@ export const Header = () => {
                       </ul>
                     </li>
                     <li><Link to="/create">Създай рецепта</Link></li>
-                    <li><Link to="/">Блог</Link></li>
                     <li><Link to="/about">За мен</Link></li>
                     <li><Link to="/contact">Контакти</Link></li>
                   </ul>
