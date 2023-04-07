@@ -10,10 +10,11 @@ import { AddComment } from '../AddComment/AddComment';
 import { RecipeDetailCarousel } from './RecipeDetailCarousel/RecipeDetailCarousel';
 import { Ingredients } from '../CreateRecipe/Ingredients/Ingredients';
 import { Steps } from '../CreateRecipe/Steps/Steps';
+import './RecipeDetails.css'
 
-export const RecipeDetails = ({ receipe }) => {
+export const RecipeDetails = () => {
     const { recipeId } = useParams();
-    const { userId, isAuthenticated, userEmail } = useAuthContext();
+    const { userId, isAuthenticated, userEmail, userFirstName } = useAuthContext();
     const [recipe, setRecipe] = useState({});
     const recipeService = useService(recipeServiceFactory);
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ export const RecipeDetails = ({ receipe }) => {
     const onCommentSubmit = async (values) => {
 
         const response = await commentServise.create(recipeId, values.comment);
-
+    
         setRecipe(state => ({
             ...state,
             comments: [
@@ -43,6 +44,7 @@ export const RecipeDetails = ({ receipe }) => {
                     ...response,
                     author: {
                         email: userEmail,
+                        firstName: userFirstName,
                     }
                 }
             ],
@@ -113,19 +115,19 @@ export const RecipeDetails = ({ receipe }) => {
                         </div>
 
                     </div>
-
-
-                    <div className="row">
+                    <div className="row details">
                         <div className="col-12 col-lg-8">
-                        <div className="steps">
-                                <h4>Стъпки:</h4>                       
+                            <div className="steps">
+                                <h4>Стъпки:</h4>
                                 <Steps steps={recipe.steps} />
                             </div>
+
+                            <p>Да ви е вкусно!</p>
                         </div>
 
                         <div className="col-12 col-lg-4">
                             <div className="ingredients">
-                                <h4>Съставки:</h4>                       
+                                <h4>Съставки:</h4>
                                 <Ingredients ingredients={recipe.ingredients} />
                             </div>
                         </div>
@@ -136,7 +138,8 @@ export const RecipeDetails = ({ receipe }) => {
                         <ul>
                             {recipe.comments && recipe.comments.map(x => (
                                 <li key={x._id} className="comments-message">
-                                    <p>{x.author.email} {x.comment}</p>
+                                
+                                    <p><strong>{x.author.firstName}</strong>: {x.comment}</p>
                                 </li>
                             ))}
                         </ul>
