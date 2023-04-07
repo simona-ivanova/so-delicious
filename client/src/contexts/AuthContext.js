@@ -59,6 +59,7 @@ export const AuthProvider = ({
         token: auth.accessToken,
         userEmail: auth.email,
         userFirstName: auth.firstName,
+        userLastName: auth.lastName,
         isAuthenticated: !!auth.accessToken,
         isAdmin: (auth.email === 'simona@gmail.bg')
     };

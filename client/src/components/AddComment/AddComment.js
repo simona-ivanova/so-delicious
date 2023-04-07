@@ -10,7 +10,7 @@ export const AddComment = ({
         <div>
             <div className="row">
                 <div className="col-12">
-                    <div className="section-heading text-left">
+                    <div className="text-left">
                         <h3>Остави коментар</h3>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ export const AddComment = ({
                                     </textarea>
                                 </div>
                                 <div className="col-12">
-                                    <button className="btn delicious-btn mt-30" type="submit">Публикувай</button>
+                                    <button className="btn delicious-btn mt-20" type="submit">Публикувай</button>
                                 </div>
                             </div>
                         </form>
