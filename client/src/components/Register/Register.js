@@ -9,7 +9,6 @@ export const Register = () => {
         firstName: '',
         lastName: '',
         email: '',
-        phoneNumber: '',
         password: '',
         repeatPassword: '',
     }, onRegisterSubmit);
@@ -63,18 +62,6 @@ export const Register = () => {
                                             pattern="[^ @]*@[^ @]*"
                                             className="form-control"
                                             placeholder="Имейл"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="col-12 col-lg-4">
-                                        <input
-                                            value={values.phoneNumber}
-                                            onChange={changeHandler}
-                                            name="phoneNumber"
-                                            type="tel"
-                                            pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"
-                                            className="form-control"
-                                            placeholder="Телефон"
                                             required
                                         />
                                     </div>
