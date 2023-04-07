@@ -1,0 +1,26 @@
+.contact-area {
+    padding: 40px 0;
+}
+
+.contact-area .info .custom-button{
+    line-height: 40px;
+    height: 40px;
+}
+
+.contact-area .info p {
+    margin-bottom: 0;
+}
+
+.contact-area .info .wrapper {
+    border: 1px solid #dddee9;
+    padding: 20px;
+}
+
+.contact-area .info .wrapper .custom-button{
+    margin-top: 10px;
+}
+
+.contact-area .favourites .wrapper{
+    background: #f3f5f8;
+    padding: 20px;
+}
