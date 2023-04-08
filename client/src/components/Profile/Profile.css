@@ -2,7 +2,7 @@
     padding: 40px 0;
 }
 
-.contact-area .info .custom-button{
+.contact-area .custom-button{
     line-height: 40px;
     height: 40px;
 }
@@ -23,4 +23,17 @@
 .contact-area .favourites .wrapper{
     background: #f3f5f8;
     padding: 20px;
+}
+
+.contact-area .favourites .logout-button{
+    line-height: 40px;
+    height: 40px;
+    background: #d40707;
+    border-left: 3px solid #850202;
+}
+
+@media only screen and (max-width: 767px) {
+    .contact-area .info {
+        margin-bottom: 20px;
+    }
 }
