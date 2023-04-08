@@ -8,7 +8,7 @@ export const RouteGuard = ({
     const { isAdmin } = useAuthContext();
 
     if (!isAdmin) {
-        return <Navigate to='/' />
+        return <Navigate to='/' replace/>
     }
     return children ? children : <Outlet />
 };
