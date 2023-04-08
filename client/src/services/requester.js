@@ -1,4 +1,5 @@
 const requester = async (method, token, url, data) => {
+   
     const options = {};
 
     if (method !== 'GET') {
@@ -20,9 +21,22 @@ const requester = async (method, token, url, data) => {
             'X-Authorization': token,
         };
     }
+    
+    if (!token || token === 'undefined') {
+        const serializedAuth = localStorage.getItem('auth');
+
+        if (serializedAuth) {
+            const auth = JSON.parse(serializedAuth);
+            token = auth.accessToken;
+            options.headers = {
+                ...options.headers,
+                'X-Authorization': token,
+            };
+        }
+    }
+    
 
     const response = await fetch(url, options);
-
 
     if (response.status === 204 || response.status === 404) {
         return {};
@@ -41,8 +55,6 @@ const requester = async (method, token, url, data) => {
 
 export const requestFactory = (token) => {
 
-
-
     if (!token) {
         const serializedAuth = localStorage.getItem('auth');
 
@@ -51,6 +63,7 @@ export const requestFactory = (token) => {
             token = auth.accessToken;
         }
     }
+    
     return {
         get: requester.bind(null, 'GET', token),
         post: requester.bind(null, 'POST', token),

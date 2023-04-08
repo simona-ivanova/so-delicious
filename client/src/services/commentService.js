@@ -14,7 +14,9 @@ export const getAll = async (recipeId) => {
 };
 
 export const create = async (recipeId, comment) => {
+
     const result = await request.post(baseUrl, { recipeId, comment });
 
     return result;
 };
+
