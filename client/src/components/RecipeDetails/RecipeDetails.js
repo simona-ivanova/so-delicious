@@ -11,10 +11,12 @@ import { RecipeDetailCarousel } from './RecipeDetailCarousel/RecipeDetailCarouse
 import { Ingredients } from '../CreateRecipe/Ingredients/Ingredients';
 import { Steps } from '../CreateRecipe/Steps/Steps';
 import './RecipeDetails.css'
+import { useRecipeContext } from '../../contexts/RecipeContext';
 
 export const RecipeDetails = () => {
     const { recipeId } = useParams();
     const { isAdmin, isAuthenticated, userEmail, userFirstName } = useAuthContext();
+    const { deleteRecipe } = useRecipeContext();
     const [recipe, setRecipe] = useState({});
     const recipeService = useService(recipeServiceFactory);
     const navigate = useNavigate();
@@ -57,10 +59,16 @@ export const RecipeDetails = () => {
     // const isOwner = recipe._ownerId === userId;
 
     const onDeleteClick = async () => {
-        // Add confirm
 
-        await recipeService.delete(recipe._id);
-        // TODO: delete from state
+        //eslint-disable-next-line no-restricted-globals
+        const result = confirm(`Сигурен ли сир че искаш да изтриеш "${recipe.title}?"`);
+        // showDeletedDialog(true);
+
+        if (result) {
+            await recipeService.delete(recipe._id);
+        }
+
+        deleteRecipe(recipe._id);
 
         navigate('/catalog');
     };
