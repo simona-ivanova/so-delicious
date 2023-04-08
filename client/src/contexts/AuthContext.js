@@ -44,9 +44,9 @@ export const AuthProvider = ({
 
     };
     const onLogout = async () => {
-
-        setAuth({});
         await authService.logout();
+        setAuth({});
+
         localStorage.clear();
         navigate('/');
     };

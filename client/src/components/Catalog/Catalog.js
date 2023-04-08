@@ -1,10 +1,34 @@
 import { CatalogItem } from './CatalogItem/CatalogItem';
 import { Link } from 'react-router-dom';
-
+import { useState, useEffect } from 'react';
+import './Catalog.css';
+  
 
 export const Catalog = ({
     recipes
 }) => {
+    const [categoryName, setCategoryName] = useState({});
+    const [recipesTest, setRecepiesTest] = useState([...recipes]);
+   // console.log(recipes);
+    //console.log(recipesTest);
+    
+
+    // // useEffect(() => {
+    // //     setRecepiesTest(...recipes);
+    // //  }, []);
+
+    // useEffect(() => {
+    //    console.log(categoryName)
+
+    //    switch (categoryName) {
+    //     case 'breakfast':
+    //         console.log(recipesTest.filter(x => x.categoryName === 'breakfast'))
+    //       break;
+        
+    //     default:
+    //       console.log(`Sorry, we are out of`);
+    //   }
+    // }, [categoryName]);
     return (
         <div>
             <div className="breadcumb-area bg-img bg-overlay" style={{ backgroundImage: `url("img/bg-img/breadcumb3.jpg")` }}>
@@ -24,13 +48,13 @@ export const Catalog = ({
                 <section className="best-receipe-area">
                     <div className="container">
                         <ul className="menu-categories">
-                            <li><Link to="/catalog">Закуски</Link></li>
-                            <li><Link to="/catalog">Салати</Link></li>
-                            <li><Link to="/catalog">Супи</Link></li>
-                            <li><Link to="/catalog">Предястия</Link></li>
-                            <li><Link to="/catalog">Основни ястия</Link></li>
-                            <li><Link to="/catalog">Десерти</Link></li>
-                            <li><Link to="/catalog">Хляб</Link></li>
+                            <li><div data-to="/catalog/breakfasts" onClick={() => setCategoryName('breakfast')}>Закуски</div></li>
+                            <li><div data-to="/catalog/salads"  onClick={() => setCategoryName('salads')}>Салати</div></li>
+                            <li><div data-to="/catalog/soups">Супи</div></li>
+                            <li><div data-to="/catalog/appetizers">Предястия</div></li>
+                            <li><div data-to="/catalog/main-dishes">Основни ястия</div></li>
+                            <li><div data-to="/catalog/desserts">Десерти</div></li>
+                            <li><div data-to="/catalog/bread"  onClick={() => setCategoryName('bread')}>Хляб</div></li>
                         </ul>
 
                         <div className="row">

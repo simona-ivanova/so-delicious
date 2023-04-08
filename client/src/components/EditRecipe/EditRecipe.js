@@ -38,7 +38,7 @@ export const EditRecipe = ({
                 <div className="row">
                     <div className="col-12">
                         <div className="section-heading">
-                            <h3>Създай рецепта</h3>
+                            <h3>Редактиране</h3>
                         </div>
                     </div>
                 </div>

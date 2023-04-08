@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { recipeServiceFactory } from '../../services/recipeService';
@@ -14,7 +14,7 @@ import './RecipeDetails.css'
 
 export const RecipeDetails = () => {
     const { recipeId } = useParams();
-    const { userId, isAuthenticated, userEmail, userFirstName } = useAuthContext();
+    const { isAdmin, isAuthenticated, userEmail, userFirstName } = useAuthContext();
     const [recipe, setRecipe] = useState({});
     const recipeService = useService(recipeServiceFactory);
     const navigate = useNavigate();
@@ -35,7 +35,7 @@ export const RecipeDetails = () => {
     const onCommentSubmit = async (values) => {
 
         const response = await commentServise.create(recipeId, values.comment);
-    
+
         setRecipe(state => ({
             ...state,
             comments: [
@@ -54,7 +54,7 @@ export const RecipeDetails = () => {
 
     const images = [recipe.imageUrl1, recipe.imageUrl2];
 
-    const isOwner = recipe._ownerId === userId;
+    // const isOwner = recipe._ownerId === userId;
 
     const onDeleteClick = async () => {
         // Add confirm
@@ -65,13 +65,37 @@ export const RecipeDetails = () => {
         navigate('/catalog');
     };
 
+
+    //     const [storageItem, setStorageItem] = useState(() => JSON.parse(localStorage.getItem("favourites") || "[]"))
+
+    //    const isFavourited = storageItem.includes(recipe);
+
+    //     const handleToggleFavourite = () => {
+
+    //         if (!isFavourited) {
+
+    //             const newStorageItem = [...storageItem, recipe]
+    //             setStorageItem(newStorageItem);
+    //             localStorage.setItem("favourites", JSON.stringify(newStorageItem))
+
+    //         } else {
+
+    //             const newStorageItem = storageItem.filter((_id) => _id !== recipeId)
+
+    //             setStorageItem(newStorageItem);
+    //             localStorage.setItem("favourites", JSON.stringify(newStorageItem))   
+
+
+    //         }}
+
+
     return (
         <div className="receipe-post-area section-padding-40">
             <div className="container">
                 <div className="row">
                     <div className="col-12">
 
-                        {isOwner && (
+                        {isAdmin && (
                             <div className="buttons">
                                 <Link to={`/catalog/${recipe._id}/edit`} className="btn delicious-btn">Редактирай</Link>
                                 <button onClick={onDeleteClick} className="btn delicious-btn">Изтрий</button>
@@ -87,7 +111,9 @@ export const RecipeDetails = () => {
                         <div className="col-12 col-md-8">
                             <div className="receipe-headline my-5">
                                 <div className="actions">
+
                                     <i className="fa fa-heart" aria-hidden="true"></i>
+
                                     <i className="fa fa-print" aria-hidden="true"></i>
                                 </div>
 
@@ -138,7 +164,7 @@ export const RecipeDetails = () => {
                         <ul>
                             {recipe.comments && recipe.comments.map(x => (
                                 <li key={x._id} className="comments-message">
-                                
+
                                     <p><strong>{x.author.firstName}</strong>: {x.comment}</p>
                                 </li>
                             ))}

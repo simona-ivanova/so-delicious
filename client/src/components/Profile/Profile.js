@@ -2,9 +2,15 @@
 import './Profile.css';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
+import { FavouritesList } from '../FavouritesList/FavouritesList';
+
 
 export const Profile = () => {
-    const { userFirstName, userLastName, userEmail } = useAuthContext();
+
+    const { userId, userFirstName, userLastName, userEmail } = useAuthContext();
+    // const data = JSON.parse(localStorage.getItem('favourites'));
+    // console.log(data);
+
     return (
         <>
 
@@ -21,30 +27,29 @@ export const Profile = () => {
             <div className="contact-area">
                 <div className="container">
                     <div className="row area">
-                        <div className="col-6 info">
+                        <div className="col-12 col-md-6 info">
 
                             <div className="wrapper">
                                 <p><strong>Име:</strong> {userFirstName}</p>
                                 <p><strong>Фамилия:</strong> {userLastName}</p>
                                 <p><strong>Имейл:</strong> {userEmail}</p>
 
-                                <Link to={'/profile/edit'} className="btn delicious-btn mt-20 custom-button" >Редактирай</Link>
+                                <Link to={`/profile/${userId}/edit`} className="btn delicious-btn mt-20 custom-button" >Редактирай</Link>
                             </div>
 
                         </div>
 
-                        <div className="col-6 favourites">
+                        <div className="col-12 col-md-6 favourites">
                             <div className="wrapper">
-                                <span className="btn delicious-btn mt-20 custom-button" >Любими</span>
+                                {/* <Link to={`/profile/${userId}/favouriteList`} className="btn delicious-btn mt-20 custom-button" >Любими</Link> */}
                             </div>
                             <div className="wrapper">
-                                <Link to={'/logout'} className="btn delicious-btn mt-20 custom-button" >Изход</Link>
+                                <Link to={'/logout'} className="btn delicious-btn mt-20 logout-button" >Изход</Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </>
     );
 };

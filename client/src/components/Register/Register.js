@@ -13,6 +13,7 @@ export const Register = () => {
         repeatPassword: '',
     }, onRegisterSubmit);
 
+
     return (
         <div className="contact-area section-padding-60">
             <div className="container">

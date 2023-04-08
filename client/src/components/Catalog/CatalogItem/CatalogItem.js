@@ -9,7 +9,7 @@ export const CatalogItem = ({
     return (
         <div className="col-12 col-sm-6 col-lg-4">
             <div className="single-best-receipe-area mb-30">
-                <img src={imageUrl1} alt="" />
+                <img src={imageUrl1} alt="" loading="lazy"/>
                 <div className="receipe-content">
                     <Link to={`/catalog/${_id}`}>
                         <h5>{title}</h5>

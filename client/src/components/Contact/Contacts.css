@@ -1,3 +1,17 @@
 .contact-area .section-heading {
     margin-bottom: 40px;
 }
+.contact-area .social-info {
+  text-align: center;
+  margin-top: 30px;
+}
+.contact-area .social-info a {
+    margin-right: 15px;
+}
+.contact-area .social-info a:last-child {
+    margin-right: 0px;
+}
+.contact-area .social-info a i {
+    color: #474747;;
+    font-size: 35px;
+}
