@@ -18,7 +18,6 @@
         }
     }
 }());
-
 /*!
 * jquery counterup
 *
