@@ -1,8 +1,8 @@
+import { useRecipeContext } from '../../contexts/RecipeContext';
 import { useForm } from '../../hooks/useForm';
 
-export const CreateRecipe = ({
-    onCreateRecipeSubmit,
-}) => {
+export const CreateRecipe = () => {
+    const { onCreateRecipeSubmit } = useRecipeContext();
     const { values, changeHandler, onSubmit } = useForm({
         title: '',
         category: '',

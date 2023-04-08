@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import { recipeServiceFactory } from './services/recipeService';
 import { AuthProvider } from './contexts/AuthContext';
+import { RecipeProvider } from './contexts/RecipeContext';
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -21,38 +20,13 @@ import { EditRecipe } from './components/EditRecipe/EditRecipe';
 // import { Preloader } from './components/Preloader/Preloader';
 import { Search } from './components/Search/Search';
 import { RouteGuard } from './components/common/RouteGuard';
+import { RecipeOwner } from './components/common/RecipeOwner';
+
 // import { Category } from './components/Catalog/Category/Category';
 // import { authServiceFactory } from './services/authService';
 // import { FavouritesList } from './components/FavouritesList/FavouritesList';
 
 function App() {
-  const navigate = useNavigate();
-  const [recipes, setRecipes] = useState([]);
-
-  const recipeService = recipeServiceFactory(); // auth.accessToken
-
-  useEffect(() => {
-    recipeService.getAll()
-      .then(result => {
-        setRecipes(result)
-      });
-  }, []);
-
-  const onCreateRecipeSubmit = async (data) => {
-    const newRecipe = await recipeService.create(data);
-
-    setRecipes(state => [...state, newRecipe]);
-
-    navigate('/catalog');
-  };
-
-  const onRecipeEditSubmit = async (values) => {
-    const result = await recipeService.edit(values._id, values);
-
-    setRecipes(state => state.map(x => x._id === values._id ? result : x));
-
-    navigate(`/catalog/${values._id}`);
-  }
 
   // const [favorites, setFavorites] = useState([]);
 
@@ -72,32 +46,37 @@ function App() {
 
   return (
     <AuthProvider>
-      {/* <Preloader /> */}
-      <Search />
-      <Header />
+      <RecipeProvider>
+        {/* <Preloader /> */}
+        <Search />
+        <Header />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/profile/' element={<Profile />} />
-        <Route path='/profile/:userId/edit' element={<ProfileEdit />} />
-        {/* <Route path='/profile/:userId/favouriteList' element={<FavouritesList recipes={recipes}/>} /> */}
-        <Route path='/logout' element={<Logout />} />
-        <Route path='/catalog' element={<Catalog recipes={recipes} />} />
-        <Route path='/catalog/:recipeId' element={<RecipeDetails />} />
-        <Route element={<RouteGuard />}>
-          <Route path='/catalog/:recipeId/edit' element={<EditRecipe onRecipeEditSubmit={onRecipeEditSubmit} />} />
-          <Route path='/create' element={<CreateRecipe onCreateRecipeSubmit={onCreateRecipeSubmit} />} />
-        </Route>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/profile/' element={<Profile />} />
+          <Route path='/profile/:userId/edit' element={<ProfileEdit />} />
+          {/* <Route path='/profile/:userId/favouriteList' element={<FavouritesList recipes={recipes}/>} /> */}
+          <Route path='/logout' element={<Logout />} />
+          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/catalog/:recipeId' element={<RecipeDetails />} />
+          <Route element={<RouteGuard />}>
+            <Route path='/catalog/:recipeId/edit' element={
+              <RecipeOwner>
+                <EditRecipe />
+              </RecipeOwner>
+            } />
+            <Route path='/create' element={<CreateRecipe />} />
+          </Route>
 
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        {/* <Route path='/catalog/:category' element={<Category recipes={recipes}/>} /> */}
-      </Routes>
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          {/* <Route path='/catalog/:category' element={<Category recipes={recipes}/>} /> */}
+        </Routes>
 
-      <Footer />
-
+        <Footer />
+      </RecipeProvider>
     </AuthProvider>
 
   );

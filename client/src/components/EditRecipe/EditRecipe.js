@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useRecipeContext } from "../../contexts/RecipeContext";
+
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { recipeServiceFactory } from "../../services/recipeService";
 
-export const EditRecipe = ({
-    onRecipeEditSubmit,
-}) => {
+export const EditRecipe = () => {
+    const { onRecipeEditSubmit } = useRecipeContext();
     const { recipeId } = useParams();
     const recipeService = useService(recipeServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
@@ -32,7 +33,7 @@ export const EditRecipe = ({
     const options = ['Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
 
     return (
-        
+
         <div className="contact-area section-padding-60">
             <div className="container">
                 <div className="row">
@@ -46,7 +47,7 @@ export const EditRecipe = ({
                 <div className="row">
                     <div className="col-12">
                         <div className="contact-form-area">
-                            <form  methd="post" onSubmit={onSubmit}>
+                            <form methd="post" onSubmit={onSubmit}>
                                 <div className="row">
                                     <div className="col-12 col-lg-4">
                                         <input
@@ -68,7 +69,7 @@ export const EditRecipe = ({
                                             })}
                                         </select>
                                     </div>
-                                                  
+
                                     <div className="col-12 col-lg-4">
                                         <input
                                             value={values.serving}
@@ -103,7 +104,7 @@ export const EditRecipe = ({
                                         />
                                     </div>
 
-                                    
+
                                     <div className="col-12 col-lg-4">
                                         <input
                                             value={values.imageUrl3}
@@ -139,7 +140,7 @@ export const EditRecipe = ({
                                         />
                                     </div>
                                     <div className="col-12 col-lg-4">
-                                    <textarea
+                                        <textarea
                                             value={values.ingredients}
                                             onChange={changeHandler}
                                             name="ingredients"
@@ -148,7 +149,7 @@ export const EditRecipe = ({
                                             required>
                                         </textarea>
                                     </div>
-                                     <div className="col-12 col-lg-4">
+                                    <div className="col-12 col-lg-4">
                                         <textarea
                                             value={values.steps}
                                             onChange={changeHandler}
@@ -159,7 +160,7 @@ export const EditRecipe = ({
                                             required>
                                         </textarea>
                                     </div>
-                                    
+
                                     <div className="col-12 text-center">
                                         <input className="btn delicious-btn mt-30" type="submit" value="Създай" />
                                     </div>
