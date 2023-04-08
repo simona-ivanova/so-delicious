@@ -15,17 +15,22 @@ import { Catalog } from './components/Catalog/Catalog';
 import { CreateRecipe } from './components/CreateRecipe/CreateRecipe';
 import { RecipeDetails } from './components/RecipeDetails/RecipeDetails';
 import { Profile } from './components/Profile/Profile';
+import { ProfileEdit } from './components/Profile/ProdileEdit/ProfileEdit'
 import { Logout } from './components/Logout/Logout';
 import { EditRecipe } from './components/EditRecipe/EditRecipe';
-import { Preloader } from './components/Preloader/Preloader';
+// import { Preloader } from './components/Preloader/Preloader';
 import { Search } from './components/Search/Search';
+import { RouteGuard } from './components/common/RouteGuard';
+// import { Category } from './components/Catalog/Category/Category';
+// import { authServiceFactory } from './services/authService';
+// import { FavouritesList } from './components/FavouritesList/FavouritesList';
 
 function App() {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState([]);
 
   const recipeService = recipeServiceFactory(); // auth.accessToken
-  
+
   useEffect(() => {
     recipeService.getAll()
       .then(result => {
@@ -49,9 +54,25 @@ function App() {
     navigate(`/catalog/${values._id}`);
   }
 
+  // const [favorites, setFavorites] = useState([]);
+
+  // const addToFavorite = (recipe) => {
+
+  // setFavorites(state => [state, recipe]);
+  // }
+
+
+  // const onProfileEditSubmit = async (values) => {
+  //   const result = await authServiceFactory.edit(values._id, values);
+
+  //   setRecipes(state => state.map(x => x._id === values._id ? result : x));
+
+  //   navigate(`/catalog/${values._id}`);
+  // }
+
   return (
     <AuthProvider>
-      <Preloader />
+      {/* <Preloader /> */}
       <Search />
       <Header />
 
@@ -60,14 +81,19 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/profile/' element={<Profile />} />
+        <Route path='/profile/:userId/edit' element={<ProfileEdit />} />
+        {/* <Route path='/profile/:userId/favouriteList' element={<FavouritesList recipes={recipes}/>} /> */}
         <Route path='/logout' element={<Logout />} />
         <Route path='/catalog' element={<Catalog recipes={recipes} />} />
-        <Route path='/create' element={<CreateRecipe onCreateRecipeSubmit={onCreateRecipeSubmit} />} />
         <Route path='/catalog/:recipeId' element={<RecipeDetails />} />
-        <Route path='/catalog/:recipeId/edit' element={<EditRecipe onRecipeEditSubmit={onRecipeEditSubmit} />} />
+        <Route element={<RouteGuard />}>
+          <Route path='/catalog/:recipeId/edit' element={<EditRecipe onRecipeEditSubmit={onRecipeEditSubmit} />} />
+          <Route path='/create' element={<CreateRecipe onCreateRecipeSubmit={onCreateRecipeSubmit} />} />
+        </Route>
+
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-
+        {/* <Route path='/catalog/:category' element={<Category recipes={recipes}/>} /> */}
       </Routes>
 
       <Footer />
