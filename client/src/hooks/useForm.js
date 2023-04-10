@@ -4,14 +4,15 @@ export const useForm = (initialValues, onSubmitHandler) => {
     const [values, setValues] = useState(initialValues);
     const [errors, setErrors] = useState({});
 
+
     const changeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }));
     };
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g
-    const passwordRegex = /^(?=\S{6,}$)[^\s<>&]*$/g
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g;
+    const passwordRegex = /^(?=\S{6,}$)[^\s<>&]*$/g;
 
-    function validateForm(formData) {
+    function validateFormRegister(formData) {
         const { firstName, lastName, email, password, repeatPassword } = formData;
         const errors = {};
 
@@ -21,7 +22,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
             errors.firstName = "Името трябва да е поне 2 символа!";
         }
 
-        if (lastName.length < 1) {
+        if (lastName.trim().length < 1) {
             errors.lastName = "Полето не може да бъде празно!";
         } else if (lastName.trim().length < 2) {
             errors.lastName = "Фамилията трябва да бъде поне 2 символа!";
@@ -37,7 +38,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
             errors.password = "Полето не може да бъде празно!";
         } else if (password.length < 6) {
             errors.password = "Паролата трябва да бъде поне 6 символа! Празните пространства са забранени!";
-        } 
+        }
         else if (!passwordRegex.test(password)) {
             errors.password = "Използвани са забранени символи!";
         }
@@ -49,9 +50,67 @@ export const useForm = (initialValues, onSubmitHandler) => {
         return errors;
     }
 
+    function validateFormCreateRecipe(formData) {
+        const { title, category, imageUrl1, imageUrl2, prepTime, cookingTime, serving, ingredients, steps } = formData;
+        const errors = {};
+
+        if (!title) {
+            errors.title = "Полето не може да бъде празно!";
+        } else if (title.trim().length < 2) {
+            errors.title = "Името трябва да е поне 2 символа!";
+        }
+
+        if (!category) {
+            errors.category = "Избери категория!";
+        } else if (category === 'Избери категория') {
+             errors.category = "Невалидна категория!";
+        }
+
+        if (!serving) {
+            errors.serving = "Полето не може да бъде празно!";
+        } else if (serving < 1) {
+             errors.serving = "Минималното количество е 1!";
+        }
+
+        if (imageUrl1.trim().length < 1) {
+            errors.imageUrl1 = "Полето не може да бъде празно!";
+        } else if (!(imageUrl1.startsWith('http://') || imageUrl1.startsWith('https://'))) {
+            errors.imageUrl1 = "Невалиден адрес!";
+        }
+
+        if (imageUrl2.trim().length < 1) {
+            errors.imageUrl2 = "Полето не може да бъде празно!";
+        } else if (!(imageUrl2.startsWith('http://') || imageUrl2.startsWith('https://'))) {
+            errors.imageUrl2 = "Невалиден адрес!";
+        }
+
+        if (!prepTime) {
+            errors.prepTime = "Полето не може да бъде празно!";
+        } else if (prepTime < 5) {
+             errors.prepTime = "Минималното време е 5 минути!";
+        }
+
+        if (!cookingTime) {
+            errors.cookingTime = "Полето не може да бъде празно!";
+        } else if (cookingTime < 5) {
+             errors.cookingTime = "Минималното време е 5 минути!";
+        }
+
+        
+        if (!ingredients) {
+            errors.ingredients = "Полето не може да бъде празно!";
+        } 
+
+        if (!steps) {
+            errors.steps = "Полето не може да бъде празно!";
+        } 
+        
+        return errors;
+    }
+
     const onSubmitRegister = (e) => {
         e.preventDefault();
-        const errors = validateForm(values);
+        const errors = validateFormRegister(values);
         setErrors(errors);
 
         if (Object.keys(errors).length === 0) {
@@ -59,8 +118,20 @@ export const useForm = (initialValues, onSubmitHandler) => {
             setValues(initialValues);
         }
 
+    };
+
+    const onSubmitCreateRecipe = (e) => {
+        e.preventDefault();
+        const errors = validateFormCreateRecipe(values);
+        setErrors(errors);
+
+        if (Object.keys(errors).length === 0) {
+            onSubmitHandler(values);
+            setValues(initialValues);
+        }
 
     };
+
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -80,6 +151,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
         values,
         changeHandler,
         onSubmit,
+        onSubmitCreateRecipe,
         onSubmitRegister,
         changeValues,
         errors

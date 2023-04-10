@@ -3,7 +3,7 @@ import { useForm } from '../../hooks/useForm';
 
 export const CreateRecipe = () => {
     const { onCreateRecipeSubmit } = useRecipeContext();
-    const { values, changeHandler, onSubmit } = useForm({
+    const { values, changeHandler, onSubmitCreateRecipe, errors } = useForm({
         title: '',
         category: '',
         imageUrl1: '',
@@ -33,7 +33,7 @@ export const CreateRecipe = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="contact-form-area">
-                            <form onSubmit={onSubmit}>
+                            <form onSubmit={onSubmitCreateRecipe}>
                                 <div className="row">
                                     <div className="col-12 col-lg-4">
                                         <input
@@ -43,8 +43,8 @@ export const CreateRecipe = () => {
                                             type="text"
                                             className="form-control"
                                             placeholder="Заглавие"
-                                            required
                                         />
+                                            {errors.title && <span>{errors.title}</span>}
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <select onChange={changeHandler} className="form-control" name="category" required>
@@ -55,6 +55,7 @@ export const CreateRecipe = () => {
                                                 </option>
                                             })}
                                         </select>
+                                        {errors.category && <span>{errors.category}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -65,8 +66,8 @@ export const CreateRecipe = () => {
                                             type="number"
                                             className="form-control"
                                             placeholder="Порции"
-                                            required
                                         />
+                                             {errors.serving && <span>{errors.serving}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -77,8 +78,8 @@ export const CreateRecipe = () => {
                                             type="text"
                                             className="form-control"
                                             placeholder="Снимка 1"
-                                            required
                                         />
+                                              {errors.imageUrl1 && <span>{errors.imageUrl1}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -89,8 +90,8 @@ export const CreateRecipe = () => {
                                             type="text"
                                             className="form-control"
                                             placeholder="Снимка 2"
-                                            required
                                         />
+                                          {errors.imageUrl2 && <span>{errors.imageUrl2}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -101,8 +102,8 @@ export const CreateRecipe = () => {
                                             type="number"
                                             className="form-control"
                                             placeholder="Време за подготовка"
-                                            required
                                         />
+                                             {errors.prepTime && <span>{errors.prepTime}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -113,8 +114,8 @@ export const CreateRecipe = () => {
                                             type="number"
                                             className="form-control"
                                             placeholder="Време за готвене"
-                                            required
                                         />
+                                          {errors.cookingTime && <span>{errors.cookingTime}</span>}
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <textarea
@@ -123,8 +124,9 @@ export const CreateRecipe = () => {
                                             name="ingredients"
                                             className="form-control"
                                             placeholder="Въведи всяка съставка на нов ред..."
-                                            required>
+                                           >
                                         </textarea>
+                                        {errors.ingredients && <span>{errors.ingredients}</span>}
 
                                     </div>
 
@@ -136,8 +138,9 @@ export const CreateRecipe = () => {
                                             type="text"
                                             className="form-control"
                                             placeholder="Въведи всяка стъпка на нов ред..."
-                                            required>
+                                        >
                                         </textarea>
+                                        {errors.steps && <span>{errors.steps}</span>}
                                     </div>
 
                                     <div className="col-12 text-center">
