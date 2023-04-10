@@ -97,97 +97,109 @@ export const RecipeDetails = () => {
     //         }}
 
 
-    return (
-        <div className="receipe-post-area section-padding-40">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
+    if (recipe.steps && recipe.ingredients) {
+        const ingredients = recipe.ingredients.split('\n');
+        const steps = recipe.steps.split('\n');
 
-                        {isAdmin && (
-                            <div className="buttons">
-                                <Link to={`/catalog/${recipe._id}/edit`} className="btn delicious-btn">Редактирай</Link>
-                                <button onClick={onDeleteClick} className="btn delicious-btn">Изтрий</button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
+        return (
 
-            <div className="receipe-content-area">
+            <div className="receipe-post-area section-padding-40">
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 col-md-8">
-                            <div className="receipe-headline my-5">
-                                <div className="actions">
+                        <div className="col-12">
 
-                                    <i className="fa fa-heart" aria-hidden="true"></i>
-
-                                    <i className="fa fa-print" aria-hidden="true"></i>
+                            {isAdmin && (
+                                <div className="buttons">
+                                    <Link to={`/catalog/${recipe._id}/edit`} className="btn delicious-btn">Редактирай</Link>
+                                    <button onClick={onDeleteClick} className="btn delicious-btn">Изтрий</button>
                                 </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
 
-                                <h2>{recipe.title}</h2>
-                                <div className="receipe-duration">
-                                    <h6>Подготовка: {recipe.prepTime} мин.</h6>
-                                    <h6>Готвене: {recipe.cookingTime} мин.</h6>
-                                    <h6>Порции: {recipe.serving}</h6>
+                <div className="receipe-content-area">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12 col-md-8">
+                                <div className="receipe-headline my-5">
+                                    <div className="actions">
+
+                                        <i className="fa fa-heart" aria-hidden="true"></i>
+
+                                        <i className="fa fa-print" aria-hidden="true"></i>
+                                    </div>
+
+                                    <h2>{recipe.title}</h2>
+                                    <div className="receipe-duration">
+                                        <h6>Подготовка: {recipe.prepTime} мин.</h6>
+                                        <h6>Готвене: {recipe.cookingTime} мин.</h6>
+                                        <h6>Порции: {recipe.serving}</h6>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
 
-                        <div className="col-12 col-md-4">
+                            <div className="col-12 col-md-4">
 
-                            <RecipeDetailCarousel images={images} />
+                                <RecipeDetailCarousel images={images} />
 
-                            {/* {(recipe.imageUrl1 && recipe.imageUrl2) !== undefined && (
+                                {/* {(recipe.imageUrl1 && recipe.imageUrl2) !== undefined && (
 
                                 <OwlCarousel className="receipe-slider owl-carousel owl-dots" loop margin={1} nav items={1}>
                                     <img src={recipe.imageUrl1} alt="" />
                                     <img src={recipe.imageUrl2} alt="" />
                                 </OwlCarousel>)
                             } */}
-                        </div>
-
-                    </div>
-                    <div className="row details">
-                        <div className="col-12 col-lg-8">
-                            <div className="steps">
-                                <h4>Стъпки:</h4>
-                                <Steps steps={recipe.steps} />
                             </div>
 
-                            <p>Да ви е вкусно!</p>
                         </div>
+                        <div className="row details">
+                            <div className="col-12 col-lg-8">
+                                <div className="steps">
+                                    <h4>Стъпки:</h4>
+                                    <Steps steps={steps} />
+                                </div>
+                                <div className="end">
+                                    <p>Приятен апетит!</p>
+                                </div>
+                            </div>
 
-                        <div className="col-12 col-lg-4">
-                            <div className="ingredients">
-                                <h4>Съставки:</h4>
-                                <Ingredients ingredients={recipe.ingredients} />
+                            <div className="col-12 col-lg-4">
+                                <div className="ingredients">
+                                    <h4>Съставки:</h4>
+                                    <Ingredients ingredients={ingredients} />
+                                </div>
                             </div>
                         </div>
+
+                        <div className="comments">
+                            <h2>Коментари</h2>
+                            <ul>
+                                {recipe.comments && recipe.comments.map(x => (
+                                    <li key={x._id} className="comments-message">
+
+                                        <p><strong>{x.author.firstName}</strong>: {x.comment}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {!recipe.comments?.length && (
+                            <p className="no-comments">Все още няма коментари.</p>
+                        )}
+
+                        {isAuthenticated ? <AddComment onCommentSubmit={onCommentSubmit} /> :
+                            <p>Само регистрирани потребители могат да публикуват коментар.</p>}
+
                     </div>
-
-                    <div className="comments">
-                        <h2>Коментари</h2>
-                        <ul>
-                            {recipe.comments && recipe.comments.map(x => (
-                                <li key={x._id} className="comments-message">
-
-                                    <p><strong>{x.author.firstName}</strong>: {x.comment}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {!recipe.comments?.length && (
-                        <p className="no-comments">Все още няма коментари.</p>
-                    )}
-
-                    {isAuthenticated ? <AddComment onCommentSubmit={onCommentSubmit} /> :
-                        <p>Само регистрирани потребители могат да публикуват коментар.</p>}
-
                 </div>
             </div>
-        </div>
-    )
+        )
+
+
+    }
+
+
+
 }

@@ -1,14 +1,11 @@
 export const Ingredients = (ingredients) => {
 
-    const ingredientsArr = [ingredients.ingredients].toString().split('\n').toString().split(',');
-
-
     return (
 
         <ul>
-            {ingredientsArr.map((ingredientsArr, index) => (
+            {ingredients.ingredients.map((ingredients, index) => (
                 <li key={index}>
-                    <i className="fa fa-check" aria-hidden="true"></i>{ingredientsArr}
+                    <i className="fa fa-check" aria-hidden="true"></i>{ingredients}
                 </li>
 
             ))}

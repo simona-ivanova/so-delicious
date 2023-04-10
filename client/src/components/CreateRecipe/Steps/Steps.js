@@ -1,13 +1,11 @@
 export const Steps = (steps) => {
 
-    const StepsArr = [steps.steps].toString().split('\n').toString().split(',');
-
     return (
 
         <ul>
-            {StepsArr.map((StepsArr, index) => (
+            {steps.steps.map((steps, index) => (
                 <li key={index}>
-                    <i className="fa fa-arrow-right" aria-hidden="true"></i>{StepsArr}
+                    <i className="fa fa-arrow-right" aria-hidden="true"></i>{steps}
                 </li>
 
             ))}
