@@ -34,3 +34,11 @@
     opacity: 1;
     visibility: visible;
 }
+
+.single-best-receipe-area img {
+   
+        max-height: 300px;
+        max-width: 280px;
+
+}
+
