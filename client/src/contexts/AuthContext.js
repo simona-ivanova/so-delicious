@@ -30,9 +30,9 @@ export const AuthProvider = ({
     const onRegisterSubmit = async (values) => {
 
         const { repeatPassword, ...registerData } = values;
-        if (repeatPassword !== registerData.password) {
-            return;
-        }
+        // if (repeatPassword !== registerData.password) {
+        //     return;
+        // }
 
         try {
             const result = await authService.register(registerData);

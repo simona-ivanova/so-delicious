@@ -1,3 +1,4 @@
+import './Register.css'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { useForm } from '../../hooks/useForm';
@@ -5,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 export const Register = () => {
     const { onRegisterSubmit } = useContext(AuthContext);
-    const { values, changeHandler, onSubmit } = useForm({
+    const { values, changeHandler, onSubmitRegister, errors } = useForm({
         firstName: '',
         lastName: '',
         email: '',
@@ -28,7 +29,7 @@ export const Register = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="contact-form-area">
-                            <form method="post" onSubmit={onSubmit}>
+                            <form method="post" onSubmit={onSubmitRegister}>
                                 <div className="row">
                                     <div className="col-12 col-lg-4">
                                         <input
@@ -36,11 +37,11 @@ export const Register = () => {
                                             onChange={changeHandler}
                                             name="firstName"
                                             type="text"
-                                            minLength="2"
                                             className="form-control"
                                             placeholder="Име"
-                                            required
                                         />
+                                        {errors.firstName && <span>{errors.firstName}</span>}
+
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <input
@@ -48,23 +49,21 @@ export const Register = () => {
                                             onChange={changeHandler}
                                             name="lastName"
                                             type="text"
-                                            minLength="2"
                                             className="form-control"
                                             placeholder="Фамилия"
-                                            required
                                         />
+                                        {errors.lastName && <span>{errors.lastName}</span>}
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <input
                                             value={values.email}
                                             onChange={changeHandler}
                                             name="email"
-                                            type="email"
-                                            pattern="[^ @]*@[^ @]*"
+                                            type="text"
                                             className="form-control"
                                             placeholder="Имейл"
-                                            required
                                         />
+                                        {errors.email && <span>{errors.email}</span>}
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <input
@@ -72,11 +71,11 @@ export const Register = () => {
                                             onChange={changeHandler}
                                             name="password"
                                             type="password"
-                                            min="6"
                                             className="form-control"
                                             placeholder="Парола"
-                                            required
                                         />
+                                        {errors.password && <span>{errors.password}</span>}
+                                        {errors.repeatPassword && <span>{errors.repeatPassword}</span>}
                                     </div>
                                     <div className="col-12 col-lg-4">
                                         <input
@@ -86,8 +85,8 @@ export const Register = () => {
                                             type="password"
                                             className="form-control"
                                             placeholder="Повтори парола"
-                                            required
                                         />
+                                        {errors.repeatPassword && <span>{errors.repeatPassword}</span>}
                                     </div>
 
                                     <div className="col-12 text-center">
