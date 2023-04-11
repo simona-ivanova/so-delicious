@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { validateFormCreateRecipe, validateFormRegister } from "../services/formValidationService";
+import { validateFormRecipe, validateFormRegister, validateFormLogin } from "../services/formValidationService";
 
 export const useForm = (initialValues, onSubmitHandler) => {
     const [values, setValues] = useState(initialValues);
@@ -24,7 +24,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     const onSubmitRecipe = (e) => {
         e.preventDefault();
-        const errors = validateFormCreateRecipe(values);
+        const errors = validateFormRecipe(values);
         setErrors(errors);
 
         if (Object.keys(errors).length === 0) {
@@ -34,6 +34,17 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     };
 
+    const onSubmitLogin = (e) => {
+        e.preventDefault();
+        const errors = validateFormLogin(values);
+        setErrors(errors);
+
+        if (Object.keys(errors).length === 0) {
+            onSubmitHandler(values);
+            setValues(initialValues);
+        }
+
+    };
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -44,7 +55,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
     };
 
     const changeValues = (newValues) => {
-   
+
         //TODO: Validate newValues shape (like initialValues)
 
         setValues(newValues);
@@ -56,6 +67,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
         onSubmit,
         onSubmitRecipe,
         onSubmitRegister,
+        onSubmitLogin,
         changeValues,
         errors
     };

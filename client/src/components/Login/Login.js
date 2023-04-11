@@ -1,3 +1,4 @@
+import "./Login.css"
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -5,7 +6,7 @@ import { useForm } from '../../hooks/useForm';
 
 export const Login = () => {
   const { onLoginSubmit } = useContext(AuthContext);
-  const { values, changeHandler, onSubmit } = useForm({
+  const { values, changeHandler, onSubmitLogin, errors } = useForm({
     email: '',
     password: '',
   }, onLoginSubmit);
@@ -24,33 +25,35 @@ export const Login = () => {
 
         <div className="row">
           <div className="col-12">
-            <div className="contact-form-area">
-              <form method="post" onSubmit={onSubmit}>
+
+            <div className="contact-form-area login">
+              <form method="post" onSubmit={onSubmitLogin}>
                 <div className="row">
+
                   <div className="col-12 col-lg-4">
                     <input
                       value={values.email}
                       onChange={changeHandler}
                       name="email"
-                      type="email"
-                      pattern="[^ @]*@[^ @]*"
+                      type="text"
                       className="form-control"
                       placeholder="Имейл"
-                      required
                     />
+                    {errors.email && <span>{errors.email}</span>}
                   </div>
+
                   <div className="col-12 col-lg-4">
                     <input
                       value={values.password}
                       onChange={changeHandler}
                       name="password"
                       type="password"
-                      min="6"
                       className="form-control"
                       placeholder="Парола"
-                      required
                     />
+                    {errors.password && <span>{errors.password}</span>}
                   </div>
+
 
                   <div className="col-12 text-center">
                     <input className="btn delicious-btn mt-30" type="submit" value="Вход" />
@@ -60,7 +63,7 @@ export const Login = () => {
 
               <p>Нямаш профил?</p>
               <Link to="/register">Регистрация</Link>
-              
+
             </div>
           </div>
         </div>

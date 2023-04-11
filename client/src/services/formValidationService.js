@@ -39,7 +39,29 @@ export const validateFormRegister = (formData) => {
     return errors;
 }
 
-export const validateFormCreateRecipe = (formData) => {
+export const validateFormLogin = (formData) => {
+    const { email, password } = formData;
+    const errors = {};
+
+    if (email.trim().length < 1) {
+        errors.email = "Полето не може да бъде празно!";
+    } else if (!emailRegex.test(email)) {
+        errors.email = "Невалиден имейл адрес!";
+    }
+
+    if (password.trim().length < 1) {
+        errors.password = "Полето не може да бъде празно!";
+    } else if (password.length < 6) {
+        errors.password = "Паролата трябва да бъде поне 6 символа! Празните пространства са забранени!";
+    }
+    else if (!passwordRegex.test(password)) {
+        errors.password = "Използвани са забранени символи!";
+    }
+
+    return errors;
+}
+
+export const validateFormRecipe = (formData) => {
     const { title, category, imageUrl1, imageUrl2, prepTime, cookingTime, serving, ingredients, steps } = formData;
     const errors = {};
 
