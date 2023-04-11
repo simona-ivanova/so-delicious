@@ -1,4 +1,3 @@
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g;
 const passwordRegex = /^(?=\S{6,}$)[^\s<>&]*$/g;
 
 export const validateFormRegister = (formData) => {
@@ -19,9 +18,7 @@ export const validateFormRegister = (formData) => {
 
     if (email.trim().length < 1) {
         errors.email = "Полето не може да бъде празно!";
-    } else if (!emailRegex.test(email)) {
-        errors.email = "Невалиден имейл адрес!";
-    }
+    } 
 
     if (password.trim().length < 1) {
         errors.password = "Полето не може да бъде празно!";
@@ -45,18 +42,11 @@ export const validateFormLogin = (formData) => {
 
     if (email.trim().length < 1) {
         errors.email = "Полето не може да бъде празно!";
-    } else if (!emailRegex.test(email)) {
-        errors.email = "Невалиден имейл адрес!";
     }
 
     if (password.trim().length < 1) {
         errors.password = "Полето не може да бъде празно!";
-    } else if (password.length < 6) {
-        errors.password = "Паролата трябва да бъде поне 6 символа! Празните пространства са забранени!";
-    }
-    else if (!passwordRegex.test(password)) {
-        errors.password = "Използвани са забранени символи!";
-    }
+    } 
 
     return errors;
 }

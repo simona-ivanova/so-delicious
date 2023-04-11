@@ -35,7 +35,7 @@ export const Login = () => {
                       value={values.email}
                       onChange={changeHandler}
                       name="email"
-                      type="text"
+                      type="email"
                       className="form-control"
                       placeholder="Имейл"
                     />
