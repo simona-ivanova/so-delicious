@@ -130,7 +130,11 @@ export const RecipeDetails = () => {
                                         <i className="fa fa-print" aria-hidden="true"></i>
                                     </div>
 
+                                    <div className="receipe-content-details">
                                     <h2>{recipe.title}</h2>
+                                    <Link to={`/catalog`}> <h6>{recipe.category}</h6> </Link>
+                                    </div>
+
                                     <div className="receipe-duration">
                                         <h6>Подготовка: {recipe.prepTime} мин.</h6>
                                         <h6>Готвене: {recipe.cookingTime} мин.</h6>
