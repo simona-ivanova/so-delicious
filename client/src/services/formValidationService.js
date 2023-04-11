@@ -118,3 +118,14 @@ export const validateFormRecipe = (formData) => {
     
     return errors;
 }
+
+export const validateFormComment = (formData) => {
+    const { comment } = formData;
+    const errors = {};
+
+    if (comment.trim().length < 1) {
+        errors.comment = "Полето не може да бъде празно!";
+    } 
+
+    return errors;
+}

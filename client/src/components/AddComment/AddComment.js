@@ -1,9 +1,10 @@
+import "./AddComment.css";
 import { useForm } from "../../hooks/useForm";
 
 export const AddComment = ({
     onCommentSubmit,
 }) => {
-    const { values, changeHandler, onSubmit } = useForm({
+    const { values, changeHandler, onSubmitComment, errors } = useForm({
         comment: ''
     }, onCommentSubmit);
     return (
@@ -18,8 +19,8 @@ export const AddComment = ({
 
             <div className="row">
                 <div className="col-12">
-                    <div className="contact-form-area">
-                        <form onSubmit={onSubmit}>
+                    <div className="contact-form-area comment">
+                        <form onSubmit={onSubmitComment}>
                             <div className="row">
                                 <div className="col-12">
                                     <textarea
@@ -32,6 +33,7 @@ export const AddComment = ({
                                         value={values.comment}
                                         onChange={changeHandler}>
                                     </textarea>
+                                    {errors.comment && <span>{errors.comment}</span>}
                                 </div>
                                 <div className="col-12">
                                     <button className="btn delicious-btn mt-20" type="submit">Публикувай</button>
