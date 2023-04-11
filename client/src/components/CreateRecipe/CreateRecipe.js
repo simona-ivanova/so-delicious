@@ -3,7 +3,7 @@ import { useForm } from '../../hooks/useForm';
 
 export const CreateRecipe = () => {
     const { onCreateRecipeSubmit } = useRecipeContext();
-    const { values, changeHandler, onSubmitCreateRecipe, errors } = useForm({
+    const { values, changeHandler, onSubmitRecipe, errors } = useForm({
         title: '',
         category: '',
         imageUrl1: '',
@@ -15,7 +15,7 @@ export const CreateRecipe = () => {
         steps: '',
     }, onCreateRecipeSubmit);
 
-    const options = ['Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
+    const options = ['Избери категория','Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
 
 
     return (
@@ -33,8 +33,9 @@ export const CreateRecipe = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="contact-form-area">
-                            <form onSubmit={onSubmitCreateRecipe}>
+                            <form onSubmit={onSubmitRecipe}>
                                 <div className="row">
+
                                     <div className="col-12 col-lg-4">
                                         <input
                                             value={values.title}
@@ -44,11 +45,11 @@ export const CreateRecipe = () => {
                                             className="form-control"
                                             placeholder="Заглавие"
                                         />
-                                            {errors.title && <span>{errors.title}</span>}
+                                        {errors.title && <span>{errors.title}</span>}
                                     </div>
+
                                     <div className="col-12 col-lg-4">
-                                        <select onChange={changeHandler} className="form-control" name="category" required>
-                                            <option>Избери категория</option>
+                                        <select onChange={changeHandler} value = {values.category} className="form-control" name="category">
                                             {options.map((option, index) => {
                                                 return <option key={index} >
                                                     {option}
@@ -67,7 +68,7 @@ export const CreateRecipe = () => {
                                             className="form-control"
                                             placeholder="Порции"
                                         />
-                                             {errors.serving && <span>{errors.serving}</span>}
+                                        {errors.serving && <span>{errors.serving}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -79,7 +80,7 @@ export const CreateRecipe = () => {
                                             className="form-control"
                                             placeholder="Снимка 1"
                                         />
-                                              {errors.imageUrl1 && <span>{errors.imageUrl1}</span>}
+                                        {errors.imageUrl1 && <span>{errors.imageUrl1}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -91,7 +92,7 @@ export const CreateRecipe = () => {
                                             className="form-control"
                                             placeholder="Снимка 2"
                                         />
-                                          {errors.imageUrl2 && <span>{errors.imageUrl2}</span>}
+                                        {errors.imageUrl2 && <span>{errors.imageUrl2}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -103,7 +104,7 @@ export const CreateRecipe = () => {
                                             className="form-control"
                                             placeholder="Време за подготовка"
                                         />
-                                             {errors.prepTime && <span>{errors.prepTime}</span>}
+                                        {errors.prepTime && <span>{errors.prepTime}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -115,8 +116,9 @@ export const CreateRecipe = () => {
                                             className="form-control"
                                             placeholder="Време за готвене"
                                         />
-                                          {errors.cookingTime && <span>{errors.cookingTime}</span>}
+                                        {errors.cookingTime && <span>{errors.cookingTime}</span>}
                                     </div>
+
                                     <div className="col-12 col-lg-4">
                                         <textarea
                                             value={values.ingredients}
@@ -124,7 +126,7 @@ export const CreateRecipe = () => {
                                             name="ingredients"
                                             className="form-control"
                                             placeholder="Въведи всяка съставка на нов ред..."
-                                           >
+                                        >
                                         </textarea>
                                         {errors.ingredients && <span>{errors.ingredients}</span>}
 
@@ -151,7 +153,7 @@ export const CreateRecipe = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };

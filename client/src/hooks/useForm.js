@@ -108,6 +108,8 @@ export const useForm = (initialValues, onSubmitHandler) => {
         return errors;
     }
 
+    
+
     const onSubmitRegister = (e) => {
         e.preventDefault();
         const errors = validateFormRegister(values);
@@ -120,7 +122,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     };
 
-    const onSubmitCreateRecipe = (e) => {
+    const onSubmitRecipe = (e) => {
         e.preventDefault();
         const errors = validateFormCreateRecipe(values);
         setErrors(errors);
@@ -142,6 +144,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
     };
 
     const changeValues = (newValues) => {
+   
         //TODO: Validate newValues shape (like initialValues)
 
         setValues(newValues);
@@ -151,7 +154,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
         values,
         changeHandler,
         onSubmit,
-        onSubmitCreateRecipe,
+        onSubmitRecipe,
         onSubmitRegister,
         changeValues,
         errors

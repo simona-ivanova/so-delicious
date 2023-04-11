@@ -10,7 +10,7 @@ export const EditRecipe = () => {
     const { onRecipeEditSubmit } = useRecipeContext();
     const { recipeId } = useParams();
     const recipeService = useService(recipeServiceFactory);
-    const { values, changeHandler, onSubmit, changeValues } = useForm({
+    const { values, changeHandler, onSubmitRecipe, changeValues, errors } = useForm({
         _id: '',
         title: '',
         category: '',
@@ -30,7 +30,9 @@ export const EditRecipe = () => {
             });
     }, [recipeId]);
 
-    const options = ['Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
+
+
+    const options = ['Избери категория','Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
 
     return (
 
@@ -47,8 +49,9 @@ export const EditRecipe = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="contact-form-area">
-                            <form methd="post" onSubmit={onSubmit}>
+                            <form methd="post" onSubmit={onSubmitRecipe}>
                                 <div className="row">
+
                                     <div className="col-12 col-lg-4">
                                         <input
                                             value={values.title}
@@ -58,16 +61,18 @@ export const EditRecipe = () => {
                                             className="form-control"
                                             placeholder="Заглавие"
                                         />
+                                        {errors.title && <span>{errors.title}</span>}
                                     </div>
+
                                     <div className="col-12 col-lg-4">
-                                        <select onChange={changeHandler} className="form-control" name="category">
-                                            <option>Избери категория</option>
+                                    <select onChange={changeHandler} value = {values.category} className="form-control" name="category">
                                             {options.map((option, index) => {
                                                 return <option key={index} >
                                                     {option}
                                                 </option>
                                             })}
                                         </select>
+                                        {errors.category && <span>{errors.category}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -78,8 +83,8 @@ export const EditRecipe = () => {
                                             type="number"
                                             className="form-control"
                                             placeholder="Порции"
-                                            min="1"
                                         />
+                                        {errors.serving && <span>{errors.serving}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -91,6 +96,7 @@ export const EditRecipe = () => {
                                             className="form-control"
                                             placeholder="Снимка 1"
                                         />
+                                        {errors.imageUrl1 && <span>{errors.imageUrl1}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -102,18 +108,7 @@ export const EditRecipe = () => {
                                             className="form-control"
                                             placeholder="Снимка 2"
                                         />
-                                    </div>
-
-
-                                    <div className="col-12 col-lg-4">
-                                        <input
-                                            value={values.imageUrl3}
-                                            onChange={changeHandler}
-                                            name="imageUrl3"
-                                            type="text"
-                                            className="form-control"
-                                            placeholder="Снимка 3"
-                                        />
+                                        {errors.imageUrl2 && <span>{errors.imageUrl2}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -124,8 +119,8 @@ export const EditRecipe = () => {
                                             type="number"
                                             className="form-control"
                                             placeholder="Време за подготовка"
-                                            min="1"
                                         />
+                                        {errors.prepTime && <span>{errors.prepTime}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
@@ -136,19 +131,22 @@ export const EditRecipe = () => {
                                             type="number"
                                             className="form-control"
                                             placeholder="Време за готвене"
-                                            min="1"
                                         />
+                                        {errors.cookingTime && <span>{errors.cookingTime}</span>}
                                     </div>
+
                                     <div className="col-12 col-lg-4">
                                         <textarea
                                             value={values.ingredients}
                                             onChange={changeHandler}
                                             name="ingredients"
                                             className="form-control"
-                                            placeholder="Въведи всяка съставка на нов ред..."
-                                            required>
+                                            placeholder="Въведи всяка съставка на нов ред...">
                                         </textarea>
+                                        {errors.ingredients && <span>{errors.ingredients}</span>}
                                     </div>
+
+
                                     <div className="col-12 col-lg-4">
                                         <textarea
                                             value={values.steps}
@@ -156,9 +154,9 @@ export const EditRecipe = () => {
                                             name="steps"
                                             type="text"
                                             className="form-control"
-                                            placeholder="Въведи всяка стъпка на нов ред..."
-                                            required>
+                                            placeholder="Въведи всяка стъпка на нов ред...">
                                         </textarea>
+                                        {errors.steps && <span>{errors.steps}</span>}
                                     </div>
 
                                     <div className="col-12 text-center">
