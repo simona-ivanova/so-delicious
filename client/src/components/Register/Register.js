@@ -28,7 +28,7 @@ export const Register = () => {
 
                 <div className="row">
                     <div className="col-12">
-                        <div className="contact-form-area">
+                        <div className="contact-form-area register">
                             <form method="post" onSubmit={onSubmitRegister}>
                                 <div className="row">
                                     <div className="col-12 col-lg-4">

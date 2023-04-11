@@ -1,3 +1,4 @@
+import "./CreateRecipe.css";
 import { useRecipeContext } from '../../contexts/RecipeContext';
 import { useForm } from '../../hooks/useForm';
 
@@ -32,7 +33,7 @@ export const CreateRecipe = () => {
 
                 <div className="row">
                     <div className="col-12">
-                        <div className="contact-form-area">
+                        <div className="contact-form-area create-recipe">
                             <form onSubmit={onSubmitRecipe}>
                                 <div className="row">
 

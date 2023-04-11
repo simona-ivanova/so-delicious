@@ -1,3 +1,4 @@
+import "./EditRecipe.css"
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useRecipeContext } from "../../contexts/RecipeContext";
@@ -48,7 +49,7 @@ export const EditRecipe = () => {
 
                 <div className="row">
                     <div className="col-12">
-                        <div className="contact-form-area">
+                        <div className="contact-form-area edit-recipe">
                             <form methd="post" onSubmit={onSubmitRecipe}>
                                 <div className="row">
 
