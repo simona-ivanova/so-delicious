@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import { React, useEffect, useRef, useState } from 'react';
+import { useReactToPrint } from 'react-to-print'
+
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { recipeServiceFactory } from '../../services/recipeService';
@@ -72,6 +74,10 @@ export const RecipeDetails = () => {
 
         navigate('/catalog');
     };
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current
+    });
 
 
     //     const [storageItem, setStorageItem] = useState(() => JSON.parse(localStorage.getItem("favourites") || "[]"))
@@ -96,14 +102,14 @@ export const RecipeDetails = () => {
 
     //         }}
 
-
     if (recipe.steps && recipe.ingredients) {
         const ingredients = recipe.ingredients.split('\n');
         const steps = recipe.steps.split('\n');
 
-        return (
 
-            <div className="receipe-post-area section-padding-40">
+        return (
+            <>
+            < div ref = { componentRef } className = "receipe-post-area section-padding-40" >
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -127,12 +133,12 @@ export const RecipeDetails = () => {
 
                                         <i className="fa fa-heart" aria-hidden="true"></i>
 
-                                        <i className="fa fa-print" aria-hidden="true"></i>
+                                        <i className="fa fa-print" aria-hidden="true" onClick={handlePrint}></i>
                                     </div>
 
                                     <div className="receipe-content-details">
-                                    <h2>{recipe.title}</h2>
-                                    <Link to={`/catalog`}> <h6>{recipe.category}</h6> </Link>
+                                        <h2>{recipe.title}</h2>
+                                        <Link to={`/catalog`}> <h6>{recipe.category}</h6> </Link>
                                     </div>
 
                                     <div className="receipe-duration">
@@ -148,13 +154,6 @@ export const RecipeDetails = () => {
 
                                 <RecipeDetailCarousel images={images} />
 
-                                {/* {(recipe.imageUrl1 && recipe.imageUrl2) !== undefined && (
-
-                                <OwlCarousel className="receipe-slider owl-carousel owl-dots" loop margin={1} nav items={1}>
-                                    <img src={recipe.imageUrl1} alt="" />
-                                    <img src={recipe.imageUrl2} alt="" />
-                                </OwlCarousel>)
-                            } */}
                             </div>
 
                         </div>
@@ -199,11 +198,10 @@ export const RecipeDetails = () => {
                     </div>
                 </div>
             </div>
+            </>
         )
-
-
     }
 
-
-
 }
+
+
