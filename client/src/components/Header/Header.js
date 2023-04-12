@@ -63,15 +63,15 @@ export const Header = () => {
                   <ul>
                     <li className="active"><a href="/">Начало</a></li>
                     <li><Link to="/catalog">Рецепти</Link>
-                      <ul className="dropdown">
-                        <li><Link to="/catalog/breakfasts">Закуски</Link></li>
+                      {/* <ul className="dropdown">
+                        <li><Link to="/catalog">Закуски</Link></li>
                         <li><Link to="/catalog/salads">Салати</Link></li>
                         <li><Link to="/catalog/soups">Супи</Link></li>
                         <li><Link to="/catalog/appetizers">Предястия</Link></li>
                         <li><Link to="/catalog/main-dishes">Основни ястия</Link></li>
                         <li><Link to="/catalog/desserts">Десерти</Link></li>
                         <li><Link to="/catalog/bread">Хляб</Link></li>
-                      </ul>
+                      </ul> */}
                     </li>
                   {isAdmin && (  <li><Link to="/create">Създай рецепта</Link></li>)}
                     <li><Link to="/about">За мен</Link></li>

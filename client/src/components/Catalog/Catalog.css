@@ -7,10 +7,14 @@
     width: 209px;
 }
 
-.end p{
+.end p {
     color: #40ba37;
     font-size: 18px;
     line-height: 4;
     font-weight: 600;
     margin: 0;
+}
+
+.menu-categories li div[data-is-active="1"] {
+    font-weight: 700;
 }

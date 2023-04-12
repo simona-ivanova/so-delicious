@@ -3,34 +3,57 @@ import { useRecipeContext } from '../../contexts/RecipeContext';
 
 import { CatalogItem } from './CatalogItem/CatalogItem';
 
-import { Link } from 'react-router-dom';
+import { Link, Navigate, redirect } from 'react-router-dom';
+import { CategoryItem } from './Category/CategoryItem';
+import { Category } from '../Category';
 import { useState, useEffect } from 'react';
 
 export const Catalog = () => {
-const { recipes } = useRecipeContext();
+    const { recipes } = useRecipeContext();
 
-    // const [categoryName, setCategoryName] = useState({});
-    // const [recipesTest, setRecepiesTest] = useState([...recipes]);
-   // console.log(recipes);
-    //console.log(recipesTest);
-    
+    const [categoryName, setCategoryName] = useState({});
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
 
-    // // useEffect(() => {
-    // //     setRecepiesTest(...recipes);
-    // //  }, []);
+    useEffect(() => {
 
-    // useEffect(() => {
-    //    console.log(categoryName)
+        switch (categoryName) {
+            case 'Закуски':
+                setFilteredRecipes(recipes.filter(x => x['category'] === 'Закуски'))
+                break;
 
-    //    switch (categoryName) {
-    //     case 'breakfast':
-    //         console.log(recipesTest.filter(x => x.categoryName === 'breakfast'))
-    //       break;
-        
-    //     default:
-    //       console.log(`Sorry, we are out of`);
-    //   }
-    // }, [categoryName]);
+            case 'Салати':
+                setFilteredRecipes(recipes.filter(x => x['category'] === 'Салати'))
+                break;
+
+            case 'Супи':
+                setFilteredRecipes(recipes.filter(x => x['category'] === 'Супи'))
+                break;
+
+            case 'Предястия':
+                setFilteredRecipes(recipes.filter(x => x['category'] === 'Предястия'))
+                break;
+
+            case 'Основни ястия':
+                setFilteredRecipes(recipes.filter(x => x['category'] === 'Основни ястия'))
+                break;
+
+            case 'Десерти':
+                setFilteredRecipes(recipes.filter(x => x['category'] === 'Десерти'))
+                break;
+
+            case 'Хляб':
+                setFilteredRecipes(recipes.filter(x => x['category'] === 'Хляб'))
+                break;
+
+            case 'Всички':
+                setFilteredRecipes([])
+                break;
+
+            default:
+                setFilteredRecipes([])
+        }
+    }, [categoryName]);
+
     return (
         <div>
             <div className="breadcumb-area bg-img bg-overlay" style={{ backgroundImage: `url("img/bg-img/breadcumb3.jpg")` }}>
@@ -49,17 +72,20 @@ const { recipes } = useRecipeContext();
 
                 <section className="best-receipe-area">
                     <div className="container">
+
                         <ul className="menu-categories">
-                            {/* <li><div data-to="/catalog/breakfasts" onClick={() => setCategoryName('breakfast')}>Закуски</div></li>
-                            <li><div data-to="/catalog/salads"  onClick={() => setCategoryName('salads')}>Салати</div></li>
-                            <li><div data-to="/catalog/soups">Супи</div></li>
-                            <li><div data-to="/catalog/appetizers">Предястия</div></li>
-                            <li><div data-to="/catalog/main-dishes">Основни ястия</div></li>
-                            <li><div data-to="/catalog/desserts">Десерти</div></li>
-                            <li><div data-to="/catalog/bread"  onClick={() => setCategoryName('bread')}>Хляб</div></li> */}
+                            <li><div data-is-active={categoryName == 'Всички' ? 1 : 0} onClick={() => setCategoryName('Всички')}>Всички рецепти</div></li>
+                            <li><div data-is-active={categoryName == 'Закуски' ? 1 : 0} onClick={() => setCategoryName('Закуски')}>Закуски</div></li>
+                            <li><div data-is-active={categoryName == 'Салати' ? 1 : 0} onClick={() => setCategoryName('Салати')}>Салати</div></li>
+                            <li><div data-is-active={categoryName == 'Супи' ? 1 : 0} onClick={() => setCategoryName('Супи')}>Супи</div></li>
+                            <li><div data-is-active={categoryName == 'Предястия' ? 1 : 0} onClick={() => setCategoryName('Предястия')}>Предястия</div></li>
+                            <li><div data-is-active={categoryName == 'Основни ястия' ? 1 : 0} onClick={() => setCategoryName('Основни ястия')}>Основни ястия</div></li>
+                            <li><div data-is-active={categoryName == 'Десерти' ? 1 : 0} onClick={() => setCategoryName('Десерти')}>Десерти</div></li>
+                            <li><div data-is-active={categoryName == 'Хляб' ? 1 : 0} onClick={() => setCategoryName('Хляб')}>Хляб</div></li>
                         </ul>
 
-                        <div className="row">
+
+                        {filteredRecipes.length === 0 && (<div className="row">
                             {recipes.map(x =>
                                 <CatalogItem key={x._id} {...x} />
                             )}
@@ -70,6 +96,24 @@ const { recipes } = useRecipeContext();
                                 </div>
                             )}
                         </div>
+                        )}
+
+
+                        {filteredRecipes && (
+                            <div className="row">
+                                {filteredRecipes.map(x =>
+                                    <CategoryItem key={x._id} {...x} />
+                                )}
+
+                                {filteredRecipes.length === 0 && (
+                                    <div className="no-recipes">
+                                        <p>No recipes yet!</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+
                     </div>
                 </section>
 

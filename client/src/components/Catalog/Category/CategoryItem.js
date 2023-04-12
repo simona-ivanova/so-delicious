@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const CatalogItem = ({
+export const CategoryItem = ({
     _id,
     title,
     category,
@@ -14,7 +14,7 @@ export const CatalogItem = ({
 
                 <div className="receipe-content">
                     <Link to={`/catalog/${_id}`}> <h5>{title}</h5> </Link>
-                    {/* <Link to={`/catalog`}> <h6>{category}</h6> </Link> */}
+                    {/* <Link to={`/catalog/category`}> <h6>{category}</h6> </Link> */}
                 </div>
 
             </div>

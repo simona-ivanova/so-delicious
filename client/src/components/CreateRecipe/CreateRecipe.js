@@ -18,7 +18,6 @@ export const CreateRecipe = () => {
 
     const options = ['Избери категория','Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
 
-
     return (
 
         <div className="contact-area section-padding-60">
