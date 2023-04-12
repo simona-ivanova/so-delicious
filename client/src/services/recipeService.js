@@ -17,7 +17,7 @@ export const recipeServiceFactory = (token) => {
 
         return result;
     };
-
+    
     const create = async (recipeData) => {
         const result = await request.post(baseUrl, recipeData);
 
