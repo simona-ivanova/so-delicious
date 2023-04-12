@@ -1875,33 +1875,6 @@ textarea:focus {
     color: #40ba37;
 }
 
-.contact-form-area .form-control {
-    height: 52px !important;
-    width: 100%;
-    background-color: #f3f5f8;
-    font-size: 12px;
-    font-style: italic;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    border: none;
-    border-left: 3px solid #f3f5f8;
-    border-radius: 0;
-    padding: 15px 30px;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.contact-form-area .form-control:focus {
-    border-left: 3px solid #40ba37;
-    box-shadow: none;
-}
-
-.contact-form-area textarea.form-control {
-    height: 200px;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
 /* :: 19.0 Elements Area CSS */
 .elements-title h2 {
     font-size: 30px;
