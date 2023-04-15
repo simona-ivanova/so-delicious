@@ -5,15 +5,25 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { useForm } from '../../hooks/useForm';
 
 export const Login = () => {
-  const { onLoginSubmit } = useContext(AuthContext);
+  const { onLoginSubmit, serverError } = useContext(AuthContext);
   const { values, changeHandler, onSubmitLogin, errors } = useForm({
     email: '',
     password: '',
   }, onLoginSubmit);
 
+
   return (
 
     <div className="contact-area section-padding-60">
+
+      {serverError && (
+
+        <div className="errorContainer">
+          <p>Невалиден имейл или парола!</p>
+        </div>
+
+      )}
+
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -61,8 +71,10 @@ export const Login = () => {
                 </div>
               </form>
 
-              <p>Нямаш профил?</p>
-              <Link to="/register">Регистрация</Link>
+              <div className="bottom-line-login">
+                <p>Нямаш профил?</p>
+                <Link to="/register">Регистрация</Link>
+              </div>
 
             </div>
           </div>
