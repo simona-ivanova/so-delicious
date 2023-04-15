@@ -22,27 +22,8 @@ import { Search } from './components/Search/Search';
 import { RouteGuard } from './components/common/RouteGuard';
 import { RecipeOwner } from './components/common/RecipeOwner';
 
-// import { Category } from './components/Catalog/Category/Category';
-// import { authServiceFactory } from './services/authService';
-// import { FavouritesList } from './components/FavouritesList/FavouritesList';
 
 function App() {
-
-  // const [favorites, setFavorites] = useState([]);
-
-  // const addToFavorite = (recipe) => {
-
-  // setFavorites(state => [state, recipe]);
-  // }
-
-
-  // const onProfileEditSubmit = async (values) => {
-  //   const result = await authServiceFactory.edit(values._id, values);
-
-  //   setRecipes(state => state.map(x => x._id === values._id ? result : x));
-
-  //   navigate(`/catalog/${values._id}`);
-  // }
 
   return (
     <AuthProvider>
@@ -69,10 +50,8 @@ function App() {
             } />
             <Route path='/create' element={<CreateRecipe />} />
           </Route>
-
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          {/* <Route path='/catalog/:category' element={<Category recipes={recipes}/>} /> */}
         </Routes>
 
         <Footer />
