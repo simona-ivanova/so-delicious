@@ -1,4 +1,4 @@
-import "./AddComment.css";
+import styles from "./AddComment.module.css";
 import { useForm } from "../../hooks/useForm";
 
 export const AddComment = ({
@@ -19,13 +19,14 @@ export const AddComment = ({
 
             <div className="row">
                 <div className="col-12">
-                    <div className="contact-form-area comment">
+                    <div className={styles["contact-form-area"]}>
+                        <div className={styles["comment"]}>
                         <form onSubmit={onSubmitComment}>
                             <div className="row">
                                 <div className="col-12">
                                     <textarea
                                         name="comment"
-                                        className="form-control"
+                                        className={styles["form-control"]}
                                         id="comment"
                                         cols="30"
                                         rows="10"
@@ -40,6 +41,7 @@ export const AddComment = ({
                                 </div>
                             </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>
