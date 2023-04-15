@@ -1,7 +1,8 @@
+import "./About.css"
 export const About = () => {
     return (
         <div>
-            <div className="breadcumb-area bg-img bg-overlay" style={{ backgroundImage: `url("img/bg-img/2018_06_27_48298_1530062479._large.jpg")` }}>
+            <div className="breadcumb-area bg-img bg-overlay about" style={{ backgroundImage: `url("img/bg-img/2018_06_27_48298_1530062479._large.jpg")`}}>
                 <div className="container h-100">
                     <div className="row h-100 align-items-center">
                         <div className="col-12">
@@ -14,7 +15,7 @@ export const About = () => {
             </div>
 
             <section className="about-area section-padding-80">
-                <div className="container">
+                <div className="container-about">
                     <div className="row">
                         <div className="col-12">
                             <div className="section-heading">
@@ -30,9 +31,7 @@ export const About = () => {
                         </div>
                     </div>
 
-                    <div className="row align-items-center mt-70">
-
-                    </div>
+                   
 
                     <div className="row">
                         <div className="col-12">
