@@ -1,0 +1,9 @@
+.single-recipe{
+    max-width: 220px;
+    margin: auto;
+ }
+
+ .catalog-img {
+    width: 220px;
+    height: 300px;
+}
