@@ -1,4 +1,4 @@
-import "./CreateRecipe.css";
+import styles from "./CreateRecipe.module.css";
 import { useRecipeContext } from '../../contexts/RecipeContext';
 import { useForm } from '../../hooks/useForm';
 
@@ -16,7 +16,7 @@ export const CreateRecipe = () => {
         steps: '',
     }, onCreateRecipeSubmit);
 
-    const options = ['Избери категория','Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
+    const options = ['Избери категория', 'Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
 
     return (
 
@@ -24,7 +24,7 @@ export const CreateRecipe = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <div className="section-heading">
+                        <div className={styles["section-heading"]}>
                             <h3>Създай рецепта</h3>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ export const CreateRecipe = () => {
 
                 <div className="row">
                     <div className="col-12">
-                        <div className="contact-form-area create-recipe">
+                        <div className={styles["contact-form-area"]}>
                             <form onSubmit={onSubmitRecipe}>
                                 <div className="row">
 
@@ -42,14 +42,17 @@ export const CreateRecipe = () => {
                                             onChange={changeHandler}
                                             name="title"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Заглавие"
                                         />
                                         {errors.title && <span>{errors.title}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
-                                        <select onChange={changeHandler} value = {values.category} className="form-control" name="category">
+                                        <select onChange={changeHandler}
+                                            value={values.category}
+                                            className={styles["form-control"]}
+                                            name="category">
                                             {options.map((option, index) => {
                                                 return <option key={index} >
                                                     {option}
@@ -65,7 +68,7 @@ export const CreateRecipe = () => {
                                             onChange={changeHandler}
                                             name="serving"
                                             type="number"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Порции"
                                         />
                                         {errors.serving && <span>{errors.serving}</span>}
@@ -77,7 +80,7 @@ export const CreateRecipe = () => {
                                             onChange={changeHandler}
                                             name="imageUrl1"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Снимка 1"
                                         />
                                         {errors.imageUrl1 && <span>{errors.imageUrl1}</span>}
@@ -89,7 +92,7 @@ export const CreateRecipe = () => {
                                             onChange={changeHandler}
                                             name="imageUrl2"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Снимка 2"
                                         />
                                         {errors.imageUrl2 && <span>{errors.imageUrl2}</span>}
@@ -101,7 +104,7 @@ export const CreateRecipe = () => {
                                             onChange={changeHandler}
                                             name="prepTime"
                                             type="number"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Време за подготовка"
                                         />
                                         {errors.prepTime && <span>{errors.prepTime}</span>}
@@ -113,7 +116,7 @@ export const CreateRecipe = () => {
                                             onChange={changeHandler}
                                             name="cookingTime"
                                             type="number"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Време за готвене"
                                         />
                                         {errors.cookingTime && <span>{errors.cookingTime}</span>}
@@ -124,7 +127,7 @@ export const CreateRecipe = () => {
                                             value={values.ingredients}
                                             onChange={changeHandler}
                                             name="ingredients"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Въведи всяка съставка на нов ред..."
                                         >
                                         </textarea>
@@ -138,7 +141,7 @@ export const CreateRecipe = () => {
                                             onChange={changeHandler}
                                             name="steps"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Въведи всяка стъпка на нов ред..."
                                         >
                                         </textarea>
