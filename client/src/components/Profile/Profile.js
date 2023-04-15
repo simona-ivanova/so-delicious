@@ -1,8 +1,6 @@
-
 import './Profile.css';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
-import { FavouritesList } from '../FavouritesList/FavouritesList';
 
 
 export const Profile = () => {
