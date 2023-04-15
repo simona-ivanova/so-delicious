@@ -1,0 +1,41 @@
+.about-page {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.container-about {
+ text-align: center;
+ margin-left: 200px;
+ margin-right: 200px;
+}
+.container-about .section-heading {
+   margin-bottom: 15px;
+}
+
+.container-about .section-heading h3 {
+    padding-bottom: 25px;
+    margin-top: 15px;
+}
+
+.container-about .section-heading h4 {
+    padding-bottom: 15px;
+}
+
+.container-about .section-heading p {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.about-img {
+    max-width: 656px;
+    max-height: 437px;
+   margin: auto;
+   margin-bottom: 50px;
+}
+
+
+.about-area {
+    padding-top: 20px;
+    
+}
+
