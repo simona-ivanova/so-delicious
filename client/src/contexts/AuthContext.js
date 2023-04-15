@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { authServiceFactory } from '../services/authService';
@@ -10,6 +10,7 @@ export const AuthProvider = ({
     children,
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
+    const [serverError, setServerError] = useState(null);
     const navigate = useNavigate();
 
     const authService = authServiceFactory(auth.accessToken);
@@ -22,7 +23,8 @@ export const AuthProvider = ({
             console.log(result);
             navigate('/');
         } catch (error) {
-            console.log('There is a problem');
+            setServerError(error);
+            return error
         };
 
     };
@@ -47,7 +49,6 @@ export const AuthProvider = ({
         await authService.logout();
         setAuth({});
 
-        localStorage.clear();
         navigate('/');
     };
 
@@ -55,6 +56,7 @@ export const AuthProvider = ({
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
+        serverError,
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,
