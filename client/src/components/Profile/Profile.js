@@ -32,7 +32,7 @@ export const Profile = () => {
                                 <p><strong>Фамилия:</strong> {userLastName}</p>
                                 <p><strong>Имейл:</strong> {userEmail}</p>
 
-                                <Link to={`/profile/${userId}/edit`} className="btn delicious-btn mt-20 custom-button" >Редактирай</Link>
+
                             </div>
 
                         </div>

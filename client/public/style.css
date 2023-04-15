@@ -1006,7 +1006,7 @@ textarea:focus {
 }
 
 .single-best-receipe-area .receipe-content {
-    padding-top: 30px;
+    padding-top: 20px;
     text-align: center;
 }
 
@@ -1016,6 +1016,7 @@ textarea:focus {
     font-weight: 400;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
+
 }
 
 .single-best-receipe-area .receipe-content h5:hover,

@@ -1,4 +1,3 @@
-import './Header.css';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -79,9 +78,9 @@ export const Header = () => {
                   </ul>
 
 
-                  <div className="search-btn">
+                  {/* <div className="search-btn">
                     <i className="fa fa-search" aria-hidden="true"></i>
-                  </div>
+                  </div> */}
 
                 </div>
 
