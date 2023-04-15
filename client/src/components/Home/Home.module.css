@@ -1,4 +1,4 @@
-.hero-area .owl-carousel .owl-nav button.owl-prev, .hero-area .owl-carousel .owl-nav button.owl-next, .hero-area .owl-carousel button.owl-dot {
+/* .hero-area .owl-carousel .owl-nav button.owl-prev, .hero-area .owl-carousel .owl-nav button.owl-next, .hero-area .owl-carousel button.owl-dot {
     background-color: transparent;
     width: 40px;
     height: 40px;
@@ -17,9 +17,9 @@
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     border-bottom: 3px solid #1c8314;
-}
+} */
 
-.hero-area .owl-carousel .owl-nav button.owl-prev:focus, 
+/* .hero-area .owl-carousel .owl-nav button.owl-prev:focus, 
 .hero-area .owl-carousel .owl-nav button.owl-next:focus{
     outline: none;
 }
@@ -33,12 +33,11 @@
 .hero-area .owl-carousel:hover .owl-nav button.owl-next {
     opacity: 1;
     visibility: visible;
-}
+} */
 
-.single-best-receipe-area img {
-   
-        max-height: 300px;
-        max-width: 280px;
+.hero-area {
+max-width: 1110px;
+margin: auto;
 
 }
 

@@ -1,4 +1,4 @@
-import './Home.css';
+import styles from "./Home.module.css";
 import CarouselFadeExample from './HomeCarousel/HomeCarousel';
 import { useRecipeContext } from '../../contexts/RecipeContext';
 import { LastRecipesItem } from './LastRecipesItem/LastRecipesItem';
@@ -14,10 +14,11 @@ export const Home = () => {
 
     return (
         <>
-            <section className="hero-area">
-                <CarouselFadeExample images={images} />
-            </section>
-
+            <div className={styles["hero-area"]}>
+                <section >
+                    <CarouselFadeExample images={images} />
+                </section>
+            </div>
             <section className="top-catagory-area section-padding-80-0">
 
             </section>
