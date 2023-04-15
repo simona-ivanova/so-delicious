@@ -3,9 +3,7 @@ import { useRecipeContext } from '../../contexts/RecipeContext';
 
 import { CatalogItem } from './CatalogItem/CatalogItem';
 
-import { Link, Navigate, redirect } from 'react-router-dom';
 import { CategoryItem } from './Category/CategoryItem';
-import { Category } from '../Category';
 import { useState, useEffect } from 'react';
 
 export const Catalog = () => {
@@ -103,12 +101,6 @@ export const Catalog = () => {
                             <div className="row">
                                 {filteredRecipes.map(x =>
                                     <CategoryItem key={x._id} {...x} />
-                                )}
-
-                                {filteredRecipes.length === 0 && (
-                                    <div className="no-recipes">
-                                        <p>No recipes yet!</p>
-                                    </div>
                                 )}
                             </div>
                         )}
