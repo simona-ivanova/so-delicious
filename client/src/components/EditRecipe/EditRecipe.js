@@ -1,4 +1,4 @@
-import "./EditRecipe.css"
+import styles from "./EditRecipe.module.css"
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useRecipeContext } from "../../contexts/RecipeContext";
@@ -33,7 +33,7 @@ export const EditRecipe = () => {
 
 
 
-    const options = ['Избери категория','Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
+    const options = ['Избери категория', 'Закуски', 'Салати', 'Супи', 'Предястия', 'Основни ястия', 'Десерти', 'Хляб'];
 
     return (
 
@@ -41,7 +41,7 @@ export const EditRecipe = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <div className="section-heading">
+                        <div className={styles["section-heading"]}>
                             <h3>Редактиране</h3>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ export const EditRecipe = () => {
 
                 <div className="row">
                     <div className="col-12">
-                        <div className="contact-form-area edit-recipe">
+                        <div className={styles["contact-form-area"]}>
                             <form methd="post" onSubmit={onSubmitRecipe}>
                                 <div className="row">
 
@@ -59,14 +59,17 @@ export const EditRecipe = () => {
                                             onChange={changeHandler}
                                             name="title"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Заглавие"
                                         />
                                         {errors.title && <span>{errors.title}</span>}
                                     </div>
 
                                     <div className="col-12 col-lg-4">
-                                    <select onChange={changeHandler} value = {values.category} className="form-control" name="category">
+                                        <select onChange={changeHandler}
+                                            value={values.category}
+                                            className={styles["form-control"]}
+                                            name="category">
                                             {options.map((option, index) => {
                                                 return <option key={index} >
                                                     {option}
@@ -82,7 +85,7 @@ export const EditRecipe = () => {
                                             onChange={changeHandler}
                                             name="serving"
                                             type="number"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Порции"
                                         />
                                         {errors.serving && <span>{errors.serving}</span>}
@@ -94,7 +97,7 @@ export const EditRecipe = () => {
                                             onChange={changeHandler}
                                             name="imageUrl1"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Снимка 1"
                                         />
                                         {errors.imageUrl1 && <span>{errors.imageUrl1}</span>}
@@ -106,7 +109,7 @@ export const EditRecipe = () => {
                                             onChange={changeHandler}
                                             name="imageUrl2"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Снимка 2"
                                         />
                                         {errors.imageUrl2 && <span>{errors.imageUrl2}</span>}
@@ -118,7 +121,7 @@ export const EditRecipe = () => {
                                             onChange={changeHandler}
                                             name="prepTime"
                                             type="number"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Време за подготовка"
                                         />
                                         {errors.prepTime && <span>{errors.prepTime}</span>}
@@ -130,7 +133,7 @@ export const EditRecipe = () => {
                                             onChange={changeHandler}
                                             name="cookingTime"
                                             type="number"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Време за готвене"
                                         />
                                         {errors.cookingTime && <span>{errors.cookingTime}</span>}
@@ -141,7 +144,7 @@ export const EditRecipe = () => {
                                             value={values.ingredients}
                                             onChange={changeHandler}
                                             name="ingredients"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Въведи всяка съставка на нов ред...">
                                         </textarea>
                                         {errors.ingredients && <span>{errors.ingredients}</span>}
@@ -154,7 +157,7 @@ export const EditRecipe = () => {
                                             onChange={changeHandler}
                                             name="steps"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Въведи всяка стъпка на нов ред...">
                                         </textarea>
                                         {errors.steps && <span>{errors.steps}</span>}
