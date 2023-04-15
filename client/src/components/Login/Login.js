@@ -1,4 +1,4 @@
-import "./Login.css"
+import styles from "./Login.module.css"
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -27,7 +27,7 @@ export const Login = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="section-heading">
+            <div className={styles["section-heading"]}>
               <h3>Вход</h3>
             </div>
           </div>
@@ -36,42 +36,46 @@ export const Login = () => {
         <div className="row">
           <div className="col-12">
 
-            <div className="contact-form-area login">
+            <div className={styles["contact-form-area"]}>
+
               <form method="post" onSubmit={onSubmitLogin}>
-                <div className="row">
+       
+                  <div className={styles["row"]}>
 
-                  <div className="col-12 col-lg-4">
-                    <input
-                      value={values.email}
-                      onChange={changeHandler}
-                      name="email"
-                      type="email"
-                      className="form-control"
-                      placeholder="Имейл"
-                    />
-                    {errors.email && <span>{errors.email}</span>}
+                    <div className={styles["col-12"]}>
+                      <input
+                        value={values.email}
+                        onChange={changeHandler}
+                        name="email"
+                        type="email"
+                        className={styles["form-control"]}
+                        placeholder="Имейл"
+                      />
+                      {errors.email && <span>{errors.email}</span>}
+                    </div>
+
+                    <div className={styles["col-12"]}>
+                      <input
+                        value={values.password}
+                        onChange={changeHandler}
+                        name="password"
+                        type="password"
+                        className={styles["form-control"]}
+                        placeholder="Парола"
+                      />
+                      {errors.password && <span>{errors.password}</span>}
+                    </div>
+
+
+                    <div className="col-12 text-center">
+                      <input className="btn delicious-btn mt-30" type="submit" value="Вход" />
+                    </div>
                   </div>
-
-                  <div className="col-12 col-lg-4">
-                    <input
-                      value={values.password}
-                      onChange={changeHandler}
-                      name="password"
-                      type="password"
-                      className="form-control"
-                      placeholder="Парола"
-                    />
-                    {errors.password && <span>{errors.password}</span>}
-                  </div>
-
-
-                  <div className="col-12 text-center">
-                    <input className="btn delicious-btn mt-30" type="submit" value="Вход" />
-                  </div>
-                </div>
+       
               </form>
 
-              <div className="bottom-line-login">
+
+              <div className={styles["bottom-line-login"]}>
                 <p>Нямаш профил?</p>
                 <Link to="/register">Регистрация</Link>
               </div>
@@ -80,6 +84,6 @@ export const Login = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
