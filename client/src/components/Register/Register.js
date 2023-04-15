@@ -95,8 +95,10 @@ export const Register = () => {
                                 </div>
                             </form>
 
-                            <p>Вече имаш акаунт?</p>
-                            <Link to="/login">Вход</Link>
+                            <div className="bottom-line-register">
+                                <p>Вече имаш акаунт?</p>
+                                <Link to="/login">Вход</Link>
+                            </div>
 
                         </div>
                     </div>
