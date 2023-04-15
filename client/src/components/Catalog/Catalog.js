@@ -1,4 +1,4 @@
-import './Catalog.css';
+import styles from './Catalog.module.css';
 import { useRecipeContext } from '../../contexts/RecipeContext';
 
 import { CatalogItem } from './CatalogItem/CatalogItem';
@@ -53,7 +53,7 @@ export const Catalog = () => {
     }, [categoryName]);
 
     return (
-        <div>
+        <div className={styles["catalog"]}>
             <div className="breadcumb-area bg-img bg-overlay" style={{ backgroundImage: `url("img/bg-img/breadcumb3.jpg")` }}>
                 <div className="container h-100">
                     <div className="row h-100 align-items-center">
@@ -66,12 +66,12 @@ export const Catalog = () => {
                 </div>
             </div>
 
-            <div className="receipe-post-area section-padding-40">
+            <div className={styles["receipe-post-area"]}>
 
                 <section className="best-receipe-area">
                     <div className="container">
 
-                        <ul className="menu-categories">
+                        <ul className={styles["menu-categories"]}>
                             <li><div data-is-active={categoryName == 'Всички' ? 1 : 0} onClick={() => setCategoryName('Всички')}>Всички рецепти</div></li>
                             <li><div data-is-active={categoryName == 'Закуски' ? 1 : 0} onClick={() => setCategoryName('Закуски')}>Закуски</div></li>
                             <li><div data-is-active={categoryName == 'Салати' ? 1 : 0} onClick={() => setCategoryName('Салати')}>Салати</div></li>

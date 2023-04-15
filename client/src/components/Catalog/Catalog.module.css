@@ -1,0 +1,30 @@
+.catalog {
+    max-width: 1300px;
+    margin: auto;
+}
+
+
+.end p {
+    color: #40ba37;
+    font-size: 18px;
+    line-height: 4;
+    font-weight: 600;
+    margin: 0;
+}
+
+.menu-categories {
+    text-align: center;
+}
+
+.menu-categories li div[data-is-active="1"] {
+    font-weight: 800;
+    color: #40ba37;
+}
+
+.menu-categories li {
+    display: inline-block;
+    margin: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
