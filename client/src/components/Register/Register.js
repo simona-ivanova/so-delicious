@@ -1,4 +1,4 @@
-import './Register.css'
+import styles from './Register.module.css'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { useForm } from '../../hooks/useForm';
@@ -20,7 +20,7 @@ export const Register = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <div className="section-heading">
+                        <div className={styles["section-heading"]}>
                             <h3>Регистрация</h3>
                         </div>
                     </div>
@@ -28,62 +28,62 @@ export const Register = () => {
 
                 <div className="row">
                     <div className="col-12">
-                        <div className="contact-form-area register">
+                        <div className={styles["contact-form-area"]}>
                             <form method="post" onSubmit={onSubmitRegister}>
-                                <div className="row">
-                                    <div className="col-12 col-lg-4">
+                                <div className={styles["row"]}>
+                                    <div className={styles["col-12"]}>
                                         <input
                                             value={values.firstName}
                                             onChange={changeHandler}
                                             name="firstName"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Име"
                                         />
                                         {errors.firstName && <span>{errors.firstName}</span>}
 
                                     </div>
-                                    <div className="col-12 col-lg-4">
+                                    <div className={styles["col-12"]}>
                                         <input
                                             value={values.lastName}
                                             onChange={changeHandler}
                                             name="lastName"
                                             type="text"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Фамилия"
                                         />
                                         {errors.lastName && <span>{errors.lastName}</span>}
                                     </div>
-                                    <div className="col-12 col-lg-4">
+                                    <div className={styles["col-12"]}>
                                         <input
                                             value={values.email}
                                             onChange={changeHandler}
                                             name="email"
                                             type="email"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Имейл"
                                         />
                                         {errors.email && <span>{errors.email}</span>}
                                     </div>
-                                    <div className="col-12 col-lg-4">
+                                    <div className={styles["col-12"]}>
                                         <input
                                             value={values.password}
                                             onChange={changeHandler}
                                             name="password"
                                             type="password"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Парола"
                                         />
                                         {errors.password && <span>{errors.password}</span>}
                                         {errors.repeatPassword && <span>{errors.repeatPassword}</span>}
                                     </div>
-                                    <div className="col-12 col-lg-4">
+                                    <div className={styles["col-12"]}>
                                         <input
                                             value={values.repeatPassword}
                                             onChange={changeHandler}
                                             name="repeatPassword"
                                             type="password"
-                                            className="form-control"
+                                            className={styles["form-control"]}
                                             placeholder="Повтори парола"
                                         />
                                         {errors.repeatPassword && <span>{errors.repeatPassword}</span>}
@@ -95,7 +95,7 @@ export const Register = () => {
                                 </div>
                             </form>
 
-                            <div className="bottom-line-register">
+                            <div className={styles["bottom-line-register"]}>
                                 <p>Вече имаш акаунт?</p>
                                 <Link to="/login">Вход</Link>
                             </div>
