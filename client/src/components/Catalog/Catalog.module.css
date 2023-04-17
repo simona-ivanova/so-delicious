@@ -3,15 +3,6 @@
     margin: auto;
 }
 
-
-.end p {
-    color: #40ba37;
-    font-size: 18px;
-    line-height: 4;
-    font-weight: 600;
-    margin: 0;
-}
-
 .menu-categories {
     text-align: center;
 }
@@ -26,5 +17,5 @@
     margin: 25px;
     text-transform: uppercase;
     font-weight: 600;
-
+    cursor: pointer;
 }

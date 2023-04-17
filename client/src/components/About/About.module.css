@@ -39,3 +39,9 @@
     
 }
 
+@media only screen and (max-width: 1024px) {
+    .container-about {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

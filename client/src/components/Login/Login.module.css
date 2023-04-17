@@ -30,7 +30,7 @@
     transition-duration: 500ms;
 }
 
-.login span {
+.col-12 span {
     color: red;
     margin: 10px;
     display: block;
@@ -71,3 +71,4 @@ div .bottom-line-login {
     color: #721c24;
     display: inline;
 }
+

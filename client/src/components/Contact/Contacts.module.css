@@ -64,3 +64,33 @@
     margin-bottom: 50px;
 
 }
+
+.messageContainer {
+    background-color: #a5eda0;
+   max-width: 380px;
+   margin-left: 60px;
+   border-color: #106d09;
+   padding-left: 20px;
+
+}
+
+.messageContainer p{
+color: #106d09;
+font-size: 18px;
+
+}
+
+.errorContainer {
+background-color: #e5b4b1;
+   max-width: 255px;
+   margin-left: 60px;
+   border-color: #a41111;
+   padding-left: 20px;
+
+}
+
+.errorContainer p{
+color: #a41111;
+font-size: 18px;
+
+}

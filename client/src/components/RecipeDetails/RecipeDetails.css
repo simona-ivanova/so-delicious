@@ -68,3 +68,16 @@
 .receipe-content-details h6:focus {
     color: #40ba37;
 }
+
+.end p {
+    color: #40ba37;
+    font-size: 18px;
+    line-height: 4;
+    font-weight: 600;
+    margin: 0;
+}
+
+.only-authenticated {
+    font-weight: 500;
+    color: #000000;
+}
