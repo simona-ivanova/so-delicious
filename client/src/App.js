@@ -20,6 +20,7 @@ import { EditRecipe } from './components/EditRecipe/EditRecipe';
 import { Search } from './components/Search/Search';
 import { RouteGuard } from './components/common/RouteGuard';
 import { RecipeOwner } from './components/common/RecipeOwner';
+import { NotFound } from './components/NotFound/NotFound';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           </Route>
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<NotFound />}/>
         </Routes>
 
         <Footer />

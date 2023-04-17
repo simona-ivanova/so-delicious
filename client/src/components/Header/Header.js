@@ -60,7 +60,7 @@ export const Header = () => {
 
                 <div className="classynav">
                   <ul>
-                    <li className="active"><a href="/">Начало</a></li>
+                    <li className="active"><Link to="/">Начало</Link></li>
                     <li><Link to="/catalog">Рецепти</Link>
                       {/* <ul className="dropdown">
                         <li><Link to="/catalog">Закуски</Link></li>

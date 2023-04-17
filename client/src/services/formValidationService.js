@@ -119,3 +119,4 @@ export const validateFormComment = (formData) => {
 
     return errors;
 }
+

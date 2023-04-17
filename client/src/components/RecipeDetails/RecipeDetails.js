@@ -53,21 +53,21 @@ export const RecipeDetails = () => {
 
     const onCommentSubmit = async (values) => {
 
-            const response = await commentServise.create(recipeId, values.comment);
+        const response = await commentServise.create(recipeId, values.comment);
 
-            setRecipe(state => ({
-                ...state,
-                comments: [
-                    ...state.comments,
-                    {
-                        ...response,
-                        author: {
-                            email: userEmail,
-                            firstName: userFirstName,
-                        }
+        setRecipe(state => ({
+            ...state,
+            comments: [
+                ...state.comments,
+                {
+                    ...response,
+                    author: {
+                        email: userEmail,
+                        firstName: userFirstName,
                     }
-                ],
-            }));
+                }
+            ],
+        }));
     };
 
 
@@ -108,8 +108,6 @@ export const RecipeDetails = () => {
     const handlePrint = useReactToPrint({
         content: () => componentRef.current
     });
-
-
 
     if (recipe.steps && recipe.ingredients) {
         const ingredients = recipe.ingredients.split('\n');
@@ -211,7 +209,7 @@ export const RecipeDetails = () => {
                             )}
 
                             {isAuthenticated ? <AddComment onCommentSubmit={onCommentSubmit} /> :
-                                <p>Само регистрирани потребители могат да публикуват коментар.</p>}
+                                <p className="only-authenticated">Само регистрирани потребители могат да публикуват коментар.</p>}
 
                         </div>
                     </div>

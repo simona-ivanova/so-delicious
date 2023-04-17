@@ -18,7 +18,7 @@ export const Login = () => {
 
       {serverError && (
 
-        <div className="errorContainer">
+        <div className={styles["errorContainer"]}>
           <p>Невалиден имейл или парола!</p>
         </div>
 

@@ -10,6 +10,7 @@ export const useLocalStorage = (key, initialValue) => {
                 return persistedState;
             }
         } catch (err) {
+            //TODO: add error for localstorage
             console.log(err);
             return initialValue;
         }
