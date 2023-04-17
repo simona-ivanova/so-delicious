@@ -18,6 +18,7 @@ The user can:
 * print Recipe Details 
 * login
 * register
+* send a message to an email
 
 ### Private part
 
@@ -29,6 +30,7 @@ The private part is accessible with authentication. The user can:
 * leave comments
 * print Recipe Details 
 * view Profile
+* send a message to an email
 
 ### Administrative part
 
