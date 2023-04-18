@@ -20,11 +20,9 @@ So Delicious App is a recipe app built with React 18.2.0. This is a project, cre
 
 The service is initialized with two users, which can be used for immediate testing:
 
-* Normal User
-peter@abv.bg : 123456
+* Normal User - peter@abv.bg : 123456
 
-* Administrator User
-simona@gmail.com : 123456
+* Administrator User - simona@gmail.com : 123456
 
 ### Publick part
 
