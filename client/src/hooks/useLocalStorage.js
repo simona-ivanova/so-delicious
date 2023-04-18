@@ -10,14 +10,12 @@ export const useLocalStorage = (key, initialValue) => {
                 return persistedState;
             }
         } catch (err) {
-            //TODO: add error for localstorage
             console.log(err);
             return initialValue;
         }
     });
 
     const setLocalStorageState = (value) => {
-        // TODO: if it is functon?
 
         setState(value);
         localStorage.setItem(key, JSON.stringify(value));

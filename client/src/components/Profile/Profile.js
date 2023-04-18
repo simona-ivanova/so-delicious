@@ -5,7 +5,7 @@ import { useAuthContext } from '../../contexts/AuthContext';
 
 export const Profile = () => {
 
-    const { userId, userFirstName, userLastName, userEmail } = useAuthContext();
+    const { userId, userFirstName, userLastName, userEmail, isAdmin } = useAuthContext();
 
     return (
         <>
@@ -15,6 +15,9 @@ export const Profile = () => {
                     <div className="col-12">
                         <div className="breadcumb-text text-center">
                             <h2>Профил</h2>
+                        {isAdmin && (
+                             <h3 className="admin">Администратор</h3>
+                        )}
                         </div>
                     </div>
                 </div>

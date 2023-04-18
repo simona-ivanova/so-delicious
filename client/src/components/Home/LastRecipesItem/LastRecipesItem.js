@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export const LastRecipesItem = ({
     _id,
     title,
-    category,
     imageUrl1
 }) => {
     return (
@@ -16,7 +15,6 @@ export const LastRecipesItem = ({
                  
                         <div className="receipe-content">
                             <h5>{title}</h5>
-                            {/* <h6>{category}</h6> */}
                         </div>
         
                 </Link>

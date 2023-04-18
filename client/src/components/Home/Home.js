@@ -37,7 +37,7 @@ export const Home = () => {
 
                         {lastRecipes.map(x =>
                             <LastRecipesItem key={x._id} {...x} />
-                        )}
+                        )} 
 
                     </div>
                 </div>
