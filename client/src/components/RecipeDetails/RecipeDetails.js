@@ -18,7 +18,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const RecipeDetails = () => {
     const { recipeId } = useParams();
-    const { isAdmin, isAuthenticated, userEmail, userFirstName } = useAuthContext();
+    const { isAdmin, userId, isAuthenticated, userEmail, userFirstName } = useAuthContext();
     const { deleteRecipe } = useRecipeContext();
     const [recipe, setRecipe] = useState({});
 
@@ -87,13 +87,12 @@ export const RecipeDetails = () => {
     }
 
 
-    // const isOwner = recipe._ownerId === userId;
+    const isOwner = recipe._ownerId === userId;
 
     const onDeleteClick = async () => {
 
         //eslint-disable-next-line no-restricted-globals
         const result = confirm(`Сигурен ли си, че искаш да изтриеш "${recipe.title}?"`);
-        // showDeletedDialog(true);
 
         if (result) {
             await recipeService.delete(recipe._id);
@@ -120,7 +119,7 @@ export const RecipeDetails = () => {
                         <div className="row">
                             <div className="col-12">
 
-                                {isAdmin && (
+                                {isAdmin || isOwner && (
                                     <div className="buttons">
                                         <Link to={`/catalog/${recipe._id}/edit`} className="btn delicious-btn">Редактирай</Link>
                                         <button onClick={onDeleteClick} className="btn delicious-btn">Изтрий</button>
@@ -138,23 +137,12 @@ export const RecipeDetails = () => {
                                         <div className="actions">
 
                                             <i className="fa fa-print" aria-hidden="true" onClick={handlePrint}></i>
-                                            {/* <i className="fa fa-heart" aria-hidden="true" onClick={() => addFavoriteRecipe(recipe)}>
-                                                {isFavorited 
-                                                    ? "Remove from Favorites"
-                                                    : "Add to Favorites"} </i> */}
-
                                             <i className="fa fa-heart" aria-hidden="true" onClick={addFavoriteRecipe}></i>
-
-                                            {/* <i className="fa fa-heart" aria-hidden="true" onClick={toggleFavorite}>
-                                                {favorites.some((favRecipe) => favRecipe === recipe)
-                                                    ? "Remove from Favorites"
-                                                    : "Add to Favorites"} </i> */}
 
                                         </div>
 
                                         <div className="receipe-content-details">
                                             <h2>{recipe.title}</h2>
-                                            {/* <Link to={`/catalog`}> <h6>{recipe.category}</h6> </Link> */}
                                         </div>
 
                                         <div className="receipe-duration">

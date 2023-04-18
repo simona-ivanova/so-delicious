@@ -22,7 +22,7 @@ The service is initialized with two users, which can be used for immediate testi
 
 * Normal User - peter@abv.bg : 123456
 
-* Administrator User - simona@gmail.com : 123456
+* Administrator User - simona@gmail.bg : 123456
 
 ### Publick part
 
