@@ -6,8 +6,6 @@ import { useAuthContext } from '../../contexts/AuthContext';
 export const Profile = () => {
 
     const { userId, userFirstName, userLastName, userEmail } = useAuthContext();
-    // const data = JSON.parse(localStorage.getItem('favourites'));
-    // console.log(data);
 
     return (
         <>
@@ -39,7 +37,6 @@ export const Profile = () => {
 
                         <div className="col-12 col-md-6 favourites">
                             <div className="wrapper">
-                                {/* <Link to={`/profile/${userId}/favouriteList`} className="btn delicious-btn mt-20 custom-button" >Любими</Link> */}
                             </div>
                             <div className="wrapper">
                                 <Link to={'/logout'} className="btn delicious-btn mt-20 logout-button" >Изход</Link>

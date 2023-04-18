@@ -32,16 +32,13 @@ export const AuthProvider = ({
     const onRegisterSubmit = async (values) => {
 
         const { repeatPassword, ...registerData } = values;
-        // if (repeatPassword !== registerData.password) {
-        //     return;
-        // }
 
         try {
             const result = await authService.register(registerData);
             setAuth(result);
             navigate('/');
         } catch (error) {
-            console.log('There is a problem');
+            console.log('Registration failed.');
         }
 
     };

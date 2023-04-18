@@ -62,25 +62,11 @@ export const Header = () => {
                   <ul>
                     <li className="active"><Link to="/">Начало</Link></li>
                     <li><Link to="/catalog">Рецепти</Link>
-                      {/* <ul className="dropdown">
-                        <li><Link to="/catalog">Закуски</Link></li>
-                        <li><Link to="/catalog/salads">Салати</Link></li>
-                        <li><Link to="/catalog/soups">Супи</Link></li>
-                        <li><Link to="/catalog/appetizers">Предястия</Link></li>
-                        <li><Link to="/catalog/main-dishes">Основни ястия</Link></li>
-                        <li><Link to="/catalog/desserts">Десерти</Link></li>
-                        <li><Link to="/catalog/bread">Хляб</Link></li>
-                      </ul> */}
                     </li>
                   {isAdmin && (  <li><Link to="/create">Създай рецепта</Link></li>)}
                     <li><Link to="/about">За мен</Link></li>
                     <li><Link to="/contact">Контакти</Link></li>
                   </ul>
-
-
-                  {/* <div className="search-btn">
-                    <i className="fa fa-search" aria-hidden="true"></i>
-                  </div> */}
 
                 </div>
 

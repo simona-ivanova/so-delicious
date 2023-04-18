@@ -14,10 +14,8 @@ import { Catalog } from './components/Catalog/Catalog';
 import { CreateRecipe } from './components/CreateRecipe/CreateRecipe';
 import { RecipeDetails } from './components/RecipeDetails/RecipeDetails';
 import { Profile } from './components/Profile/Profile';
-import { ProfileEdit } from './components/Profile/ProdileEdit/ProfileEdit'
 import { Logout } from './components/Logout/Logout';
 import { EditRecipe } from './components/EditRecipe/EditRecipe';
-import { Search } from './components/Search/Search';
 import { RouteGuard } from './components/common/RouteGuard';
 import { RecipeOwner } from './components/common/RecipeOwner';
 import { NotFound } from './components/NotFound/NotFound';
@@ -28,7 +26,6 @@ function App() {
   return (
     <AuthProvider>
       <RecipeProvider>
-        <Search />
         <Header />
 
         <Routes>
@@ -36,8 +33,6 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/profile/' element={<Profile />} />
-          <Route path='/profile/:userId/edit' element={<ProfileEdit />} />
-          {/* <Route path='/profile/:userId/favouriteList' element={<FavouritesList recipes={recipes}/>} /> */}
           <Route path='/logout' element={<Logout />} />
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/catalog/:recipeId' element={<RecipeDetails />} />
