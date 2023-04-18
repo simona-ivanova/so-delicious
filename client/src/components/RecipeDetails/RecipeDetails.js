@@ -36,10 +36,10 @@ export const RecipeDetails = () => {
                 ...recipeData,
                 comments,
             });
+        }).catch(err => {
+            console.log(err);
         });
     }, [recipeId]);
-
-
 
     useEffect(() => {
         if (favorites) {
@@ -49,7 +49,6 @@ export const RecipeDetails = () => {
         }
 
     }, []);
-
 
     const onCommentSubmit = async (values) => {
 
@@ -70,11 +69,7 @@ export const RecipeDetails = () => {
         }));
     };
 
-
-
     const images = [recipe.imageUrl1, recipe.imageUrl2];
-
-
 
     const addFavoriteRecipe = () => {
 
@@ -85,7 +80,6 @@ export const RecipeDetails = () => {
         }
 
     }
-
 
     const isOwner = recipe._ownerId === userId;
 
@@ -155,9 +149,7 @@ export const RecipeDetails = () => {
 
 
                                 <div className="col-12 col-md-4">
-
                                     <RecipeDetailCarousel images={images} />
-
                                 </div>
 
                             </div>
