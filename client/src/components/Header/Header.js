@@ -42,7 +42,7 @@ export const Header = () => {
             <nav className="classy-navbar justify-content-between" id="deliciousNav">
 
 
-              <Link to="/" className="nav-brand"><img src="img/logo.png" alt="" /></Link>
+              <Link to="/" className="nav-brand"><img src="/img/logo.png" alt="" /></Link>
 
 
               <div className="classy-navbar-toggler">
