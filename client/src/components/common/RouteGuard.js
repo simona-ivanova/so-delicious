@@ -5,9 +5,9 @@ export const RouteGuard = ({
     children,
 }) => {
 
-    const { isAdmin } = useAuthContext();
+    const { isAdmin, isOwner} = useAuthContext();
 
-    if (!isAdmin) {
+    if (!(isAdmin || isOwner)) {
         return <Navigate to='/' replace/>
     }
     return children ? children : <Outlet />
