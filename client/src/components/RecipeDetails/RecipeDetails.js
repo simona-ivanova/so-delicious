@@ -1,3 +1,4 @@
+import './RecipeDetails.css'
 import { React, useEffect, useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print'
 
@@ -12,8 +13,8 @@ import { AddComment } from '../AddComment/AddComment';
 import { RecipeDetailCarousel } from './RecipeDetailCarousel/RecipeDetailCarousel';
 import { Ingredients } from '../CreateRecipe/Ingredients/Ingredients';
 import { Steps } from '../CreateRecipe/Steps/Steps';
-import './RecipeDetails.css'
-import { RecipeContext, useRecipeContext } from '../../contexts/RecipeContext';
+
+import { useRecipeContext } from '../../contexts/RecipeContext';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const RecipeDetails = () => {
@@ -113,7 +114,7 @@ export const RecipeDetails = () => {
                         <div className="row">
                             <div className="col-12">
 
-                                {isAdmin || isOwner && (
+                                {(isAdmin || isOwner) && (
                                     <div className="buttons">
                                         <Link to={`/catalog/${recipe._id}/edit`} className="btn delicious-btn">Редактирай</Link>
                                         <button onClick={onDeleteClick} className="btn delicious-btn">Изтрий</button>
