@@ -56,6 +56,13 @@
     margin-bottom: 10px;
 }
 
+.receipe-content-details h5 {
+    color: #817a7a;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
 .receipe-content-details h6 {
     font-size: 18px;
     margin-bottom: 20px;

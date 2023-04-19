@@ -138,6 +138,7 @@ export const RecipeDetails = () => {
 
                                         <div className="receipe-content-details">
                                             <h2>{recipe.title}</h2>
+                                            <h5>{recipe.category}</h5>
                                         </div>
 
                                         <div className="receipe-duration">
